@@ -1,17 +1,29 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <v-app>
+      <toolbar></toolbar>
+      <v-content>
+        <v-container>
+          <AboutMe></AboutMe>
+        </v-container>
+      </v-content>
+      <!-- <img src="./assets/logo.png">
+      <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+    </v-app>
   </div>
 </template>
 
 <script>
 import HelloWorld from "./components/HelloWorld.vue";
+import Toolbar from "@/components/Toolbar.vue";
+import AboutMe from "@/components/AboutMe.vue";
 
 export default {
   name: "app",
   components: {
-    HelloWorld
+    HelloWorld,
+    Toolbar,
+    AboutMe
   }
 };
 </script>
@@ -24,5 +36,8 @@ export default {
   text-align: center;
   color: #2c3e50;
   margin-top: 60px;
+}
+body {
+  background-color: #f7f8fa;
 }
 </style>
