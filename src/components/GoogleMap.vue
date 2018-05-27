@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <v-container>
     <!-- <div>
       <h2>Search and add a pin</h2>
       <label>
@@ -15,7 +15,7 @@
     <gmap-map
       :center="center"
       :zoom="12"
-      style="width:100%;  height: 600px;"
+      style="width:100%;  height: 800px;"
     >
       <gmap-marker
         :key="index"
@@ -24,7 +24,7 @@
         @click="center=m.position"
       ></gmap-marker>
     </gmap-map>
-  </div>
+  </v-container>
 </template>
 
 <script>

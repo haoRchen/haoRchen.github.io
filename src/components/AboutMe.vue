@@ -1,5 +1,5 @@
 <template>
-  <v-container grid-list-lg>
+  <v-container>
     <v-layout id="layout" class="custom-wrap" align-center wrap row>
       <v-flex sm12 md6>
         <v-container>
@@ -19,23 +19,6 @@
             <v-layout aligh-center justify-right> 
               <v-btn color="info">View Portfolio</v-btn>
             </v-layout>
-          </v-container>
-          <v-container>
-            <hr>
-              <v-layout fill-height>
-                <v-flex xs12 align-baseline align-content-end align-content-space-around>
-                  <h3>Connect with me  - </h3>
-                  <v-btn flat icon color="3B4A4D">
-                    <v-icon class="text-xs-right">fab fa-linkedin</v-icon>
-                  </v-btn>
-                  <v-btn flat icon color="3B4A4D">
-                    <v-icon class="text-xs-right">fab fa-github</v-icon>
-                  </v-btn>
-                  <v-btn flat icon color="3B4A4D">
-                    <v-icon class="text-xs-right">fas fa-envelope</v-icon>
-                  </v-btn>
-                </v-flex>
-              </v-layout>
           </v-container>
         </v-container>
       </v-flex> 
