@@ -1,11 +1,11 @@
 <template>
   <v-app>
-    <toolbar></toolbar>
+    <toolbar/>
     <v-content id="body">
       <!-- <AboutMe></AboutMe> -->
-    <all-projects></all-projects>
+      <all-projects/>
     </v-content>
-    <Footer></Footer>
+    <Footer/>
     <!-- <img src="./assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   </v-app>
@@ -19,7 +19,7 @@ import Footer from "@/components/Footer.vue";
 import AllProjects from "@/components/Project/AllProjects.vue";
 
 export default {
-  name: "app",
+  name: "App",
   components: {
     HelloWorld,
     Toolbar,
