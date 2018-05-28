@@ -1,12 +1,14 @@
 <template>
-    <v-toolbar id="toolbar" app scroll-toolbar-off-screen>
+    <v-toolbar id="toolbar" app scroll-off-screen>
         <!-- <v-toolbar-side-icon></v-toolbar-side-icon> -->
-        <v-toolbar-title class="white-text">H</v-toolbar-title>
+        <!-- <v-toolbar-title class="white-text">H</v-toolbar-title> -->
         <v-spacer></v-spacer>
         <v-toolbar-items class="hidden-sm-and-down">
-            <v-btn class="white-text" flat>Portfolio</v-btn>
-            <v-btn class="white-text" flat>About me</v-btn>
+            <v-btn color="white" flat>Portfolio</v-btn>
+            <v-btn color="white" flat>H</v-btn>
+            <v-btn color="white" flat>About me</v-btn>
         </v-toolbar-items>
+        <v-spacer></v-spacer>
     </v-toolbar>
 </template>
 

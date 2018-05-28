@@ -2,7 +2,8 @@
   <v-app>
     <toolbar></toolbar>
     <v-content id="body">
-      <AboutMe></AboutMe>
+      <!-- <AboutMe></AboutMe> -->
+    <all-projects></all-projects>
     </v-content>
     <Footer></Footer>
     <!-- <img src="./assets/logo.png">
@@ -15,6 +16,7 @@ import HelloWorld from "./components/HelloWorld.vue";
 import Toolbar from "@/components/Toolbar.vue";
 import AboutMe from "@/components/AboutMe.vue";
 import Footer from "@/components/Footer.vue";
+import AllProjects from "@/components/Project/AllProjects.vue";
 
 export default {
   name: "app",
@@ -22,7 +24,8 @@ export default {
     HelloWorld,
     Toolbar,
     AboutMe,
-    Footer
+    Footer,
+    AllProjects
   }
 };
 </script>
@@ -37,6 +40,6 @@ export default {
   margin-top: 60px;
 }
 #body {
-  background-color: #f7f8fa;
+  /* background-color: #f7f8fa; */
 }
 </style>
