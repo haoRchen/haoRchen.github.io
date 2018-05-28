@@ -1,13 +1,25 @@
 <template>
-  <v-container grid-list-xs fill-height>
-    <v-layout id="layout" class="custom-wrap" align-center justify-center wrap row>
-      <v-flex sm12 md5>
+  <v-container 
+    grid-list-xs 
+    fill-height>
+    <v-layout 
+      id="layout" 
+      class="custom-wrap" 
+      align-center 
+      justify-center 
+      wrap 
+      row>
+      <v-flex 
+        sm12 
+        md5>
         <v-container>
           <!-- <img src="https://developers.google.com/maps/documentation/urls/images/map-no-params.png" height="700px" width="500px" alt="My location"> -->
-        <google-map/>
+          <google-map/>
         </v-container>
       </v-flex> 
-      <v-flex sm12 md5> <!-- 2nd Column -->
+      <v-flex 
+        sm12 
+        md5> <!-- 2nd Column -->
         <v-container>
           <v-container>
             <h1 class="text-xs-left">Whale hello there!</h1>
@@ -28,6 +40,7 @@
 import GoogleMap from "./GoogleMap";
 
 export default {
+  name: "AboutMe",
   components: {
     GoogleMap
   }
