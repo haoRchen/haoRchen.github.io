@@ -8,15 +8,15 @@
     <v-spacer/>
     <v-toolbar-items class="hidden-sm-and-down">
       <v-btn 
-        to="Portfolio" 
+        to="/portfolio" 
         color="white" 
         flat>Portfolio</v-btn>
       <v-btn 
-        to="LandingPage" 
+        to="/" 
         color="white" 
         flat>H</v-btn>
       <v-btn 
-        to="/" 
+        to="/about-me" 
         color="white" 
         flat>About me</v-btn>
     </v-toolbar-items>

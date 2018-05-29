@@ -1,7 +1,9 @@
 <template>
   <v-app>
     <toolbar/>
-    <v-content id="body">
+    <v-content 
+      id="body" 
+      class= "mt-4">
       <router-view/>
     </v-content>
     <Footer/>
@@ -25,6 +27,6 @@ export default {
 
 <style>
 #body {
-  /* background-color: #f7f8fa; */
+  background-color: #f7f8fa;
 }
 </style>
