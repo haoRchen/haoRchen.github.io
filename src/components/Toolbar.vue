@@ -1,6 +1,6 @@
 <template>
   <nav 
-    class="navbar" 
+    class="navbar is-primary" 
     role="navigation" 
     aria-label="main navigation">
     <div class="navbar-brand">
@@ -57,11 +57,8 @@ export default {
   }
 };
 </script>
-<style>
-#toolbar {
-  background-color: #30cbe8;
-}
-.white-text {
-  color: white;
-}
+<style lang="sass">
+@import '../main.sass'
+#toolbar 
+  background-color: #30cbe8
 </style>

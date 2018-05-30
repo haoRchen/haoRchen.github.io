@@ -1,11 +1,11 @@
 import Vue from "vue";
 import App from "./App.vue";
 import Router from "./router";
-import Bulma from "../node_modules/bulma/css/bulma.css";
+// import Bulma from "../node_modules/bulma/css/bulma.css";
 import * as VueGoogleMaps from "vue2-google-maps";
 
 Vue.config.productionTip = false;
-Vue.use(Bulma);
+// Vue.use(Bulma);
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyDqihpHzlKCB7lcZRU7zjtRZB1mAhrSCwg",

@@ -25,8 +25,7 @@ export default {
 };
 </script>
 
-<style>
-#body {
-  background-color: #f7f8fa;
-}
+<style lang="sass">
+@import 'main.sass'
+@import '~bulma/bulma.sass'
 </style>
