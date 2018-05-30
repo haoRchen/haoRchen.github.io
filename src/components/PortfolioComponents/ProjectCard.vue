@@ -10,13 +10,13 @@
           <v-card-title primary-title>
             <v-layout>
               <v-flex>
-                <h4 class="headline mb-0">{{ Project.name }}</h4>
+                <h4 class="headline mb-0">{{ project.name }}</h4>
               </v-flex>
               <v-flex class="text-xs-right">
-                <p>{{ Project.date }}</p>
+                <p>{{ project.date }}</p>
               </v-flex>
             </v-layout>
-            {{ Project.description }}
+            {{ project.description }}
           </v-card-title>
           <v-card-actions>
             <v-layout>
@@ -57,7 +57,7 @@
 export default {
   name: "ProjectTitle",
   props: {
-    Project: {
+    project: {
       type: Object,
       required: true,
       default: () => {

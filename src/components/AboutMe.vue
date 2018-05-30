@@ -11,7 +11,7 @@
       row>
       <v-flex 
         sm12 
-        md5>
+        md6>
         <v-container>
           <!-- <img src="https://developers.google.com/maps/documentation/urls/images/map-no-params.png" height="700px" width="500px" alt="My location"> -->
           <google-map/>
@@ -19,7 +19,7 @@
       </v-flex> 
       <v-flex 
         sm12 
-        md5> <!-- 2nd Column -->
+        md6> <!-- 2nd Column -->
         <v-container>
           <v-container>
             <h1 class="text-xs-left">Whale hello there!</h1>

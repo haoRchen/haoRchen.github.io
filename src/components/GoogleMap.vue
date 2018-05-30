@@ -15,14 +15,14 @@
     <gmap-map
       :center="center"
       :zoom="12"
-      style="width:100%;  height: 700px;"
+      style="width:100%;  height: 600px;"
     >
       <gmap-marker
-        :key="index"
         v-for="(m, index) in markers"
+        :key="index"
         :position="m.position"
         @click="center=m.position"
-      ></gmap-marker>
+      />
     </gmap-map>
   </v-container>
 </template>

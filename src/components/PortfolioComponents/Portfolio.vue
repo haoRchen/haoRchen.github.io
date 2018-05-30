@@ -8,12 +8,25 @@
       row>
       <v-flex 
         id="HeaderPane" 
+        class="text-xs-right"
         sm12 
         md2 >
-        <v-container mt-5>
-          <h3 class="text-sm-right">Work</h3>
+        <v-container mt-5 >
+          <v-btn 
+            flat
+            color="white" 
+            class="text-xs-right">Work</v-btn>
+          <v-btn 
+            flat
+            color="white" 
+            class="text-xs-right">Personal Projects</v-btn>
+          <v-btn 
+            flat
+            color="white" 
+            class="text-xs-right">Open Source</v-btn>
+            <!-- <h3 class="text-sm-right">Work</h3>
           <h3 class="text-sm-right">Personal Projects</h3>
-          <h3 class="text-sm-right">Open Source</h3>
+          <h3 class="text-sm-right">Open Source</h3> -->
         </v-container>
       </v-flex> 
       <v-flex 
@@ -28,7 +41,7 @@
               xs10 
               md11>
               <ProjectCard 
-                v-for="project in list" 
+                v-for="project in workList" 
                 :key="project.id" 
                 :project="project"
               />
@@ -42,7 +55,7 @@
 
 <script>
 import ProjectCard from "@/components/PortfolioComponents/ProjectCard.vue";
-import ProjectList from "@/assets/ProjectList";
+import WorkProjects from "@/assets/ProjectList/work";
 export default {
   name: "Portfolio",
   components: {
@@ -50,11 +63,11 @@ export default {
   },
   data: function() {
     return {
-      list: Object
+      workList: Object
     };
   },
   mounted() {
-    this.list = ProjectList;
+    this.workList = WorkProjects;
   }
 };
 </script>
