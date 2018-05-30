@@ -10,12 +10,12 @@
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
     "babel-polyfill": "^6.26.0",
+    "bulma": "^0.7.1",
     "fontawesome": "^4.7.2",
     "material-design-icons-iconfont": "^3.0.3",
     "vue": "^2.5.16",
     "vue-router": "^3.0.1",
-    "vue2-google-maps": "^0.9.7",
-    "vuetify": "^1.0.18"
+    "vue2-google-maps": "^0.9.7"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0-beta.11",

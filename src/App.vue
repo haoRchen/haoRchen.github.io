@@ -4,9 +4,9 @@
     <v-content 
       id="body" 
       class= "mt-4">
-      <router-view/>
+      <!-- <router-view/> -->
     </v-content>
-    <Footer/>
+    <!-- <Footer/> -->
   </v-app>
 </template>
 
