@@ -1,6 +1,6 @@
 <template>
   <nav 
-    class="navbar is-primary" 
+    class="navbar" 
     role="navigation" 
     aria-label="main navigation">
     <div class="navbar-brand">
@@ -15,7 +15,9 @@
       </a>
 
       <!--
-    Using the v-on: directive to listen for the click event and toggle the data property showNav. Also, using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
+    Using the v-on: directive to listen for the click event and toggle the data property showNav.
+     Also, using the v-bind: directive to reactively update the class attribute 'is-active' 
+     based on the showNav property.
     -->
       <div 
         :class="{ 'is-active': showNav }" 
@@ -27,7 +29,8 @@
       </div>
     </div>
     <!--
-    Using the v-bind: directive to reactively update the class attribute 'is-active' based on the showNav property.
+    Using the v-bind: directive to reactively update the class attribute 'is-active' based 
+    on the showNav property.
     -->
     <div 
       :class="{ 'is-active': showNav }" 
@@ -57,8 +60,6 @@ export default {
   }
 };
 </script>
-<style lang="sass">
-@import '../main.sass'
-#toolbar 
-  background-color: #30cbe8
+<style lang="sass" scoped>
+@import '../main.sass'  
 </style>

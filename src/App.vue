@@ -1,13 +1,14 @@
 <template>
-  <v-app>
+  <div class="mainBackground">
     <toolbar/>
-    <v-content 
-      id="body" 
-      class= "mt-4">
-      <!-- <router-view/> -->
-    </v-content>
-    <!-- <Footer/> -->
-  </v-app>
+    <div class="section">
+      <div class="container">
+        <about-me/>
+        <!-- <router-view/> -->
+      </div>
+    </div>
+    <Footer/>
+  </div>
 </template>
 
 <script>
@@ -28,4 +29,9 @@ export default {
 <style lang="sass">
 @import 'main.sass'
 @import '~bulma/bulma.sass'
+
+.mainBackground
+  background-color: #f7f8fa
+.section
+  min-height: 90vh // minus the height of the footer
 </style>

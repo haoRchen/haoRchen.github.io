@@ -1,30 +1,35 @@
 <template>
-    <v-footer id="footer" height="auto">
-      <v-container>
-        <v-layout row wrap justify-center align-center>
-          <v-flex xs12 sm2 class="text-xs-center">
-            <v-btn icon color="3B4A4D">
-              <v-icon >fab fa-linkedin</v-icon>
-            </v-btn>
-            <v-btn  icon color="3B4A4D">
-              <v-icon >fab fa-github</v-icon>
-            </v-btn>
-            <v-btn icon color="3B4A4D">
-              <v-icon >fas fa-envelope</v-icon>
-            </v-btn>
-            <h3>@2018 Hao Ran Chen</h3>
-          </v-flex>
-        </v-layout>
-      </v-container>
-    </v-footer>
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="button">
+          <span class="icon is-large">
+            <i class="fab fa-linkedin"/>
+          </span> 
+        </a>
+        <a class="button">
+          <span class="icon is-large">
+            <i class="fab fa-github<"/>
+          </span>
+        </a>
+        <a class="button">
+          <span class="icon is-large">
+            <i class="fas fa-envelope"/>
+          </span>
+        </a>
+        <h4>@2018 Hao Ran Chen</h4>
+      </div>
+    </div>
+  </footer>
+    
 </template>
 
 <script>
 export default {};
 </script>
 
-<style>
-#footer {
-  background-color: #f7f8fa;
-}
+<style lang="sass" scoped>
+footer 
+  background-color: #f7f8fa
+  padding-bottom: 10px
 </style>
