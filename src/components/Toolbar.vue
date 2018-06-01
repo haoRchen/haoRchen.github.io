@@ -4,15 +4,17 @@
     role="navigation" 
     aria-label="main navigation">
     <div class="navbar-brand">
-      <a 
+      <router-link 
+        to="/"
         class="navbar-item" 
-        href="#">
+        tag="a"
+      >
         <img 
           src="https://bulma.io/images/bulma-logo.png" 
           alt="Bulma: a modern CSS framework based on Flexbox" 
           width="112" 
           height="28">
-      </a>
+      </router-link>
 
       <!--
     Using the v-on: directive to listen for the click event and toggle the data property showNav.
@@ -36,16 +38,20 @@
       :class="{ 'is-active': showNav }" 
       class="navbar-menu">
       <div class="navbar-end">
-        <a 
+        <router-link 
+          to="/portfolio"
           class="navbar-item" 
-          href="#">
+          tag="a"
+        >
           Portfolio
-        </a>
-        <a 
+        </router-link>
+        <router-link 
+          to="/about-me"
           class="navbar-item" 
-          href="#">
+          tag="a"
+        >
           About Me
-        </a>
+        </router-link>
       </div>
     </div>
   </nav>

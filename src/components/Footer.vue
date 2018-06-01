@@ -29,6 +29,7 @@ export default {};
 </script>
 
 <style lang="sass" scoped>
+@import '../main.sass'
 footer 
   background-color: #f7f8fa
   padding-bottom: 10px

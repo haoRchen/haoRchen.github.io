@@ -1,56 +1,24 @@
 <template>
-  <v-container 
-    grid-list-xs 
-    fill-height>
-    <v-layout 
-      class="custom-wrap" 
-      wrap 
-      row>
-      <v-flex 
-        id="HeaderPane" 
-        class="text-xs-right"
-        sm12 
-        md2 >
-        <v-container mt-5 >
-          <v-btn 
-            flat
-            color="white" 
-            class="text-xs-right">Work</v-btn>
-          <v-btn 
-            flat
-            color="white" 
-            class="text-xs-right">Personal Projects</v-btn>
-          <v-btn 
-            flat
-            color="white" 
-            class="text-xs-right">Open Source</v-btn>
-            <!-- <h3 class="text-sm-right">Work</h3>
-          <h3 class="text-sm-right">Personal Projects</h3>
-          <h3 class="text-sm-right">Open Source</h3> -->
-        </v-container>
-      </v-flex> 
-      <v-flex 
-        id="ProjectPane" 
-        sm12 
-        md10> <!-- 2nd Column -->
-        <v-container>
-          <v-layout 
-            align-center 
-            justify-center>
-            <v-flex 
-              xs10 
-              md11>
-              <ProjectCard 
-                v-for="project in workList" 
-                :key="project.id" 
-                :project="project"
-              />
-            </v-flex>
-          </v-layout>
-        </v-container>
-      </v-flex> 
-    </v-layout>
-  </v-container>
+  <div class="columns is-vcentered">
+    <div class="column is-one-fifth">
+      <a class="button">
+        Work
+      </a>
+      <a class="button">
+        Personal Projects
+      </a>
+      <a class="button">
+        Open Source
+      </a>
+    </div>
+    <div class="column content layout">
+      <ProjectCard 
+        v-for="project in workList" 
+        :key="project.id" 
+        :project="project"
+      />
+    </div>
+  </div>
 </template>
 
 <script>
@@ -72,11 +40,8 @@ export default {
 };
 </script>
 
-<style>
-#HeaderPane {
-  background-color: grey;
-}
-#ProjectPane {
-  background-color: white;
-}
+<style lang="sass" scoped>
+@import '../../main.sass'
+.layout 
+  background-color: #fff
 </style>

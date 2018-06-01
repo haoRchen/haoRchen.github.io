@@ -21,26 +21,26 @@
           <v-card-actions>
             <v-layout>
               <v-flex>
-                <v-btn 
-                  icon 
-                  color="white">
-                  <v-icon color="red">fab fa-angular</v-icon>
-                </v-btn>
-                <v-btn 
-                  icon 
-                  color="white">
-                  <v-icon color="red">fab fa-vuejs</v-icon>
-                </v-btn>
-                <v-btn 
-                  icon 
-                  color="white">
-                  <v-icon color="red">fab fa-js</v-icon>
-                </v-btn>
-                <v-btn 
-                  icon 
-                  color="white">
-                  <v-icon color="red">fab fa-node-js</v-icon>
-                </v-btn>
+                <a class="button">
+                  <span class="icon is-large">
+                    <i class="fab fa-angular<"/>
+                  </span>
+                </a>
+                <a class="button">
+                  <span class="icon is-large">
+                    <i class="fab fa-js<"/>
+                  </span>
+                </a>
+                <a class="button">
+                  <span class="icon is-large">
+                    <i class="fab fa-vuejs<"/>
+                  </span>
+                </a>
+                <a class="button">
+                  <span class="icon is-large">
+                    <i class="fab fa-node-js<"/>
+                  </span>
+                </a>
               </v-flex>
               <v-flex class="text-xs-right">
                 <v-btn color="white">View Details</v-btn>
