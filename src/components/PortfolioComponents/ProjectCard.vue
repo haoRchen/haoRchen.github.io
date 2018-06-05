@@ -1,56 +1,66 @@
 <template>
-  <v-card flat>
-    <v-container>
-      <v-layout 
-        align-center 
-        justify-center>
-        <v-flex 
-          xs12 
-          md12>
-          <v-card-title primary-title>
-            <v-layout>
-              <v-flex>
-                <h4 class="headline mb-0">{{ project.name }}</h4>
-              </v-flex>
-              <v-flex class="text-xs-right">
-                <p>{{ project.date }}</p>
-              </v-flex>
-            </v-layout>
-            {{ project.description }}
-          </v-card-title>
-          <v-card-actions>
-            <v-layout>
-              <v-flex>
-                <a class="button">
-                  <span class="icon is-large">
-                    <i class="fab fa-angular<"/>
-                  </span>
-                </a>
-                <a class="button">
-                  <span class="icon is-large">
-                    <i class="fab fa-js<"/>
-                  </span>
-                </a>
-                <a class="button">
-                  <span class="icon is-large">
-                    <i class="fab fa-vuejs<"/>
-                  </span>
-                </a>
-                <a class="button">
-                  <span class="icon is-large">
-                    <i class="fab fa-node-js<"/>
-                  </span>
-                </a>
-              </v-flex>
-              <v-flex class="text-xs-right">
-                <v-btn color="white">View Details</v-btn>
-              </v-flex>
-            </v-layout>
-          </v-card-actions>
-        </v-flex>
-      </v-layout>
-    </v-container>
-  </v-card>
+  <div class="box">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <div class="level is-mobile is-marginless">
+            <div class="level-left">
+              <h6 class="title is-5 level-item">{{ project.name }}</h6>
+            </div>
+            <div class="level-right">
+              <h6 class="subtitle is-6 level-item">{{ project.date }}</h6>
+            </div>
+          </div>
+          <p>
+            {{ project.description }}            
+          </p>
+        </div>
+        <nav class="level is-mobile is-marginless">
+          <div class="level-left">
+            <a 
+              class="level-item" 
+              aria-label="reply">
+              <span class="icon is-small">
+                <i 
+                  class="fab fa-angular" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+            <a 
+              class="level-item" 
+              aria-label="retweet">
+              <span class="icon is-small">
+                <i 
+                  class="fab fa-js" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+            <a 
+              class="level-item" 
+              aria-label="like">
+              <span class="icon is-small">
+                <i 
+                  class="fab fa-vuejs" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+            <a 
+              class="level-item" 
+              aria-label="like">
+              <span class="icon is-small">
+                <i 
+                  class="fab fa-node-js" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+          </div>
+          <div class="level-right">
+            <a class="button level-item is-invisible">View Detail</a>
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>    
 </template>
 
 <script>
