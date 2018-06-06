@@ -11,10 +11,12 @@
               <h6 class="subtitle is-6 level-item">{{ project.date }}</h6>
             </div>
           </div>
-          <p>
+          <!-- Project Descriptions -->
+          <p >
             {{ project.description }}            
           </p>
         </div>
+        <!-- Card Technology Icons -->
         <nav class="level is-mobile is-marginless">
           <div class="level-left">
             <a 
@@ -82,5 +84,7 @@ export default {
 };
 </script>
 
-<style>
+<style lang="sass" scoped>
+@import "../../main.sass"
+
 </style>

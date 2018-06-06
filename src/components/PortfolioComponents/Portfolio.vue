@@ -11,7 +11,7 @@
         Open Source
       </a>
     </div>
-    <div class="column content layout">
+    <div class="column content layout p-t-lg p-l-lg p-r-lg p-b-lg">
       <ProjectCard 
         v-for="project in workList" 
         :key="project.id" 
