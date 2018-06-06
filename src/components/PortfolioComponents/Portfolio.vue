@@ -1,17 +1,17 @@
 <template>
-  <div class="columns is-vcentered">
-    <div class="column is-one-fifth">
-      <a class="button">
+  <div class="columns is-desktop">
+    <div class="column LeftLayout is-one-fifth p-t-lg">
+      <button class="button SideButton  is-pulled-right">
         Work
-      </a>
-      <a class="button">
+      </button>
+      <button class="button SideButton is-pulled-right">
         Personal Projects
-      </a>
-      <a class="button">
+      </button>
+      <button class="button SideButton  is-pulled-right">
         Open Source
-      </a>
+      </button>
     </div>
-    <div class="column content layout p-t-lg p-l-lg p-r-lg p-b-lg">
+    <div class="column content is-two-thirds RightLayout p-t-lg p-l-lg p-r-lg p-b-lg">
       <ProjectCard 
         v-for="project in workList" 
         :key="project.id" 
@@ -42,6 +42,17 @@ export default {
 
 <style lang="sass" scoped>
 @import '../../main.sass'
-.layout 
+.LeftLayout
+.RightLayout 
   background-color: #fff
+.SideButton
+  text-decoration: none
+  background-color: transparent
+  border: none
+  font-family: 'Roboto Slab', Arial, sans-serif
+  font-weight: 600
+  @media screen and (min-width: $tablet)
+    clear: both
+.SideButton:hover
+  background-color: grey
 </style>

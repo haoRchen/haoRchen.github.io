@@ -1,8 +1,6 @@
 <template>
-  <div class="columns is-vcentered layout p-t-lg p-l-lg p-r-lg p-b-lg">
-    <div class="column">
-      <google-map/>
-    </div>
+  <div class="columns is-vcentered is-desktop p-t-lg p-l-lg p-r-lg p-b-lg is-3 layout">
+    
     <div class="column content">
       <div>
         <h2 class="AboutMeHeader is-size-2-desktop" >Whale hello there!</h2>
@@ -12,10 +10,19 @@
         <div class="level-left"/>
         <div class="level-right">
           <div class="level-item">
-            <a class="button is-info">View Portfolio</a>
+            <router-link 
+              to="/portfolio"
+              class="button PortfolioButton " 
+              tag="a"
+            >
+              Portfolio
+            </router-link>
           </div>
         </div>
       </div>
+    </div>
+    <div class="column">
+      <google-map/>
     </div>
   </div>    
 </template>
@@ -40,4 +47,7 @@ export default {
 .AboutMeContent
   font-family: 'Montserrat', Arial, sans-serif
   font-weight: 400
+.PortfolioButton
+  font-family: 'Roboto Slab', Arial, sans-serif
+  font-weight: 500
 </style>

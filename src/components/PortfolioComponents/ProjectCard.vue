@@ -5,10 +5,10 @@
         <div class="content">
           <div class="level is-mobile is-marginless">
             <div class="level-left">
-              <h5 class="title is-5 level-item">{{ project.name }}</h5>
+              <h5 class="title level-item">{{ project.name }}</h5>
             </div>
             <div class="level-right">
-              <h6 class="subtitle is-6 level-item">{{ project.date }}</h6>
+              <h6 class="subtitle level-item">{{ project.date }}</h6>
             </div>
           </div>
           <!-- Project Descriptions -->
@@ -87,7 +87,7 @@ export default {
 <style lang="sass" scoped>
 @import "../../main.sass"
 .title
-  font-family: 'Montserrat', Arial, sans-serif
+  font-family: 'Roboto Slab', Arial, sans-serif
   font-weight: 500
 .subtitle
   font-family: 'Montserrat', Arial, sans-serif
@@ -95,4 +95,6 @@ export default {
 .ProjectDescription
   font-family: 'Montserrat', Arial, sans-serif
   font-weight: 300
+.ProjectDescription
+  overflow: auto
 </style>

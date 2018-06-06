@@ -52,6 +52,7 @@
         >
           About Me
         </router-link>
+        <div class="p-r-xxl"/>
       </div>
     </div>
   </nav>
@@ -71,4 +72,5 @@ export default {
 .navbar 
   font-family: 'Roboto Slab', Arial, sans-serif
   font-weight: bold
+  min-height: 60px
 </style>

@@ -1,19 +1,25 @@
 <template>
   <footer class="footer p-b-s">
     <div class="content has-text-centered">
-      <a class="button">
+      <a >
         <span class="icon is-large">
-          <i class="fab fa-linkedin"/>
+          <i 
+            class="fab fa-linkedin fa-lg"
+            aria-hidden="true"/>
         </span> 
       </a>
-      <a class="button">
+      <a >
         <span class="icon is-large">
-          <i class="fab fa-github<"/>
+          <i 
+            class="fab fa-github fa-lg"
+            aria-hidden="true"/>
         </span>
       </a>
-      <a class="button">
+      <a >
         <span class="icon is-large">
-          <i class="fas fa-envelope"/>
+          <i 
+            class="fas fa-envelope fa-lg"
+            aria-hidden="true"/>
         </span>
       </a>
       <h6>@2018 Hao Ran Chen</h6>
