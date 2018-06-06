@@ -1,18 +1,18 @@
 <template>
-  <div class="box">
+  <div class="box is-shadowless"> <!-- TODO: toggle shadowless on hover. -->
     <article class="media">
       <div class="media-content">
         <div class="content">
           <div class="level is-mobile is-marginless">
             <div class="level-left">
-              <h6 class="title is-5 level-item">{{ project.name }}</h6>
+              <h5 class="title is-5 level-item">{{ project.name }}</h5>
             </div>
             <div class="level-right">
               <h6 class="subtitle is-6 level-item">{{ project.date }}</h6>
             </div>
           </div>
           <!-- Project Descriptions -->
-          <p >
+          <p class="ProjectDescription">
             {{ project.description }}            
           </p>
         </div>
@@ -22,36 +22,36 @@
             <a 
               class="level-item" 
               aria-label="reply">
-              <span class="icon is-small">
+              <span class="icon is-medium">
                 <i 
-                  class="fab fa-angular" 
+                  class="fab fa-angular fa-lg" 
                   aria-hidden="true"/>
               </span>
             </a>
             <a 
               class="level-item" 
               aria-label="retweet">
-              <span class="icon is-small">
+              <span class="icon is-medium">
                 <i 
-                  class="fab fa-js" 
+                  class="fab fa-js fa-lg" 
                   aria-hidden="true"/>
               </span>
             </a>
             <a 
               class="level-item" 
               aria-label="like">
-              <span class="icon is-small">
+              <span class="icon is-medium">
                 <i 
-                  class="fab fa-vuejs" 
+                  class="fab fa-vuejs fa-lg" 
                   aria-hidden="true"/>
               </span>
             </a>
             <a 
               class="level-item" 
               aria-label="like">
-              <span class="icon is-small">
+              <span class="icon is-medium">
                 <i 
-                  class="fab fa-node-js" 
+                  class="fab fa-node-js fa-lg" 
                   aria-hidden="true"/>
               </span>
             </a>
@@ -86,5 +86,13 @@ export default {
 
 <style lang="sass" scoped>
 @import "../../main.sass"
-
+.title
+  font-family: 'Montserrat', Arial, sans-serif
+  font-weight: 500
+.subtitle
+  font-family: 'Montserrat', Arial, sans-serif
+  font-weight: 400
+.ProjectDescription
+  font-family: 'Montserrat', Arial, sans-serif
+  font-weight: 300
 </style>

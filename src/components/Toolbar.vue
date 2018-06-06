@@ -40,14 +40,14 @@
       <div class="navbar-end">
         <router-link 
           to="/portfolio"
-          class="navbar-item" 
+          class="navbar-item has-text-white" 
           tag="a"
         >
           Portfolio
         </router-link>
         <router-link 
           to="/about-me"
-          class="navbar-item" 
+          class="navbar-item has-text-white" 
           tag="a"
         >
           About Me
@@ -68,4 +68,7 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import '../main.sass'  
+.navbar 
+  font-family: 'Roboto Slab', Arial, sans-serif
+  font-weight: bold
 </style>

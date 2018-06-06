@@ -1,5 +1,5 @@
 <template>
-  <div class="mainBackground">
+  <div class="Body">
     <toolbar/>
     <div class="section">
       <div class="container">
@@ -33,8 +33,12 @@ export default {
 @import 'main.sass'
 @import '~bulma/bulma.sass'
 
-.mainBackground
+.Body
   background-color: #f7f8fa
+  font-family: 'Roboto Slab', Arial, sans-serif
+  display: flex
+  min-height: 100vh
+  flex-direction: column
 .section
-  min-height: 90vh // minus the height of the footer
+  flex: 1 0 auto
 </style>
