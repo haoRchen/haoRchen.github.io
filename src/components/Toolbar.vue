@@ -98,7 +98,7 @@ export default {
   position: fixed 
   width: 100%
   top: 0 
-  transition: top 0.4s
+  transition: top 0.4s ease 0.2s
 .NavButton:active
   color: black
 
