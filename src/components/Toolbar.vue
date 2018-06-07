@@ -16,20 +16,20 @@
           width="112" 
           height="28">
       </router-link>
-
       <!--
     Using the v-on: directive to listen for the click event and toggle the data property showNav.
      Also, using the v-bind: directive to reactively update the class attribute 'is-active' 
      based on the showNav property.
     -->
-    </div>
-    <div 
-      :class="{ 'is-active': showNav }" 
-      class="navbar-burger m-r-md" 
-      @click="showNav = !showNav">
-      <span/>
-      <span/>
-      <span/>
+      <div 
+        :class="{ 'is-active': showNav }" 
+        class="navbar-burger" 
+        @click="showNav = !showNav">
+        <span/>
+        <span/>
+        <span/>
+      </div>
+
     </div>
     <!--
     Using the v-bind: directive to reactively update the class attribute 'is-active' based 
@@ -94,16 +94,12 @@ export default {
 .navbar 
   font-family: $roboto
   font-weight: bold
-  display: flex
+  // display: flex
   position: fixed 
   width: 100%
   top: 0 
-  transition: top 0.4s ease 0.2s
-.navbar-brand
-  margin-right: auto
+  transition: top 0.3s ease 0.1s
 .navbar-burger
   color: $white
-  display: inline-block
-  vertical-align: middle
   
 </style>
