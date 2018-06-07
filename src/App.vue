@@ -1,11 +1,13 @@
 <template>
-  <div class="Body">
+  <div>
     <toolbar/>
-    <div class="section">
-      <div class="container">
-        <!-- <about-me/> -->
-        <router-view/>
-        <!-- <portfolio/> -->
+    <div class="Body">
+      <div class="section">
+        <div class="container">
+          <!-- <about-me/> -->
+          <router-view/>
+          <!-- <portfolio/> -->
+        </div>
       </div>
     </div>
     <Footer/>
@@ -39,6 +41,7 @@ export default {
   display: flex
   min-height: 100vh
   flex-direction: column
+  padding-top: 60px
 .section
   flex: 1 0 auto
 </style>

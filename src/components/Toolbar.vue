@@ -1,5 +1,6 @@
 <template>
   <nav 
+    :style="{top:navTop}"
     class="navbar" 
     role="navigation" 
     aria-label="main navigation">
@@ -62,8 +63,29 @@
 export default {
   data() {
     return {
-      showNav: false
+      showNav: false,
+      PreviousScrollPos: null,
+      CurrentScrollPos: null,
+      ScrolledDown: false,
+      navTop: 0
     };
+  },
+  mounted() {
+    this.PreviousScrollPos = window.pageYOffset;
+  },
+  created() {
+    window.addEventListener("scroll", this.handleScroll);
+  },
+  destroyed() {
+    window.removeEventListener("scroll", this.handleScroll);
+  },
+  methods: {
+    handleScroll() {
+      this.CurrentScrollPos = window.pageYOffset;
+      this.navTop =
+        this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-60px";
+      this.PreviousScrollPos = this.CurrentScrollPos;
+    }
   }
 };
 </script>
@@ -73,4 +95,8 @@ export default {
   font-family: 'Roboto Slab', Arial, sans-serif
   font-weight: bold
   min-height: 60px
+  position: fixed 
+  width: 100%
+  top: 0 
+  transition: top 0.4s
 </style>

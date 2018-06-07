@@ -29,7 +29,7 @@ export default {
   components: {
     ProjectCard
   },
-  data: function() {
+  data() {
     return {
       workList: Object
     };
