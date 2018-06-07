@@ -1,9 +1,9 @@
 <template>
-  <div class="columns is-vcentered is-desktop p-t-lg p-l-lg p-r-lg p-b-lg is-3 layout">
+  <div class="columns is-vcentered is-tablet p-t-lg p-l-lg p-r-lg p-b-lg is-3 layout">
     
     <div class="column content">
       <div>
-        <h2 class="AboutMeHeader is-size-2-desktop" >Whale hello there!</h2>
+        <h2 class="AboutMeHeader is-size-2-tablet" >Whale hello there!</h2>
       </div>
       <p class="AboutMeContent">Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights. Gluten-free Odd Future American Apparel pour-over umami drinking vinegar Truffaut. Selvage sustainable plaid viral salvia readymade, lomo slow-carb before they sold out bitters leggings. 90's pickled actually biodiesel put a bird on it, butcher dreamcatcher Cosby sweater.</p>
       <div class="level">

@@ -1,5 +1,5 @@
 <template>
-  <div class="columns is-desktop">
+  <div class="columns is-tablet">
     <div class="column LeftLayout is-one-fifth p-t-lg">
       <button class="button SideButton  is-pulled-right">
         Work
@@ -43,6 +43,13 @@ export default {
 <style lang="sass" scoped>
 @import '../../main.sass'
 .LeftLayout
+  flex-direction: row
+  justify-content: center
+  display: flex
+  @media screen and (min-width: $tablet)
+    display: flex
+    flex-direction: column
+    justify-content: flex-start
 .RightLayout 
   background-color: #fff
 .SideButton
@@ -51,8 +58,11 @@ export default {
   border: none
   font-family: 'Roboto Slab', Arial, sans-serif
   font-weight: 600
+  display: flex
+  justify-content: flex-end
   @media screen and (min-width: $tablet)
-    clear: both
+    display: flex
+    jusitfy-content: center 
 .SideButton:hover
   background-color: grey
 </style>

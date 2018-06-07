@@ -8,6 +8,8 @@ import LandingPage from "@/components/LandingPage.vue";
 Vue.use(VueRouter);
 
 export default new VueRouter({
+  //https://stackoverflow.com/questions/49794618/add-is-active-class-bulma-to-router-in-vue
+  linkExactActiveClass: "is-active",
   routes: [
     {
       path: "/",

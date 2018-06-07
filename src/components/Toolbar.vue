@@ -41,14 +41,14 @@
       <div class="navbar-end">
         <router-link 
           to="/portfolio"
-          class="navbar-item has-text-white" 
+          class="navbar-item has-text-white NavButton" 
           tag="a"
         >
           Portfolio
         </router-link>
         <router-link 
           to="/about-me"
-          class="navbar-item has-text-white" 
+          class="navbar-item has-text-white NavButton" 
           tag="a"
         >
           About Me
@@ -74,13 +74,13 @@ export default {
     this.PreviousScrollPos = window.pageYOffset;
   },
   created() {
-    window.addEventListener("scroll", this.handleScroll);
+    window.addEventListener("scroll", this.ToggleNavBar);
   },
   destroyed() {
-    window.removeEventListener("scroll", this.handleScroll);
+    window.removeEventListener("scroll", this.ToggleNavBar);
   },
   methods: {
-    handleScroll() {
+    ToggleNavBar() {
       this.CurrentScrollPos = window.pageYOffset;
       this.navTop =
         this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-60px";
@@ -99,4 +99,7 @@ export default {
   width: 100%
   top: 0 
   transition: top 0.4s
+.NavButton:active
+  color: black
+
 </style>
