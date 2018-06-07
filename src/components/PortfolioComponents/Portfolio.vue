@@ -56,7 +56,7 @@ export default {
   text-decoration: none
   background-color: transparent
   border: none
-  font-family: 'Roboto Slab', Arial, sans-serif
+  font-family: $roboto
   font-weight: 600
   display: flex
   justify-content: flex-end

@@ -38,6 +38,6 @@ export default {};
 .TheFooter 
   background-color: #f7f8fa
   flex-shrink: 0
-  font-family: 'Montserrat', Arial, sans-serif
+  font-family: $montserrat
   font-weight: 600
 </style>

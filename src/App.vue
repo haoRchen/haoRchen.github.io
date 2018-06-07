@@ -33,11 +33,10 @@ export default {
 
 <style lang="sass">
 @import 'main.sass'
-@import '~bulma/bulma.sass'
 
 .Body
   background-color: #f7f8fa
-  font-family: 'Roboto Slab', Arial, sans-serif
+  font-family: $roboto
   display: flex
   min-height: 100vh
   flex-direction: column

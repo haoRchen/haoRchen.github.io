@@ -42,12 +42,12 @@ export default {
 .layout 
   background-color: #fff
 .AboutMeHeader
-  font-family: 'Roboto Slab', Arial, sans-serif
+  font-family: $roboto
   font-weight: 600
 .AboutMeContent
-  font-family: 'Montserrat', Arial, sans-serif
+  font-family: $montserrat
   font-weight: 400
 .PortfolioButton
-  font-family: 'Roboto Slab', Arial, sans-serif
+  font-family: $roboto
   font-weight: 500
 </style>

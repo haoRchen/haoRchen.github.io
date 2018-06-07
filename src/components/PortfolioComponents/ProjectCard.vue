@@ -87,13 +87,13 @@ export default {
 <style lang="sass" scoped>
 @import "../../main.sass"
 .title
-  font-family: 'Roboto Slab', Arial, sans-serif
+  font-family: $roboto
   font-weight: 500
 .subtitle
-  font-family: 'Montserrat', Arial, sans-serif
+  font-family: $montserrat
   font-weight: 400
 .ProjectDescription
-  font-family: 'Montserrat', Arial, sans-serif
+  font-family: $montserrat
   font-weight: 300
 .ProjectDescription
   overflow: auto

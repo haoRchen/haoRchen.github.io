@@ -22,14 +22,14 @@
      Also, using the v-bind: directive to reactively update the class attribute 'is-active' 
      based on the showNav property.
     -->
-      <div 
-        :class="{ 'is-active': showNav }" 
-        class="navbar-burger" 
-        @click="showNav = !showNav">
-        <span/>
-        <span/>
-        <span/>
-      </div>
+    </div>
+    <div 
+      :class="{ 'is-active': showNav }" 
+      class="navbar-burger m-r-md" 
+      @click="showNav = !showNav">
+      <span/>
+      <span/>
+      <span/>
     </div>
     <!--
     Using the v-bind: directive to reactively update the class attribute 'is-active' based 
@@ -41,14 +41,14 @@
       <div class="navbar-end">
         <router-link 
           to="/portfolio"
-          class="navbar-item has-text-white NavButton" 
+          class="navbar-item " 
           tag="a"
         >
           Portfolio
         </router-link>
         <router-link 
           to="/about-me"
-          class="navbar-item has-text-white NavButton" 
+          class="navbar-item " 
           tag="a"
         >
           About Me
@@ -92,14 +92,18 @@ export default {
 <style lang="sass" scoped>
 @import '../main.sass'  
 .navbar 
-  font-family: 'Roboto Slab', Arial, sans-serif
+  font-family: $roboto
   font-weight: bold
-  min-height: 60px
+  display: flex
   position: fixed 
   width: 100%
   top: 0 
   transition: top 0.4s ease 0.2s
-.NavButton:active
-  color: black
-
+.navbar-brand
+  margin-right: auto
+.navbar-burger
+  color: $white
+  display: inline-block
+  vertical-align: middle
+  
 </style>
