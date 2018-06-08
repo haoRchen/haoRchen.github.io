@@ -1,6 +1,6 @@
 <template>
   <div class="columns is-tablet">
-    <div class="column LeftLayout is-one-fifth p-t-lg">
+    <div class="column LeftLayout is-one-fifth p-t-lg m-l-lg">
       <button class="button SideButton  is-pulled-right">
         Work
       </button>
@@ -11,7 +11,7 @@
         Open Source
       </button>
     </div>
-    <div class="column content is-two-thirds RightLayout p-t-lg p-l-lg p-r-lg p-b-lg">
+    <div class="column content is-two-thirds RightLayout p-t-lg p-l-lg p-r-lg p-b-lg m-l-sm">
       <ProjectCard 
         v-for="project in workList" 
         :key="project.id" 

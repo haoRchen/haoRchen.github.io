@@ -94,7 +94,6 @@ export default {
 .navbar 
   font-family: $roboto
   font-weight: bold
-  // display: flex
   position: fixed 
   width: 100%
   top: 0 

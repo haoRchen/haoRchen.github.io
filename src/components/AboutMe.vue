@@ -1,7 +1,7 @@
 <template>
   <div class="columns is-vcentered is-tablet p-t-lg p-l-lg p-r-lg p-b-lg is-3 layout">
     
-    <div class="column content">
+    <div class="column is-two-fifth content">
       <div>
         <h2 class="AboutMeHeader is-size-2-tablet" >Whale hello there!</h2>
       </div>
