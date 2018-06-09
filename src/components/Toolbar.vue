@@ -39,10 +39,12 @@
       :class="{ 'is-active': showNav }" 
       class="navbar-menu">
       <div class="navbar-end">
+        <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
         <router-link 
           to="/portfolio"
           class="navbar-item " 
           tag="a"
+          @click.native="HideNav"
         >
           Portfolio
         </router-link>
@@ -50,6 +52,7 @@
           to="/about-me"
           class="navbar-item " 
           tag="a"
+          @click.native="HideNav"
         >
           About Me
         </router-link>
@@ -72,6 +75,13 @@ export default {
   },
   mounted() {
     this.PreviousScrollPos = window.pageYOffset;
+    //https://techstacker.com/posts/yz6e9Ksz6ARbNpQAZ/vanilla-javascript-how-to-detect-clicks-outside-of-an
+    document.addEventListener("click", e => {
+      if (e.target.closest(".navbar")) {
+        return;
+      }
+      this.HideNav();
+    });
   },
   created() {
     window.addEventListener("scroll", this.ToggleNavBar);
@@ -80,8 +90,11 @@ export default {
     window.removeEventListener("scroll", this.ToggleNavBar);
   },
   methods: {
-    ToggleNavBar() {
+    HideNav() {
       this.showNav = false;
+    },
+    ToggleNavBar() {
+      this.HideNav();
       this.CurrentScrollPos = window.pageYOffset;
       this.navTop =
         this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-60px";
