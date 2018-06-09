@@ -1,30 +1,30 @@
 export default [
   {
     id: 1,
-    name: "Powerapps",
+    name: "Excel",
     date: "Jan 2016 - Oct 2017",
     description:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+      "ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit."
   },
   {
     id: 2,
-    name: "is",
+    name: "Word processor",
     date: "Apr 2015 - May 2018",
     description:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+      "ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit."
   },
   {
     id: 3,
-    name: "too",
+    name: "bananas",
     date: "Aug 2009 - Jul 2050",
     description:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+      "ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit."
   },
   {
     id: 4,
-    name: "powerful",
+    name: "very powerful",
     date: "Feb 2012 - Dec 2017",
     description:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+      "ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit."
   }
 ];

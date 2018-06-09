@@ -63,6 +63,7 @@
 </template>
 
 <script>
+import _ from "lodash";
 export default {
   data() {
     return {
@@ -93,13 +94,14 @@ export default {
     HideNav() {
       this.showNav = false;
     },
-    ToggleNavBar() {
+    //https://github.com/vuejs-templates/browserify-simple/issues/6#issuecomment-214003282 function() over ()=>
+    ToggleNavBar: _.debounce(function() {
       this.HideNav();
       this.CurrentScrollPos = window.pageYOffset;
       this.navTop =
         this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-60px";
       this.PreviousScrollPos = this.CurrentScrollPos;
-    }
+    }, 40)
   }
 };
 </script>

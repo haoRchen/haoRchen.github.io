@@ -24,6 +24,9 @@
 <script>
 import ProjectCard from "@/components/PortfolioComponents/ProjectCard.vue";
 import WorkProjects from "@/assets/ProjectList/work";
+// import OpenSourceProjects from "@/assets/ProjectList/openSource";
+// import PersonalProjects from "@/assets/ProjectList/personal";
+
 export default {
   name: "Portfolio",
   components: {
