@@ -34,6 +34,14 @@ export default {
   name: "AboutMe",
   components: {
     GoogleMap
+  },
+  mounted() {
+    this.ScrollTop();
+  },
+  methods: {
+    ScrollTop() {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
   }
 };
 </script>

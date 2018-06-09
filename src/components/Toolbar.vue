@@ -81,6 +81,7 @@ export default {
   },
   methods: {
     ToggleNavBar() {
+      this.showNav = false;
       this.CurrentScrollPos = window.pageYOffset;
       this.navTop =
         this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-60px";
@@ -98,7 +99,9 @@ export default {
   width: 100%
   top: 0 
   transition: top 0.3s ease 0.1s
-.navbar-burger
-  color: $white
+  .navbar-menu
+    &.is-active
+  .navbar-burger
+    color: $white
   
 </style>

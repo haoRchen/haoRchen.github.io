@@ -39,8 +39,9 @@ export default {
   font-family: $roboto
   display: flex
   min-height: 100vh
-  flex-direction: column
+  flex-direction: row
   padding-top: 60px
+  margin: auto
 .section
   flex: 1 0 auto
 </style>

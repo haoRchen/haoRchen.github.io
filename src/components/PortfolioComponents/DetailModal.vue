@@ -1,5 +1,6 @@
 <template>
-  <div class="modal is-active">
+  <div class="modal">
+    <!-- is-active add to modal class to make it appear -->
     <div class="modal-background"/>
     <div class="modal-card">
       <header class="modal-card-head">

@@ -36,6 +36,12 @@ export default {
   },
   mounted() {
     this.workList = WorkProjects;
+    this.ScrollTop();
+  },
+  methods: {
+    ScrollTop() {
+      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    }
   }
 };
 </script>
