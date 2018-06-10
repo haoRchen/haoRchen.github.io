@@ -42,7 +42,7 @@
         <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
         <router-link 
           to="/portfolio"
-          class="navbar-item " 
+          class="navbar-item has-text-centered" 
           tag="a"
           @click.native="HideNav"
         >
@@ -50,7 +50,7 @@
         </router-link>
         <router-link 
           to="/about-me"
-          class="navbar-item " 
+          class="navbar-item has-text-centered" 
           tag="a"
           @click.native="HideNav"
         >
@@ -75,6 +75,11 @@ export default {
     };
   },
   mounted() {
+    // https://www.w3schools.com/howto/howto_js_media_queries.asp
+    // This is needed to hide drop down nav when adjusting between viewport size.
+    var mediaQuery = window.matchMedia("(max-width: 985px)");
+    mediaQuery.addListener(this.HideNavBarOnMediaQuery);
+
     this.PreviousScrollPos = window.pageYOffset;
     //https://techstacker.com/posts/yz6e9Ksz6ARbNpQAZ/vanilla-javascript-how-to-detect-clicks-outside-of-an
     document.addEventListener("click", e => {
@@ -91,6 +96,11 @@ export default {
     window.removeEventListener("scroll", this.ToggleNavBar);
   },
   methods: {
+    HideNavBarOnMediaQuery(mediaSize) {
+      if (mediaSize.matches) {
+        this.HideNav();
+      }
+    },
     HideNav() {
       this.showNav = false;
     },
@@ -113,9 +123,14 @@ export default {
   position: fixed 
   width: 100%
   top: 0 
-  transition: top 0.3s ease 0.1s
-  .navbar-menu
+  transition: top 0.3s ease 0.2s
+  .navbar-item
     &.is-active
+      background-color: transparent
+      color: $primary-darker
+    &:hover
+      color: $white
+      background-color: $primary-darker
   .navbar-burger
     color: $white
   

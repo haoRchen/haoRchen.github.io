@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mapWrapper">
     <!-- <div>
       <h2>Search and add a pin</h2>
       <label>
@@ -15,7 +15,7 @@
     <gmap-map
       :center="center"
       :zoom="12"
-      style="width:100%;  height: 50vw;"
+      class="map"
     >
       <gmap-marker
         v-for="(m, index) in markers"
@@ -62,3 +62,13 @@ export default {
   }
 };
 </script>
+<style lang="sass" scoped>
+@import '../main.sass' 
+// .mapWrapper
+//   display: flex 
+.map
+  width: 100%
+  height: 30vw 
+  min-height: 400px
+  flex: 1
+</style>

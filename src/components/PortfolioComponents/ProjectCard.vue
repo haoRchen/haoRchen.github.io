@@ -1,5 +1,5 @@
 <template>
-  <div class="box is-shadowless"> <!-- TODO: toggle shadowless on hover. -->
+  <div class="box"> <!-- TODO: toggle shadowless on hover. -->
     <article class="media">
       <div class="media-content">
         <div class="content">
@@ -7,9 +7,9 @@
             <div class="level-left">
               <h5 class="title level-item">{{ project.name }}</h5>
             </div>
-            <div class="level-right">
+            <!-- <div class="level-right">
               <h6 class="subtitle level-item">{{ project.date }}</h6>
-            </div>
+            </div> -->
           </div>
           <!-- Project Descriptions -->
           <p class="ProjectDescription">
@@ -57,7 +57,7 @@
             </a>
           </div>
           <div class="level-right">
-            <a class="button level-item is-invisible">View Detail</a>
+            <a class="button level-item">View Detail</a>
           </div>
         </nav>
       </div>
@@ -86,6 +86,17 @@ export default {
 
 <style lang="sass" scoped>
 @import "../../main.sass"
+.box
+  .button
+    visibility: hidden
+  &:hover
+    border: 1px solid
+    box-shadow: 0 4px 5px grey 
+    border-radius: 6px
+    transition: all 0.3s 
+    .button
+      visibility: visible
+      transition: visibility 0.1s
 .title
   font-family: $roboto
   font-weight: 500
