@@ -1,5 +1,5 @@
 <template>
-  <div class="columns is-tablet">
+  <div class="columns PortfolioWrapper is-tablet">
     <div class="column LeftLayout is-one-fifth p-t-lg m-l-lg">
       <button class="button SideButton  is-pulled-right">
         Work

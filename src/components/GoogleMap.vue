@@ -64,11 +64,10 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import '../main.sass' 
-// .mapWrapper
-//   display: flex 
-.map
-  width: 100%
-  height: 30vw 
-  min-height: 400px
-  flex: 1
+.mapWrapper
+  .map
+    width: 100%
+    height: 20vw 
+    min-height: 400px
+
 </style>

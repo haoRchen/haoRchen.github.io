@@ -57,7 +57,8 @@
             </a>
           </div>
           <div class="level-right">
-            <a class="button level-item">View Detail</a>
+            <a class="button level-item">MORE INFO</a>
+            <a class="DemoLink level-item">View Demo</a>
           </div>
         </nav>
       </div>
@@ -87,14 +88,17 @@ export default {
 <style lang="sass" scoped>
 @import "../../main.sass"
 .box
-  .button
+  .level-right
     visibility: hidden
+    .DemoLink
+      border-bottom-width: 1px
+      border-bottom-style: solid
   &:hover
     border: 1px solid
-    box-shadow: 0 4px 5px grey 
+    box-shadow: 0 5px 5px grey 
     border-radius: 6px
     transition: all 0.3s 
-    .button
+    .level-right
       visibility: visible
       transition: visibility 0.1s
 .title

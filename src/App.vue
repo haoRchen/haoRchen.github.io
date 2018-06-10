@@ -4,29 +4,20 @@
     <div class="Body">
       <div class="section">
         <div class="container">
-          <!-- <about-me/> -->
           <router-view/>
-          <!-- <portfolio/> -->
         </div>
       </div>
     </div>
-    <Footer/>
   </div>
 </template>
 
 <script>
 import Toolbar from "@/components/Toolbar.vue";
-import AboutMe from "@/components/AboutMe.vue";
-import Portfolio from "@/components/PortfolioComponents/Portfolio.vue";
-import Footer from "@/components/Footer.vue";
 
 export default {
   name: "App",
   components: {
-    Toolbar,
-    AboutMe,
-    Portfolio,
-    Footer
+    Toolbar
   }
 };
 </script>

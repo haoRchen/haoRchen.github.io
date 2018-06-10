@@ -1,7 +1,7 @@
 export default [
   {
     id: 1,
-    name: "Powerapps",
+    name: "MAPLE LEAF FOOD",
     date: "Jan 2016 - Oct 2017",
     technologies: ["Angular", "Vuejs", "JavaScript", "CSS3"],
     description:
