@@ -1,5 +1,5 @@
 <template>
-  <div class="box"> <!-- TODO: toggle shadowless on hover. -->
+  <div class="box">
     <article class="media">
       <div class="media-content">
         <div class="content">
@@ -56,8 +56,10 @@
               </span>
             </a>
           </div>
-          <div class="level-right">
-            <a class="button level-item">MORE INFO</a>
+          <div 
+            v-if="ShowMoreInfo"
+            class="level-right ButtonGroup">
+            <a class="button MoreInfoButton level-item">MORE INFO</a>
             <a class="DemoLink level-item">View Demo</a>
           </div>
         </nav>
@@ -81,6 +83,16 @@ export default {
         };
       }
     }
+  },
+  data() {
+    return {
+      ShowMoreInfo: true
+    };
+  },
+  methods: {
+    ToggleShowMoreInfo() {
+      this.ShowMoreInfo = !this.ShowMoreInfo;
+    }
   }
 };
 </script>
@@ -89,11 +101,9 @@ export default {
 @import "../../main.sass"
 .box
   background-color: $white
-  .level-right
-    opacity: 0
-    .DemoLink
-      border-bottom-width: 1px
-      border-bottom-style: solid
+  @media screen and (max-width: $mobile)
+    transition: height 0.3s
+    height: auto
   &:hover
     border: 1px $light-grey
     box-shadow: 0 2px 5px grey 
@@ -103,9 +113,27 @@ export default {
       color: $primary
       &:hover
         color: $dark-grey
-    .level-right
+    .ButtonGroup
       opacity: 1
-      transition: opacity 0.3s
+      @media screen and (max-width: $mobile)
+        height: 100px
+  .level-right
+    opacity: 0
+    height: 0
+    transition: all 0.3s
+    .DemoLink
+      border-bottom-width: 1px
+      border-bottom-style: solid
+  .level
+    flex-wrap: wrap
+    @media screen and (max-width: $mobile)
+      justify-content: space-around
+      .ButtonGroup
+        flex-wrap: wrap
+        .MoreInfoButton,
+        .DemoLink
+          margin-top: 10px
+          width: 100%
 .title
   font-family: $roboto
   font-weight: 500

@@ -1,6 +1,6 @@
 <template>
   <div class="columns PortfolioWrapper is-tablet">
-    <div class="column LeftLayout is-one-fifth p-t-lg m-l-lg">
+    <div class="column LeftLayout is-one-fifth p-t-lg">
       <a 
         class="button SideButton "
         href="#">
