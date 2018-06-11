@@ -50,13 +50,12 @@
         </router-link>
         <router-link 
           to="/about-me"
-          class="navbar-item has-text-centered" 
+          class="navbar-item has-text-centered aboutMe" 
           tag="a"
           @click.native="HideNav"
         >
           About Me
         </router-link>
-        <div class="p-r-xxl"/>
       </div>
     </div>
   </nav>
@@ -124,6 +123,12 @@ export default {
   width: 100%
   top: 0 
   transition: top 0.3s ease 0.2s
+  box-shadow: 0 1px 3px grey
+  .navbar-menu
+    // margin-right: 17vw
+  .navbar-burger
+    color: $white
+    // margin-right: 17vw
   .navbar-item
     &.is-active
       background-color: transparent
@@ -131,7 +136,5 @@ export default {
     &:hover
       color: $white
       background-color: $primary-darker
-  .navbar-burger
-    color: $white
   
 </style>

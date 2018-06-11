@@ -88,16 +88,21 @@ export default {
 <style lang="sass" scoped>
 @import "../../main.sass"
 .box
+  background-color: $white
   .level-right
     visibility: hidden
     .DemoLink
       border-bottom-width: 1px
       border-bottom-style: solid
   &:hover
-    border: 1px solid
+    border: 1px $light-grey
     box-shadow: 0 5px 5px grey 
     border-radius: 6px
     transition: all 0.3s 
+    .icon
+      color: $primary
+      &:hover
+        color: $dark-grey
     .level-right
       visibility: visible
       transition: visibility 0.1s

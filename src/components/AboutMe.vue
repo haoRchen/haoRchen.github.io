@@ -10,7 +10,7 @@
       </p>
       <div class="TheFooter has-text-centered">
         <a >
-          <span class="icon is-large">
+          <span class="icon is-large linkedin">
             <i 
               class="fab fa-linkedin fa-lg"
               aria-hidden="true"/>
@@ -73,6 +73,10 @@ export default {
       font-family: $montserrat
       font-weight: 500
       display: flex
+      .linkedin
+        margin-left: -13px
+      .icon:hover
+        color: $primary
   .AboutMeHeader
     font-family: $roboto
     font-weight: 600

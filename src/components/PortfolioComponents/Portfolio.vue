@@ -1,17 +1,23 @@
 <template>
   <div class="columns PortfolioWrapper is-tablet">
     <div class="column LeftLayout is-one-fifth p-t-lg m-l-lg">
-      <button class="button SideButton  is-pulled-right">
+      <a 
+        class="button SideButton "
+        href="#">
         Work
-      </button>
-      <button class="button SideButton is-pulled-right">
+      </a>
+      <a 
+        class="button SideButton "
+        href="#">
         Personal Projects
-      </button>
-      <button class="button SideButton  is-pulled-right">
+      </a>
+      <a 
+        class="button SideButton "
+        href="#">
         Open Source
-      </button>
+      </a>
     </div>
-    <div class="column content is-two-thirds RightLayout p-t-lg p-l-lg p-r-lg p-b-lg m-l-sm">
+    <div class="column content is-two-thirds RightLayout ">
       <ProjectCard 
         v-for="project in workList" 
         :key="project.id" 
@@ -59,19 +65,18 @@ export default {
     display: flex
     flex-direction: column
     justify-content: flex-start
-.RightLayout 
-  background-color: #fff
-.SideButton
-  text-decoration: none
-  background-color: transparent
-  border: none
-  font-family: $roboto
-  font-weight: 600
-  display: flex
-  justify-content: flex-end
-  @media screen and (min-width: $tablet)
+  .SideButton
+    text-decoration: none
+    background-color: transparent
+    border: none
+    font-family: $roboto
+    font-weight: 600
     display: flex
-    jusitfy-content: center 
-.SideButton:hover
-  background-color: grey
+    justify-content: flex-end
+    @media screen and (min-width: $tablet)
+      display: flex
+      jusitfy-content: center 
+    &:hover
+      color: $primary
+.RightLayout 
 </style>

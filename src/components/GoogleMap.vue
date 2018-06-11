@@ -66,8 +66,7 @@ export default {
 @import '../main.sass' 
 .mapWrapper
   .map
-    width: 100%
     height: 20vw 
-    min-height: 400px
+    min-height: 450px
 
 </style>
