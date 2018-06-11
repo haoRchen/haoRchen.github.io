@@ -135,6 +135,6 @@ export default {
       color: $primary-darker
     &:hover
       color: $white
-      background-color: $primary-darker
+      background-color: rgba(0, 0, 0, 0.05)
   
 </style>
