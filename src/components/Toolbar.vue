@@ -122,7 +122,7 @@ export default {
   position: fixed 
   width: 100%
   top: 0 
-  transition: top 0.3s ease 0.2s
+  transition: all 0.3s ease-in-out
   box-shadow: 0 1px 3px grey
   .navbar-menu
     // margin-right: 17vw

@@ -1,6 +1,6 @@
 <template>
-  <div class="columns PortfolioWrapper is-tablet">
-    <div class="column LeftLayout is-one-fifth p-t-lg">
+  <div class="columns PortfolioWrapper is-centered is-tablet">
+    <div class="column LeftLayout is-one-fifth">
       <a 
         class="button SideButton "
         href="#">
@@ -61,6 +61,8 @@ export default {
   flex-direction: row
   justify-content: center
   display: flex
+  position: sticky
+  top: 0
   @media screen and (min-width: $tablet)
     display: flex
     flex-direction: column
@@ -73,7 +75,7 @@ export default {
     font-weight: 600
     display: flex
     justify-content: flex-end
-    @media screen and (min-width: $tablet)
+    @media screen and (min-width: $mobile)
       display: flex
       jusitfy-content: center 
     &:hover

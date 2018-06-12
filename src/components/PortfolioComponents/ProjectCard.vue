@@ -115,14 +115,16 @@ export default {
     transition: all 0.3s ease-in-out
     @media screen and (max-width: $mobile)
       position: relative
+      right: auto
       transition: all 0.3s ease-in-out
     .DemoLink
       border-bottom-width: 1px
       border-bottom-style: solid
   .NavLevel
-    flex-wrap: wrap
+    flex-wrap: nowrap
     @media screen and (max-width: $mobile)
       justify-content: space-around
+      flex-wrap: wrap
       .ButtonGroup
         flex-wrap: wrap
         .MoreInfoButton,
