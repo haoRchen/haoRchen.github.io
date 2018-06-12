@@ -5,7 +5,7 @@
         <div class="content">
           <div class="level is-mobile is-marginless">
             <div class="level-left">
-              <h5 class="title level-item">{{ project.name }}</h5>
+              <h5 class="title ProjectTitle level-item">{{ project.name }}</h5>
             </div>
             <!-- <div class="level-right">
               <h6 class="subtitle level-item">{{ project.date }}</h6>
@@ -17,7 +17,7 @@
           </p>
         </div>
         <!-- Card Technology Icons -->
-        <nav class="level is-mobile is-marginless">
+        <nav class="level NavLevel is-mobile is-marginless">
           <div class="level-left">
             <a 
               class="level-item" 
@@ -57,7 +57,6 @@
             </a>
           </div>
           <div 
-            v-if="ShowMoreInfo"
             class="level-right ButtonGroup">
             <a class="button MoreInfoButton level-item">MORE INFO</a>
             <a class="DemoLink level-item">View Demo</a>
@@ -83,16 +82,6 @@ export default {
         };
       }
     }
-  },
-  data() {
-    return {
-      ShowMoreInfo: true
-    };
-  },
-  methods: {
-    ToggleShowMoreInfo() {
-      this.ShowMoreInfo = !this.ShowMoreInfo;
-    }
   }
 };
 </script>
@@ -101,30 +90,36 @@ export default {
 @import "../../main.sass"
 .box
   background-color: $white
+  transition: all 0.3s 
   @media screen and (max-width: $mobile)
-    transition: height 0.3s
     height: auto
   &:hover
     border: 1px $light-grey
     box-shadow: 0 2px 5px grey 
     border-radius: 6px
-    transition: all 0.5s 
     .icon
       color: $primary
       &:hover
         color: $dark-grey
     .ButtonGroup
       opacity: 1
+      right: 0px
       @media screen and (max-width: $mobile)
-        height: 100px
-  .level-right
-    opacity: 0
-    height: 0
-    transition: all 0.3s
+        right: auto
+        height: 80px
+  .ButtonGroup
+    opacity: 0 
+    height: 0 // Used for slide out/in within mobile view
+    right: -20px
+    position: relative
+    transition: all 0.3s ease-in-out
+    @media screen and (max-width: $mobile)
+      position: relative
+      transition: all 0.3s ease-in-out
     .DemoLink
       border-bottom-width: 1px
       border-bottom-style: solid
-  .level
+  .NavLevel
     flex-wrap: wrap
     @media screen and (max-width: $mobile)
       justify-content: space-around
@@ -143,6 +138,7 @@ export default {
 .ProjectDescription
   font-family: $montserrat
   font-weight: 300
-.ProjectDescription
-  overflow: auto
+.level
+  @media screen and (max-width: $mobile)
+    justify-content: center
 </style>
