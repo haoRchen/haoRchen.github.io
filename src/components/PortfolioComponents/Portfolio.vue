@@ -2,17 +2,17 @@
   <div class="columns PortfolioWrapper is-centered is-tablet">
     <div class="column LeftLayout is-one-fifth">
       <a 
-        class="button SideButton "
+        class="button SideButton Work"
         href="#">
         Work
       </a>
       <a 
-        class="button SideButton "
+        class="button SideButton PersonalProject"
         href="#">
         Personal Projects
       </a>
       <a 
-        class="button SideButton "
+        class="button SideButton OpenSource"
         href="#">
         Open Source
       </a>
@@ -61,10 +61,8 @@ export default {
   flex-direction: row
   justify-content: center
   display: flex
-  position: sticky
-  top: 0
+  flex-wrap: wrap
   @media screen and (min-width: $tablet)
-    display: flex
     flex-direction: column
     justify-content: flex-start
   .SideButton
@@ -75,10 +73,24 @@ export default {
     font-weight: 600
     display: flex
     justify-content: flex-end
-    @media screen and (min-width: $mobile)
-      display: flex
-      jusitfy-content: center 
+    width: fit-content
+    padding-left: 0
+    padding-right: 0
+    @media screen and (max-width: $tablet)
+      margin-left: 10px
+      margin-right: 10px
     &:hover
       color: $primary
-.RightLayout 
+      &:after
+        width: 100%
+    &:after
+      content: ''
+      position: absolute
+      bottom: 0
+      left: 0
+      width: 0
+      border-bottom: 2px solid $primary
+      transition: 0.3s
+    &:focus
+      box-shadow: none
 </style>

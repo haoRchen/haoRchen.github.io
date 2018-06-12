@@ -18,7 +18,7 @@
         </div>
         <!-- Card Technology Icons -->
         <nav class="level NavLevel is-mobile is-marginless">
-          <div class="level-left">
+          <div class="level-left IconWrapper">
             <a 
               class="level-item" 
               aria-label="reply">
@@ -57,7 +57,7 @@
             </a>
           </div>
           <div 
-            class="level-right ButtonGroup">
+            class="level-right ButtonWrapper">
             <a class="button MoreInfoButton level-item">MORE INFO</a>
             <a class="DemoLink level-item">View Demo</a>
           </div>
@@ -101,46 +101,64 @@ export default {
       color: $primary
       &:hover
         color: $dark-grey
-    .ButtonGroup
+    .ButtonWrapper
       opacity: 1
       right: 0px
       @media screen and (max-width: $mobile)
         right: auto
         height: 80px
-  .ButtonGroup
+  .ButtonWrapper
     opacity: 0 
     height: 0 // Used for slide out/in within mobile view
     right: -20px
     position: relative
     transition: all 0.3s ease-in-out
+    font-family: $roboto
+    font-weight: 500
+    .MoreInfoButton
+      background-color: $primary
+      color: $white
+      &:hover
+        background-color: $dark-grey
+        color: $white
+    .DemoLink
+      color: $primary
+      border-bottom-width: 1px
+      border-bottom-style: solid 
+      border-bottom-color: $primary
+      &:hover
+        color: $dark-grey
+        border-bottom-color: $dark-grey
     @media screen and (max-width: $mobile)
       position: relative
       right: auto
       transition: all 0.3s ease-in-out
-    .DemoLink
-      border-bottom-width: 1px
-      border-bottom-style: solid
   .NavLevel
     flex-wrap: nowrap
     @media screen and (max-width: $mobile)
-      justify-content: space-around
+      justify-content: center
       flex-wrap: wrap
-      .ButtonGroup
+      .IconWrapper
+      .ButtonWrapper
         flex-wrap: wrap
-        .MoreInfoButton,
+        .MoreInfoButton
+          margin-top: 15px
+          margin-bottom: 15px
+          margin-left: 0.75rem// counter bulma's is-mobile auto margin-right.
         .DemoLink
-          margin-top: 10px
-          width: 100%
-.title
-  font-family: $roboto
-  font-weight: 500
-.subtitle
-  font-family: $montserrat
-  font-weight: 400
-.ProjectDescription
-  font-family: $montserrat
-  font-weight: 300
+          width: auto
+          margin-left: 30%
+          margin-right: 30%
+          &:hover
+            margin-left: 15%
+            margin-right: 15%
 .level
   @media screen and (max-width: $mobile)
     justify-content: center
+.title
+  font-family: $montserrat
+  font-weight: 700
+.ProjectDescription
+  font-family: $montserrat
+  font-weight: 300
 </style>
