@@ -58,24 +58,25 @@ export default {
 <style lang="sass" scoped>
 @import '../../main.sass'
 .LeftLayout
+  display: flex
   flex-direction: row
   justify-content: center
-  display: flex
   flex-wrap: wrap
+  margin-right: 2% // gap between column
   @media screen and (min-width: $tablet)
     flex-direction: column
     justify-content: flex-start
+    align-items: flex-end
   .SideButton
     text-decoration: none
     background-color: transparent
     border: none
     font-family: $roboto
     font-weight: 600
-    display: flex
-    justify-content: flex-end
     width: fit-content
     padding-left: 0
     padding-right: 0
+    margin-left: auto
     @media screen and (max-width: $tablet)
       margin-left: 10px
       margin-right: 10px
@@ -89,8 +90,11 @@ export default {
       bottom: 0
       left: 0
       width: 0
-      border-bottom: 2px solid $primary
-      transition: 0.3s
+      border-bottom: 3px solid $primary
+      transition: width 0.3s
     &:focus
       box-shadow: none
+      color: $primary-darker
+      &:after
+        width: 0
 </style>

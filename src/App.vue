@@ -32,6 +32,7 @@ export default {
   min-height: 100vh
   flex-direction: column
   padding-top: 60px
+  padding-bottom: 60px
   margin: auto
 .section
   flex: 1 0 auto
