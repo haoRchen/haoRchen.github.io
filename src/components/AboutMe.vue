@@ -1,7 +1,7 @@
 <template>
-  <div class="columns is-desktop p-t-lg p-l-lg p-r-lg p-b-lg is-3">
+  <div class="columns p-t-lg p-l-lg p-r-lg p-b-lg ">
     
-    <div class="column is-two-fifth LeftColumn">
+    <div class="column LeftColumn">
       <div>
         <h1 class="title AboutMeHeader" >Hey there!</h1>
       </div>
@@ -60,7 +60,7 @@ export default {
 @import '../main.sass'
 .columns 
   background-color: $white
-  border-radius: 6px
+  margin: 1%
   .LeftColumn
     display: flex
     flex-direction: column

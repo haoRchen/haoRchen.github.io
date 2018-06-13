@@ -1,5 +1,5 @@
 <template>
-  <div class="columns PortfolioWrapper is-centered is-tablet">
+  <div class="columns PortfolioWrapper is-centered ">
     <div class="column LeftLayout is-one-fifth">
       <a 
         class="button SideButton Work"
@@ -17,7 +17,7 @@
         Open Source
       </a>
     </div>
-    <div class="column content is-two-thirds RightLayout ">
+    <div class="column RightLayout">
       <ProjectCard 
         v-for="project in workList" 
         :key="project.id" 
@@ -57,11 +57,15 @@ export default {
 
 <style lang="sass" scoped>
 @import '../../main.sass'
+.PortfolioWrapper
+.RightLayout
+  // width: 70%
 .LeftLayout
   display: flex
   flex-direction: row
   justify-content: center
   flex-wrap: wrap
+  // width: 30%
   margin-right: 2% // gap between column
   @media screen and (min-width: $tablet)
     flex-direction: column

@@ -34,6 +34,9 @@ export default {
   padding-top: 60px
   padding-bottom: 60px
   margin: auto
+  align-items: center
 .section
   flex: 1 0 auto
+.container
+  width: 90%
 </style>
