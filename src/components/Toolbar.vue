@@ -1,15 +1,14 @@
 <template>
   <nav 
     :style="{top:navTop}"
-    class="navbar" 
+    class="nav" 
     role="navigation" 
     aria-label="main navigation">
     <div class="nav-wrapper container" >
-
-      <div class="navbar-brand">
+      <div class="nav-logo-wrapper">
         <router-link 
           to="/"
-          class="navbar-item" 
+          class="nav-item" 
           tag="a"
         >
           <img 
@@ -25,7 +24,7 @@
       -->
         <div 
           :class="{ 'is-active': showNav }" 
-          class="navbar-burger" 
+          class="nav-burger" 
           @click="showNav = !showNav">
           <span/>
           <span/>
@@ -39,26 +38,26 @@
       -->
       <div 
         :class="{ 'is-active': showNav }" 
-        class="navbar-menu">
-        <div class="navbar-end">
-          <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
-          <router-link 
-            to="/portfolio"
-            class="navbar-item has-text-centered" 
-            tag="a"
-            @click.native="HideNav"
-          >
-            Portfolio
-          </router-link>
-          <router-link 
-            to="/about-me"
-            class="navbar-item has-text-centered aboutMe" 
-            tag="a"
-            @click.native="HideNav"
-          >
-            About Me
-          </router-link>
-        </div>
+        class="nav-links">
+        <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
+        <!-- <p class="item">abc</p>
+        <p>ddd</p> -->
+        <router-link 
+          to="/portfolio"
+          class="nav-item" 
+          tag="a"
+          @click.native="HideNav"
+        >
+          Portfolio
+        </router-link>
+        <router-link 
+          to="/about-me"
+          class="nav-item aboutMe" 
+          tag="a"
+          @click.native="HideNav"
+        >
+          About Me
+        </router-link>
       </div>
     </div>
   </nav>
@@ -117,35 +116,70 @@ export default {
   }
 };
 </script>
-<style lang="sass" scoped>
-@import '../main.sass'  
-.navbar 
-  font-family: $roboto
-  font-weight: bold
-  position: fixed
-  width: 100%
-  top: 0 
-  transition: all 0.3s ease-in-out
-  box-shadow: 0 1px 3px grey
-  .nav-wrapper
-    position: relative
-    width: 70%
-    @media screen and (max-width: $desktop)
-      width: 80%
-    @media screen and (max-width: $tablet)
-      width: 100%
-  .navbar-menu
-    box-shadow: none
-    &.is-active
-      width: fit-content
-      margin: auto
-  .navbar-burger
-    color: $white
-  .navbar-item
-    &.is-active
-      background-color: transparent
-      color: $primary-darker
-    &:hover
-      color: $white
-      background-color: rgba(0, 0, 0, 0.05)
+<style lang="scss" scoped>
+@import "../main.sass";
+a {
+  vertical-align: middle;
+  text-align: center;
+}
+.nav {
+  box-sizing: border-box;
+  background-color: $primary;
+  z-index: 10; // Ensure nav appears in front of all contents.
+  font-family: $roboto;
+  font-weight: bold;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 1px 3px grey;
+  .nav-wrapper {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    position: relative;
+    @media screen and (max-width: $desktop) {
+      width: 80%;
+    }
+    @media screen and (max-width: $tablet) {
+      width: 100%;
+    }
+    .nav-logo-wrapper {
+      display: flex;
+      align-items: center;
+      .nav-burger {
+        display: none;
+        color: $secondary;
+        @media screen and (max-width: $tablet) {
+          display: inline-block;
+        }
+      }
+    }
+    .nav-links {
+      display: flex;
+      box-shadow: none;
+      margin-left: auto;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      // &.is-active {
+      //   width: fit-content;
+      // }
+    }
+    .nav-item {
+      height: 100%;
+      // padding: 0.5rem;
+      color: $secondary;
+      &.is-active {
+        background-color: transparent;
+        // color: $primary-darker;
+        color: $secondary;
+      }
+      &:hover {
+        color: $white;
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
+  }
+}
 </style>
