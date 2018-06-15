@@ -2,10 +2,12 @@
   "name": "portfolio",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://github.com/haorchen/portfolio",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "deploy": "node ./node_modules/vue-gh-pages/index.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome": "^1.1.8",
@@ -30,6 +32,7 @@
     "eslint-plugin-prettier": "^2.6.0",
     "eslint-plugin-vue": "^4.5.0",
     "lint-staged": "^6.0.0",
+    "vue-gh-pages": "^1.16.3",
     "vue-template-compiler": "^2.5.16"
   },
   "babel": {
