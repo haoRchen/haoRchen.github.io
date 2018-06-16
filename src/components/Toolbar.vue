@@ -4,7 +4,9 @@
     class="nav" 
     role="navigation" 
     aria-label="main navigation">
-    <div class="nav-wrapper container" >
+    <div
+      class="nav-wrapper container" 
+    >
       <div class="nav-logo-wrapper">
         <router-link 
           to="/"
@@ -112,6 +114,9 @@ export default {
     //https://github.com/vuejs-templates/browserify-simple/issues/6#issuecomment-214003282 function() over ()=>
     ToggleNavBar: _.debounce(function() {
       this.HideNav();
+      if (this.displayDropdown) {
+        this.ToggleNavBurger();
+      }
       this.CurrentScrollPos = window.pageYOffset;
       this.navTop =
         this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-60px";
@@ -181,7 +186,20 @@ export default {
   }
 }
 .nav-logo {
-  @extend .nav-item;
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center; // aligns the text.
+  color: $white;
+  transition: height 0.4s;
+  &.is-active {
+    background-color: transparent;
+    color: $primary-darker;
+  }
+  &:hover {
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
 }
 
 @media screen and (max-width: $tablet) {
@@ -222,13 +240,19 @@ export default {
     top: 60px;
     display: flex;
     flex-direction: column;
+    justify-content: flex-start;
     width: 100%;
     overflow-y: hidden;
     position: absolute;
   }
   .nav-item {
+    font-family: $roboto;
+    font-weight: bold;
+    font-size: 2rem;
     display: flex;
+    position: relative;
     justify-content: center;
+    height: 100px;
     width: 100%;
     &.is-active {
       background-color: transparent;
@@ -243,7 +267,7 @@ export default {
     display: flex;
   }
   .dropdown {
-    height: 100px;
+    height: 100vh;
     overflow-y: auto;
   }
 }
