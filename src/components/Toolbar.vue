@@ -25,12 +25,12 @@
       based on the showNav property.
       -->
         <div 
-          :class="{ 'is-active': showNav }" 
+          :class="{ 'is-active': displayDropdown }" 
           class="nav-burger" 
           @click="ToggleNavBurger">
-          <div class="burger-menu-line1"/>
-          <div class="burger-menu-line2"/>
-          <div class="burger-menu-line3"/>
+          <span class="line line1"/>
+          <span class="line line2"/>
+          <span class="line line3"/>
         </div>
 
       </div>
@@ -70,8 +70,8 @@ import _ from "lodash";
 export default {
   data() {
     return {
-      showNav: true,
-      displayDropdown: true,
+      showNav: false,
+      displayDropdown: false,
       PreviousScrollPos: null,
       CurrentScrollPos: null,
       ScrolledDown: false,
@@ -166,7 +166,7 @@ export default {
   display: flex;
   box-shadow: none;
   margin-left: auto;
-  transition: height 0.4s;
+  transition: height 0.5s ease-in-out;
 }
 
 .nav-item {
@@ -175,7 +175,6 @@ export default {
   display: flex;
   align-items: center; // aligns the text.
   color: $white;
-  transition: height 0.4s;
   &.is-active {
     background-color: transparent;
     color: $primary-darker;
@@ -212,26 +211,66 @@ export default {
     width: 100%;
   }
   .nav-logo {
-    // margin-right: auto;
     align-self: flex-start;
-    width: fit-content;
   }
   .nav-burger {
     display: flex;
-    // margin-left: auto;
-    padding: 0.35rem;
+    padding: 0.5rem;
     flex-direction: column;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    .burger-menu-line1,
-    .burger-menu-line2,
-    .burger-menu-line3 {
+    .line {
       width: 30px;
       height: 3px;
       background-color: $white;
+      border-radius: 8px;
       margin: 3px 0;
-      transition: 0.4s;
+      transition: all ease 0.3s;
+      //Hovering effect
+      // we only see the first 100% of width initially,
+      // On hover, slide the background image over horizontally! ^_^
+      background-size: 200% 100%;
+      background-image: linear-gradient(
+        to right,
+        $white 50%,
+        $primary-darker 50%
+      );
+      background-position: auto;
+    }
+    .line1 {
+      transition-delay: 0.3s;
+    }
+    .line2 {
+      transition-delay: 0.2s;
+    }
+    .line3 {
+      transition-delay: 0.1s;
+    }
+    &:hover {
+      .line {
+        background-position: -100% 0;
+      }
+      .line1 {
+        transition-delay: 0.1s;
+      }
+      .line2 {
+        transition-delay: 0.2s;
+      }
+      .line3 {
+        transition-delay: 0.3s;
+      }
+    }
+    &.is-active {
+      .line1 {
+        transform: rotate(-45deg) translate(-9px, 5px);
+      }
+      .line2 {
+        opacity: 0;
+      }
+      .line3 {
+        transform: rotate(45deg) translate(-8px, -8px);
+      }
     }
   }
   .nav-links {
@@ -249,11 +288,13 @@ export default {
     font-family: $roboto;
     font-weight: bold;
     font-size: 2rem;
+    opacity: 0;
     display: flex;
     position: relative;
     justify-content: center;
     height: 100px;
     width: 100%;
+    transition: all 0.4s;
     &.is-active {
       background-color: transparent;
       color: $primary-darker;
@@ -267,8 +308,12 @@ export default {
     display: flex;
   }
   .dropdown {
+    transition-delay: 0.5s;
     height: 100vh;
     overflow-y: auto;
+    .nav-item {
+      opacity: 1;
+    }
   }
 }
 </style>
