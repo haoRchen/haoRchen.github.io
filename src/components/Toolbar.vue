@@ -8,7 +8,7 @@
       <div class="nav-logo-wrapper">
         <router-link 
           to="/"
-          class="nav-item" 
+          class="nav-logo" 
           tag="a"
         >
           <img 
@@ -25,10 +25,10 @@
         <div 
           :class="{ 'is-active': showNav }" 
           class="nav-burger" 
-          @click="showNav = !showNav">
-          <span/>
-          <span/>
-          <span/>
+          @click="ToggleNavBurger">
+          <div class="burger-menu-line1"/>
+          <div class="burger-menu-line2"/>
+          <div class="burger-menu-line3"/>
         </div>
 
       </div>
@@ -37,7 +37,7 @@
       on the showNav property.
       -->
       <div 
-        :class="{ 'is-active': showNav }" 
+        :class="{ 'dropdown': displayDropdown }" 
         class="nav-links">
         <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
         <!-- <p class="item">abc</p>
@@ -68,7 +68,8 @@ import _ from "lodash";
 export default {
   data() {
     return {
-      showNav: false,
+      showNav: true,
+      displayDropdown: true,
       PreviousScrollPos: null,
       CurrentScrollPos: null,
       ScrolledDown: false,
@@ -97,6 +98,9 @@ export default {
     window.removeEventListener("scroll", this.ToggleNavBar);
   },
   methods: {
+    ToggleNavBurger() {
+      this.displayDropdown = !this.displayDropdown;
+    },
     HideNavBarOnMediaQuery(mediaSize) {
       if (mediaSize.matches) {
         this.HideNav();
@@ -118,10 +122,6 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../main.sass";
-a {
-  vertical-align: middle;
-  text-align: center;
-}
 .nav {
   box-sizing: border-box;
   background-color: $primary;
@@ -129,57 +129,122 @@ a {
   font-family: $roboto;
   font-weight: bold;
   position: fixed;
+  display: flex;
   width: 100%;
   height: 60px;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 1px 3px grey;
-  .nav-wrapper {
-    height: 100%;
-    width: 70%;
+}
+.nav-wrapper {
+  height: 100%;
+  width: 70%;
+  display: flex;
+  position: relative;
+  @media screen and (max-width: $desktop) {
+    width: 80%;
+  }
+  @media screen and (max-width: $tablet) {
+    width: 100%;
+  }
+}
+.nav-logo-wrapper {
+  display: flex;
+}
+.nav-burger {
+  display: none;
+  cursor: pointer;
+  @media screen and (max-width: $tablet) {
+    display: inline-block;
+  }
+}
+.nav-links {
+  display: flex;
+  box-shadow: none;
+  margin-left: auto;
+  transition: height 0.4s;
+}
+
+.nav-item {
+  height: 100%;
+  padding: 0.5rem;
+  display: flex;
+  align-items: center; // aligns the text.
+  color: $white;
+  transition: height 0.4s;
+  &.is-active {
+    background-color: transparent;
+    color: $primary-darker;
+  }
+  &:hover {
+    color: $white;
+    background-color: rgba(0, 0, 0, 0.05);
+  }
+}
+.nav-logo {
+  @extend .nav-item;
+}
+
+@media screen and (max-width: $tablet) {
+  .nav {
+    background-color: $primary;
+  }
+  .nav-logo-wrapper {
     display: flex;
-    position: relative;
-    @media screen and (max-width: $desktop) {
-      width: 80%;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .nav-logo {
+    // margin-right: auto;
+    align-self: flex-start;
+    width: fit-content;
+  }
+  .nav-burger {
+    display: flex;
+    // margin-left: auto;
+    padding: 0.35rem;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    .burger-menu-line1,
+    .burger-menu-line2,
+    .burger-menu-line3 {
+      width: 30px;
+      height: 3px;
+      background-color: $white;
+      margin: 3px 0;
+      transition: 0.4s;
     }
-    @media screen and (max-width: $tablet) {
-      width: 100%;
+  }
+  .nav-links {
+    background-color: $primary;
+    height: 0px;
+    top: 60px;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: hidden;
+    position: absolute;
+  }
+  .nav-item {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    &.is-active {
+      background-color: transparent;
+      color: $primary-darker;
     }
-    .nav-logo-wrapper {
-      display: flex;
-      align-items: center;
-      .nav-burger {
-        display: none;
-        color: $secondary;
-        @media screen and (max-width: $tablet) {
-          display: inline-block;
-        }
-      }
+    &:hover {
+      color: $white;
+      background-color: rgba(0, 0, 0, 0.05);
     }
-    .nav-links {
-      display: flex;
-      box-shadow: none;
-      margin-left: auto;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      // &.is-active {
-      //   width: fit-content;
-      // }
-    }
-    .nav-item {
-      height: 100%;
-      // padding: 0.5rem;
-      color: $secondary;
-      &.is-active {
-        background-color: transparent;
-        // color: $primary-darker;
-        color: $secondary;
-      }
-      &:hover {
-        color: $white;
-        background-color: rgba(0, 0, 0, 0.05);
-      }
-    }
+  }
+  .nav-logo {
+    display: flex;
+  }
+  .dropdown {
+    height: 100px;
+    overflow-y: auto;
   }
 }
 </style>
