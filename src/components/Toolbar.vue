@@ -235,7 +235,7 @@ export default {
   transition-delay: 1s;
   .footer-item {
     color: $white;
-    margin: 0.7rem;
+    margin: 1rem;
     &:hover {
       color: $primary-darker;
     }

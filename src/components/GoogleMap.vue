@@ -62,17 +62,18 @@ export default {
   }
 };
 </script>
-<style lang="sass" scoped>
-@import '../main.sass' 
-.mapWrapper
-  display: flex
-  width: 100%
-  height: 100%
-  .map
-    width: 100%
-    height: 100%
-    // height: 20vw 
-    min-height: 350px
-    min-width: 200px
-
+<style lang="scss" scoped>
+@import "../main.sass";
+.mapWrapper {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  .map {
+    width: 100%;
+    height: 100%;
+    // height: 20vw
+    min-height: 350px;
+    min-width: 200px;
+  }
+}
 </style>
