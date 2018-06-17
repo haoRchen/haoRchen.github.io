@@ -31,6 +31,8 @@
           <span class="line line1"/>
           <span class="line line2"/>
           <span class="line line3"/>
+          <span class="line line4"/>
+          <span class="line line5"/>
         </div>
 
       </div>
@@ -221,12 +223,11 @@ export default {
     align-items: center;
     justify-content: center;
     .line {
-      width: 30px;
       height: 3px;
       background-color: $white;
       border-radius: 8px;
       margin: 3px 0;
-      transition: all ease 0.3s;
+      transition: all ease-in-out 0.3s;
       //Hovering effect
       // we only see the first 100% of width initially,
       // On hover, slide the background image over horizontally! ^_^
@@ -239,15 +240,33 @@ export default {
       background-position: auto;
     }
     .line1 {
+      width: 30px;
       transition-delay: 0.3s;
     }
     .line2 {
+      width: 30px;
       transition-delay: 0.2s;
     }
     .line3 {
+      width: 30px;
       transition-delay: 0.1s;
     }
+    .line4 {
+      width: 15px;
+      position: relative;
+      top: -60px;
+      left: -30px;
+      opacity: 0;
+    }
+    .line5 {
+      width: 15px;
+      position: relative;
+      top: 60px;
+      left: 30px;
+      opacity: 0;
+    }
     &:hover {
+      transform: scale(1.2, 1.2);
       .line {
         background-position: -100% 0;
       }
@@ -260,16 +279,36 @@ export default {
       .line3 {
         transition-delay: 0.3s;
       }
+      .line4 {
+        transition-delay: 0.3s;
+      }
+      .line5 {
+        transition-delay: 0.3s;
+      }
     }
     &.is-active {
       .line1 {
-        transform: rotate(-45deg) translate(-9px, 5px);
+        opacity: 0;
+        transform: translateX(50px);
       }
       .line2 {
-        opacity: 0;
+        transform: rotate(315deg);
       }
       .line3 {
-        transform: rotate(45deg) translate(-8px, -8px);
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      .line4 {
+        top: -37px;
+        left: -4px;
+        opacity: 1;
+        transform: rotate(45deg) translate(10px, 10px);
+      }
+      .line5 {
+        top: 28px;
+        left: -45px;
+        opacity: 1;
+        transform: rotate(45deg) translate(-0px, -40px);
       }
     }
   }

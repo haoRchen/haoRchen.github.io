@@ -68,5 +68,6 @@ export default {
   .map
     height: 20vw 
     min-height: 450px
+    min-width: 400px
 
 </style>

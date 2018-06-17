@@ -97,6 +97,7 @@ export default {
     border: 1px $light-grey
     box-shadow: 0 2px 5px grey 
     border-radius: 6px
+    transform: scale(1.02, 1.02)
     .icon
       color: $primary
       &:hover

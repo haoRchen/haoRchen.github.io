@@ -1,6 +1,6 @@
 <template>
   <div class="columns PortfolioWrapper is-centered ">
-    <div class="column LeftLayout is-one-fifth">
+    <div class="LeftLayout">
       <a 
         class="button SideButton Work"
         href="#">
@@ -58,34 +58,30 @@ export default {
 <style lang="sass" scoped>
 @import '../../main.sass'
 .PortfolioWrapper
+  display: flex
+  flex-direction: column
+  align-items: center
+  margin: 1%
 .RightLayout
-  // width: 70%
 .LeftLayout
   display: flex
   flex-direction: row
   justify-content: center
   flex-wrap: wrap
-  // width: 30%
-  margin-right: 2% // gap between column
-  @media screen and (min-width: $tablet)
-    flex-direction: column
-    justify-content: flex-start
-    align-items: flex-end
   .SideButton
     text-decoration: none
     background-color: transparent
     border: none
     font-family: $roboto
     font-weight: 600
-    width: fit-content
     padding-left: 0
     padding-right: 0
-    margin-left: auto
-    @media screen and (max-width: $tablet)
-      margin-left: 10px
-      margin-right: 10px
+    margin-left: 10px
+    margin-right: 10px
     &:hover
       color: $primary
+      margin-left: 20px
+      margin-right: 20px
       &:after
         width: 100%
     &:after
