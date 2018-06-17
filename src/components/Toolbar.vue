@@ -19,11 +19,6 @@
             width="112" 
             height="28">
         </router-link>
-        <!--
-      Using the v-on: directive to listen for the click event and toggle the data property showNav.
-      Also, using the v-bind: directive to reactively update the class attribute 'is-active' 
-      based on the showNav property.
-      -->
         <div 
           :class="{ 'is-active': displayDropdown }" 
           class="nav-burger" 
@@ -36,10 +31,6 @@
         </div>
 
       </div>
-      <!--
-      Using the v-bind: directive to reactively update the class attribute 'is-active' based 
-      on the showNav property.
-      -->
       <div 
         :class="{ 'dropdown': displayDropdown }" 
         class="nav-links">
@@ -50,7 +41,7 @@
           to="/portfolio"
           class="nav-item" 
           tag="a"
-          @click.native="HideNav"
+          @click.native="ToggleNavBurger"
         >
           Portfolio
         </router-link>
@@ -58,10 +49,38 @@
           to="/about-me"
           class="nav-item aboutMe" 
           tag="a"
-          @click.native="HideNav"
+          @click.native="ToggleNavBurger"
         >
           About Me
         </router-link>
+        <footer
+          class="nav-footer"
+        >
+          <span class="credit footer-item">
+            @2018 Hao Ran Chen
+          </span>
+          <a>
+            <span class="icon is-large linkedin footer-item" >
+              <i 
+                class="fab fa-linkedin fa-lg"
+                aria-hidden="true"/>
+            </span> 
+          </a>
+          <a>
+            <span class="icon is-large footer-item">
+              <i 
+                class="fab fa-github fa-lg"
+                aria-hidden="true"/>
+            </span>
+          </a>
+          <a>
+            <span class="icon is-large footer-item">
+              <i 
+                class="fas fa-envelope fa-lg"
+                aria-hidden="true"/>
+            </span>
+          </a>
+        </footer>
       </div>
     </div>
   </nav>
@@ -202,7 +221,30 @@ export default {
     background-color: rgba(0, 0, 0, 0.05);
   }
 }
-
+.nav-footer {
+  margin-top: auto;
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  opacity: 0;
+  bottom: -50px;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+  transition-delay: 1s;
+  .footer-item {
+    color: $white;
+    margin: 0.7rem;
+    &:hover {
+      color: $primary-darker;
+    }
+  }
+  .credit {
+    margin-right: auto;
+  }
+}
+// ********************************************************************
 @media screen and (max-width: $tablet) {
   .nav {
     background-color: $primary;
@@ -335,7 +377,8 @@ export default {
     justify-content: center;
     height: 100px;
     width: 100%;
-    transition: all 0.4s;
+    top: -30px;
+    transition: all ease-in-out 0.3s;
     &.is-active {
       background-color: transparent;
       color: $primary-darker;
@@ -354,6 +397,11 @@ export default {
     overflow-y: auto;
     .nav-item {
       opacity: 1;
+      top: 0;
+    }
+    .nav-footer {
+      opacity: 1;
+      bottom: 0;
     }
   }
 }
