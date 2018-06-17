@@ -1,7 +1,7 @@
 <template>
-  <div class="columns p-t-lg p-l-lg p-r-lg p-b-lg ">
+  <div class="pagewrapper p-t-lg p-l-lg p-r-lg p-b-lg ">
     
-    <div class="column LeftColumn">
+    <div class="LeftColumn">
       <div>
         <h1 class="title AboutMeHeader" >Hey there!</h1>
       </div>
@@ -32,7 +32,7 @@
         </a>
       </div>
     </div>
-    <div class="column">
+    <div class="RightColumn">
       <google-map/>
     </div>
   </div>    
@@ -58,33 +58,48 @@ export default {
 </script>
 <style lang="sass" scoped>
 @import '../main.sass'
-.columns 
+.pagewrapper 
   background-color: $white
   margin: 1%
-  .LeftColumn
-    display: flex
+  display: flex
+  @media screen and (max-width: $tablet)
     flex-direction: column
-    justify-content: space-around
-    @media screen and (max-width: $widescreen)
-      & > div
-        margin-top: 15px
-        margin-bottom: 15px
-    .TheFooter 
-      font-family: $montserrat
-      font-weight: 500
-      display: flex
-      .linkedin
-        margin-left: -13px
-      .icon:hover
-        color: $primary
-  .AboutMeHeader
-    font-family: $roboto
-    font-weight: 600
-  .AboutMeContent
+  @media screen and (max-width: $tablet)
+    margin: 0.7rem
+.RightColumn
+  width: 50%
+  display: flex
+  margin: 1%
+  @media screen and (max-width: $tablet)
+    width: 100%
+.LeftColumn
+  width: 50%
+  margin: 1%
+  @media screen and (max-width: $tablet)
+    width: 100%
+  display: flex
+  flex-direction: column
+  justify-content: space-around
+  @media screen and (max-width: $widescreen)
+    & > div
+      margin-top: 15px
+      margin-bottom: 15px
+  .TheFooter 
     font-family: $montserrat
-    font-weight: 400
-  .PortfolioButton
-    font-family: $roboto
     font-weight: 500
+    display: flex
+    .linkedin
+      margin-left: -13px
+    .icon:hover
+      color: $primary
+.AboutMeHeader
+  font-family: $roboto
+  font-weight: 600
+.AboutMeContent
+  font-family: $montserrat
+  font-weight: 400
+.PortfolioButton
+  font-family: $roboto
+  font-weight: 500
 
 </style>

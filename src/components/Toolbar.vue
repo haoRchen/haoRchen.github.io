@@ -280,10 +280,10 @@ export default {
         transition-delay: 0.3s;
       }
       .line4 {
-        transition-delay: 0.3s;
+        transition-delay: 0.5s;
       }
       .line5 {
-        transition-delay: 0.3s;
+        transition-delay: 0.5s;
       }
     }
     &.is-active {
@@ -303,12 +303,14 @@ export default {
         left: -4px;
         opacity: 1;
         transform: rotate(45deg) translate(10px, 10px);
+        transition-delay: 0;
       }
       .line5 {
         top: 28px;
         left: -45px;
         opacity: 1;
         transform: rotate(45deg) translate(-0px, -40px);
+        transition-delay: 0;
       }
     }
   }

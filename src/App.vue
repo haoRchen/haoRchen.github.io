@@ -36,7 +36,11 @@ export default {
   margin: auto
   align-items: center
 .section
-  flex: 1 0 auto
+  @media screen and (max-width: $mobile)
+    padding-left: 0
+    padding-right: 0
 .container
-  width: 90%
+  width: 80%
+  @media screen and (max-width: $tablet)
+    width: 100%
 </style>

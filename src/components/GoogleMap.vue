@@ -65,9 +65,14 @@ export default {
 <style lang="sass" scoped>
 @import '../main.sass' 
 .mapWrapper
+  display: flex
+  width: 100%
+  height: 100%
   .map
-    height: 20vw 
-    min-height: 450px
-    min-width: 400px
+    width: 100%
+    height: 100%
+    // height: 20vw 
+    min-height: 350px
+    min-width: 200px
 
 </style>
