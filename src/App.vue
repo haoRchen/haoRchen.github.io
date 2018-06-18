@@ -35,16 +35,23 @@ export default {
   margin: auto;
   align-items: center;
 }
-.section {
-  @media screen and (max-width: $mobile) {
+.container {
+  width: 80%;
+}
+@media screen and (max-width: $mobile) {
+  .section {
     padding-left: 0;
     padding-right: 0;
   }
 }
-.container {
-  width: 80%;
-  @media screen and (max-width: $tablet) {
+@media screen and (max-width: $tablet) {
+  .container {
     width: 100%;
+  }
+}
+@media screen and (max-width: $desktop) {
+  .container {
+    width: 90%;
   }
 }
 </style>

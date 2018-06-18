@@ -61,46 +61,45 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 1%;
 }
 .LeftLayout {
   display: flex;
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
-  .SideButton {
-    text-decoration: none;
-    background-color: transparent;
-    border: none;
-    font-family: $roboto;
-    font-weight: 600;
-    padding-left: 0;
-    padding-right: 0;
-    margin-left: 10px;
-    margin-right: 10px;
-    &:hover {
-      color: $primary;
-      margin-left: 20px;
-      margin-right: 20px;
-      &:after {
-        width: 100%;
-      }
-    }
+}
+.SideButton {
+  font-family: $roboto;
+  font-weight: 600;
+  padding-left: 0;
+  padding-right: 0;
+  margin-left: 10px;
+  margin-right: 10px;
+  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  &:hover {
+    color: $primary;
+    margin-left: 20px;
+    margin-right: 20px;
     &:after {
-      content: "";
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      border-bottom: 3px solid $primary;
-      transition: width 0.3s;
+      width: 100%;
     }
-    &:focus {
-      box-shadow: none;
-      color: $primary-darker;
-      &:after {
-        width: 0;
-      }
+  }
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    border-bottom: 3px solid $primary;
+    transition: width 0.3s;
+  }
+  &:focus {
+    box-shadow: none;
+    color: $primary-darker;
+    &:after {
+      width: 0;
     }
   }
 }

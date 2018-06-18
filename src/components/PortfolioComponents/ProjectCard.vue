@@ -91,59 +91,14 @@ export default {
 .box {
   background-color: $white;
   transition: all 0.3s;
-  @media screen and (max-width: $mobile) {
-    height: auto;
-  }
   &:hover {
     border: 1px $light-grey;
     box-shadow: 0 2px 5px grey;
     border-radius: 6px;
     transform: scale(1.02, 1.02);
-    .icon {
-      color: $primary;
-      &:hover {
-        color: $dark-grey;
-      }
-    }
     .ButtonWrapper {
       opacity: 1;
       right: 0px;
-      @media screen and (max-width: $mobile) {
-        right: auto;
-        height: 80px;
-      }
-    }
-  }
-  .ButtonWrapper {
-    opacity: 0;
-    height: 0; // Used for slide out/in within mobile view
-    right: -20px;
-    position: relative;
-    transition: all 0.3s ease-in-out;
-    font-family: $roboto;
-    font-weight: 500;
-    .MoreInfoButton {
-      background-color: $primary;
-      color: $white;
-      &:hover {
-        background-color: $dark-grey;
-        color: $white;
-      }
-    }
-    .DemoLink {
-      color: $primary;
-      border-bottom-width: 1px;
-      border-bottom-style: solid;
-      border-bottom-color: $primary;
-      &:hover {
-        color: $dark-grey;
-        border-bottom-color: $dark-grey;
-      }
-    }
-    @media screen and (max-width: $mobile) {
-      position: relative;
-      right: auto;
-      transition: all 0.3s ease-in-out;
     }
   }
   .NavLevel {
@@ -171,9 +126,10 @@ export default {
     }
   }
 }
-.level {
-  @media screen and (max-width: $mobile) {
-    justify-content: center;
+.icon {
+  color: $primary;
+  &:hover {
+    color: $dark-grey;
   }
 }
 .title {
@@ -183,5 +139,51 @@ export default {
 .ProjectDescription {
   font-family: $montserrat;
   font-weight: 300;
+}
+.ButtonWrapper {
+  opacity: 0;
+  height: 0; // Used for slide out/in within mobile view
+  right: -20px;
+  position: relative;
+  transition: all 0.3s ease-in-out;
+  font-family: $roboto;
+  font-weight: 500;
+}
+.MoreInfoButton {
+  background-color: $primary;
+  color: $white;
+  &:hover {
+    background-color: $dark-grey;
+    color: $white;
+  }
+}
+.DemoLink {
+  color: $primary;
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: $primary;
+  &:hover {
+    color: $dark-grey;
+    border-bottom-color: $dark-grey;
+  }
+}
+@media screen and (max-width: $mobile) {
+  .box {
+    height: auto;
+    &:hover {
+      .ButtonWrapper {
+        right: auto;
+        height: 80px;
+      }
+    }
+  }
+  .ButtonWrapper {
+    position: relative;
+    right: auto;
+    transition: all 0.3s ease-in-out;
+  }
+  .level {
+    justify-content: center;
+  }
 }
 </style>

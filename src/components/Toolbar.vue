@@ -56,30 +56,30 @@
         <footer
           class="nav-footer"
         >
-          <span class="credit footer-item">
-            @2018 Hao Ran Chen
-          </span>
           <a>
-            <span class="icon is-large linkedin footer-item" >
+            <span class="icon linkedin is-large footer-item" >
               <i 
                 class="fab fa-linkedin fa-lg"
                 aria-hidden="true"/>
             </span> 
           </a>
           <a>
-            <span class="icon is-large footer-item">
+            <span class="icon github is-large footer-item">
               <i 
                 class="fab fa-github fa-lg"
                 aria-hidden="true"/>
             </span>
           </a>
           <a>
-            <span class="icon is-large footer-item">
+            <span class="icon envelope is-large footer-item">
               <i 
                 class="fas fa-envelope fa-lg"
                 aria-hidden="true"/>
             </span>
           </a>
+          <span class="credit footer-item">
+            @2018 Hao Ran Chen
+          </span>
         </footer>
       </div>
     </div>
@@ -166,12 +166,6 @@ export default {
   width: 70%;
   display: flex;
   position: relative;
-  @media screen and (max-width: $desktop) {
-    width: 80%;
-  }
-  @media screen and (max-width: $tablet) {
-    width: 100%;
-  }
 }
 .nav-logo-wrapper {
   display: flex;
@@ -179,9 +173,6 @@ export default {
 .nav-burger {
   display: none;
   cursor: pointer;
-  @media screen and (max-width: $tablet) {
-    display: inline-block;
-  }
 }
 .nav-links {
   display: flex;
@@ -230,18 +221,41 @@ export default {
   bottom: -50px;
   display: flex;
   justify-content: flex-end;
+  flex-wrap: wrap;
   align-items: center;
   transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
   transition-delay: 1s;
+}
+.footer-item {
+  color: $white;
+  margin: 1rem;
+  &:hover {
+    color: $primary-darker;
+  }
+}
+.credit {
+  margin-left: auto;
+}
+// ********************************************************************
+@media screen and (max-width: $mobile) {
+  .nav-footer {
+    justify-content: center;
+    height: 100px;
+  }
+  .linkedin {
+    margin-left: 2.4rem;
+  }
+  .envelope {
+    margin-right: 2.4rem;
+  }
   .footer-item {
-    color: $white;
-    margin: 1rem;
-    &:hover {
-      color: $primary-darker;
-    }
+    margin-top: 0;
+    margin-bottom: 0;
   }
   .credit {
-    margin-right: auto;
+    margin-right: 3.3rem;
+    margin-left: 3.3rem;
+    margin-bottom: 1rem;
   }
 }
 // ********************************************************************
@@ -257,6 +271,9 @@ export default {
   .nav-logo {
     align-self: flex-start;
   }
+  .nav-wrapper {
+    width: 100%;
+  }
   .nav-burger {
     display: flex;
     padding: 0.5rem;
@@ -264,49 +281,6 @@ export default {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    .line {
-      height: 3px;
-      background-color: $white;
-      border-radius: 8px;
-      margin: 3px 0;
-      transition: all ease-in-out 0.3s;
-      //Hovering effect
-      // we only see the first 100% of width initially,
-      // On hover, slide the background image over horizontally! ^_^
-      background-size: 200% 100%;
-      background-image: linear-gradient(
-        to right,
-        $white 50%,
-        $primary-darker 50%
-      );
-      background-position: auto;
-    }
-    .line1 {
-      width: 30px;
-      transition-delay: 0.3s;
-    }
-    .line2 {
-      width: 30px;
-      transition-delay: 0.2s;
-    }
-    .line3 {
-      width: 30px;
-      transition-delay: 0.1s;
-    }
-    .line4 {
-      width: 15px;
-      position: relative;
-      top: -60px;
-      left: -30px;
-      opacity: 0;
-    }
-    .line5 {
-      width: 15px;
-      position: relative;
-      top: 60px;
-      left: 30px;
-      opacity: 0;
-    }
     &:hover {
       transform: scale(1.2, 1.2);
       .line {
@@ -355,6 +329,49 @@ export default {
         transition-delay: 0;
       }
     }
+  }
+  .line {
+    height: 3px;
+    background-color: $white;
+    border-radius: 8px;
+    margin: 3px 0;
+    transition: all ease-in-out 0.3s;
+    //Hovering effect
+    // we only see the first 100% of width initially,
+    // On hover, slide the background image over horizontally! ^_^
+    background-size: 200% 100%;
+    background-image: linear-gradient(
+      to right,
+      $white 50%,
+      $primary-darker 50%
+    );
+    background-position: auto;
+  }
+  .line1 {
+    width: 30px;
+    transition-delay: 0.3s;
+  }
+  .line2 {
+    width: 30px;
+    transition-delay: 0.2s;
+  }
+  .line3 {
+    width: 30px;
+    transition-delay: 0.1s;
+  }
+  .line4 {
+    width: 15px;
+    position: relative;
+    top: -60px;
+    left: -30px;
+    opacity: 0;
+  }
+  .line5 {
+    width: 15px;
+    position: relative;
+    top: 60px;
+    left: 30px;
+    opacity: 0;
   }
   .nav-links {
     background-color: $primary;

@@ -64,13 +64,15 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../main.sass";
-.mapWrapper {
-  display: flex;
+.fullsize {
   width: 100%;
   height: 100%;
+}
+.mapWrapper {
+  display: flex;
+  @extend .fullsize;
   .map {
-    width: 100%;
-    height: 100%;
+    @extend .fullsize;
     // height: 20vw
     min-height: 350px;
     min-width: 200px;

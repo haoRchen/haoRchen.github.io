@@ -60,29 +60,16 @@ export default {
 @import "../main.sass";
 .pagewrapper {
   background-color: $white;
-  margin: 1%;
   display: flex;
-  @media screen and (max-width: $tablet) {
-    flex-direction: column;
-  }
-  @media screen and (max-width: $tablet) {
-    margin: 0.7rem;
-  }
 }
 .RightColumn {
   width: 50%;
   display: flex;
   margin: 1%;
-  @media screen and (max-width: $tablet) {
-    width: 100%;
-  }
 }
 .LeftColumn {
   width: 50%;
   margin: 1%;
-  @media screen and (max-width: $tablet) {
-    width: 100%;
-  }
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -90,28 +77,39 @@ export default {
     margin-top: 15px;
     margin-bottom: 15px;
   }
-  .TheFooter {
-    font-family: $montserrat;
-    font-weight: 500;
-    display: flex;
-    .linkedin {
-      margin-left: -13px;
-    }
-    .icon:hover {
-      color: $primary;
-    }
+}
+.TheFooter {
+  font-family: $montserrat;
+  font-weight: 500;
+  display: flex;
+}
+.linkedin {
+  margin-left: -13px;
+}
+.icon:hover {
+  color: $primary;
+}
+.AboutMeHeader {
+  font-family: $roboto;
+  font-weight: 600;
+}
+.AboutMeContent {
+  font-family: $montserrat;
+  font-weight: 400;
+}
+.PortfolioButton {
+  font-family: $roboto;
+  font-weight: 500;
+}
+@media screen and (max-width: $tablet) {
+  .pagewrapper {
+    flex-direction: column;
   }
-  .AboutMeHeader {
-    font-family: $roboto;
-    font-weight: 600;
+  .RightColumn {
+    width: 100%;
   }
-  .AboutMeContent {
-    font-family: $montserrat;
-    font-weight: 400;
-  }
-  .PortfolioButton {
-    font-family: $roboto;
-    font-weight: 500;
+  .LeftColumn {
+    width: 100%;
   }
 }
 </style>
