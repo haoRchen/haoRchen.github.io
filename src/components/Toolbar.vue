@@ -7,10 +7,10 @@
     <div
       class="nav__wrapper container" 
     >
-      <div class="nav-logo-wrapper">
+      <div class="nav__wrapper--logo">
         <router-link 
           to="/"
-          class="nav-logo" 
+          class="nav__logo" 
           tag="a"
         >
           <img 
@@ -21,7 +21,7 @@
         </router-link>
         <div 
           :class="{ 'is-active': displayDropdown }" 
-          class="nav-burger" 
+          class="nav__burger" 
           @click="ToggleNavBurger">
           <span class="line line1"/>
           <span class="line line2"/>
@@ -33,7 +33,7 @@
       </div>
       <div 
         :class="{ 'dropdown': displayDropdown }" 
-        class="nav-links">
+        class="nav__wrapper--links">
         <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
         <!-- <p class="item">abc</p>
         <p>ddd</p> -->
@@ -54,30 +54,30 @@
           About Me
         </router-link>
         <footer
-          class="nav-footer"
+          class="nav__footer"
         >
           <a>
-            <span class="icon linkedin is-large footer-item" >
+            <span class="icon linkedin is-large nav__footer__item" >
               <i 
                 class="fab fa-linkedin fa-lg"
                 aria-hidden="true"/>
             </span> 
           </a>
           <a>
-            <span class="icon github is-large footer-item">
+            <span class="icon github is-large nav__footer__item">
               <i 
                 class="fab fa-github fa-lg"
                 aria-hidden="true"/>
             </span>
           </a>
           <a>
-            <span class="icon envelope is-large footer-item">
+            <span class="icon envelope is-large nav__footer__item">
               <i 
                 class="fas fa-envelope fa-lg"
                 aria-hidden="true"/>
             </span>
           </a>
-          <span class="credit footer-item">
+          <span class="credit nav__footer__item">
             @2018 Hao Ran Chen
           </span>
         </footer>
@@ -165,20 +165,57 @@ export default {
     width: 70%;
     display: flex;
     position: relative;
+    &--logo {
+      display: flex;
+    }
+    &--links {
+      display: flex;
+      box-shadow: none;
+      margin-left: auto;
+      transition: height 0.5s ease-in-out;
+    }
   }
-}
-.nav-logo-wrapper {
-  display: flex;
-}
-.nav-burger {
-  display: none;
-  cursor: pointer;
-}
-.nav-links {
-  display: flex;
-  box-shadow: none;
-  margin-left: auto;
-  transition: height 0.5s ease-in-out;
+  &__logo {
+    height: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center; // aligns the text.
+    color: $white;
+    transition: height 0.4s;
+    &.is-active {
+      background-color: transparent;
+      color: $primary-darker;
+    }
+    &:hover {
+      color: $white;
+      background-color: rgba(0, 0, 0, 0.05);
+    }
+  }
+  &__burger {
+    display: none;
+    cursor: pointer;
+  }
+  &__footer {
+    margin-top: auto;
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    opacity: 0;
+    bottom: -50px;
+    display: flex;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    align-items: center;
+    transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+    transition-delay: 1s;
+    &__item {
+      color: $white;
+      margin: 1rem;
+      &:hover {
+        color: $primary-darker;
+      }
+    }
+  }
 }
 
 .nav-item {
@@ -196,61 +233,26 @@ export default {
     background-color: rgba(0, 0, 0, 0.05);
   }
 }
-.nav-logo {
-  height: 100%;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center; // aligns the text.
-  color: $white;
-  transition: height 0.4s;
-  &.is-active {
-    background-color: transparent;
-    color: $primary-darker;
-  }
-  &:hover {
-    color: $white;
-    background-color: rgba(0, 0, 0, 0.05);
-  }
-}
-.nav-footer {
-  margin-top: auto;
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  opacity: 0;
-  bottom: -50px;
-  display: flex;
-  justify-content: flex-end;
-  flex-wrap: wrap;
-  align-items: center;
-  transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-  transition-delay: 1s;
-}
-.footer-item {
-  color: $white;
-  margin: 1rem;
-  &:hover {
-    color: $primary-darker;
-  }
-}
 .credit {
   margin-left: auto;
 }
 // ********************************************************************
 @media screen and (max-width: $mobile) {
-  .nav-footer {
-    justify-content: center;
-    height: 100px;
+  .nav {
+    &__footer {
+      justify-content: center;
+      height: 100px;
+      &__item {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
   }
   .linkedin {
-    margin-left: 2.4rem;
+    margin-left: 3rem;
   }
   .envelope {
-    margin-right: 2.4rem;
-  }
-  .footer-item {
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-right: 3rem;
   }
   .credit {
     margin-right: 3.3rem;
@@ -264,69 +266,80 @@ export default {
     background-color: $primary;
     &__wrapper {
       width: 100%;
-    }
-  }
-  .nav-logo-wrapper {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-  }
-  .nav-logo {
-    align-self: flex-start;
-  }
-  .nav-burger {
-    display: flex;
-    padding: 0.5rem;
-    flex-direction: column;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
-    &:hover {
-      transform: scale(1.2, 1.2);
-      .line {
-        background-position: -100% 0;
+      &--logo {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
       }
-      .line1 {
-        transition-delay: 0.1s;
-      }
-      .line2 {
-        transition-delay: 0.2s;
-      }
-      .line3 {
-        transition-delay: 0.3s;
-      }
-      .line4 {
-        transition-delay: 0.5s;
-      }
-      .line5 {
-        transition-delay: 0.5s;
+      &--links {
+        background-color: $primary;
+        height: 0px;
+        top: 60px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        width: 100%;
+        overflow-y: hidden;
+        position: absolute;
       }
     }
-    &.is-active {
-      .line1 {
-        opacity: 0;
-        transform: translateX(50px);
+    &__logo {
+      align-self: flex-start;
+    }
+    &__burger {
+      display: flex;
+      padding: 0.5rem;
+      flex-direction: column;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      &:hover {
+        transform: scale(1.2, 1.2);
+        .line {
+          background-position: -100% 0;
+        }
+        .line1 {
+          transition-delay: 0.1s;
+        }
+        .line2 {
+          transition-delay: 0.2s;
+        }
+        .line3 {
+          transition-delay: 0.3s;
+        }
+        .line4 {
+          transition-delay: 0.5s;
+        }
+        .line5 {
+          transition-delay: 0.5s;
+        }
       }
-      .line2 {
-        transform: rotate(315deg);
-      }
-      .line3 {
-        opacity: 0;
-        transform: translateX(-50px);
-      }
-      .line4 {
-        top: -37px;
-        left: -4px;
-        opacity: 1;
-        transform: rotate(45deg) translate(10px, 10px);
-        transition-delay: 0;
-      }
-      .line5 {
-        top: 28px;
-        left: -45px;
-        opacity: 1;
-        transform: rotate(45deg) translate(-0px, -40px);
-        transition-delay: 0;
+      &.is-active {
+        .line1 {
+          opacity: 0;
+          transform: translateX(50px);
+        }
+        .line2 {
+          transform: rotate(315deg);
+        }
+        .line3 {
+          opacity: 0;
+          transform: translateX(-50px);
+        }
+        .line4 {
+          top: -37px;
+          left: -4px;
+          opacity: 1;
+          transform: rotate(45deg) translate(10px, 10px);
+          transition-delay: 0;
+        }
+        .line5 {
+          top: 28px;
+          left: -45px;
+          opacity: 1;
+          transform: rotate(45deg) translate(-0px, -40px);
+          transition-delay: 0;
+        }
       }
     }
   }
@@ -373,17 +386,6 @@ export default {
     left: 30px;
     opacity: 0;
   }
-  .nav-links {
-    background-color: $primary;
-    height: 0px;
-    top: 60px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    width: 100%;
-    overflow-y: hidden;
-    position: absolute;
-  }
   .nav-item {
     font-family: $roboto;
     font-weight: bold;
@@ -416,7 +418,7 @@ export default {
       opacity: 1;
       top: 0;
     }
-    .nav-footer {
+    .nav__footer {
       opacity: 1;
       bottom: 0;
     }
