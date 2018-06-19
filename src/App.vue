@@ -27,13 +27,13 @@ export default {
 .Body {
   background-color: #f7f8fa;
   font-family: $roboto;
-  display: flex;
   min-height: 100vh;
+  display: flex;
   flex-direction: column;
+  align-items: center;
   padding-top: 60px;
   padding-bottom: 60px;
   margin: auto;
-  align-items: center;
 }
 .container {
   width: 80%;

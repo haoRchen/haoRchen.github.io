@@ -5,7 +5,7 @@
     role="navigation" 
     aria-label="main navigation">
     <div
-      class="nav-wrapper container" 
+      class="nav__wrapper container" 
     >
       <div class="nav-logo-wrapper">
         <router-link 
@@ -160,12 +160,12 @@ export default {
   height: 60px;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 1px 3px grey;
-}
-.nav-wrapper {
-  height: 100%;
-  width: 70%;
-  display: flex;
-  position: relative;
+  &__wrapper {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    position: relative;
+  }
 }
 .nav-logo-wrapper {
   display: flex;
@@ -262,6 +262,9 @@ export default {
 @media screen and (max-width: $tablet) {
   .nav {
     background-color: $primary;
+    &__wrapper {
+      width: 100%;
+    }
   }
   .nav-logo-wrapper {
     display: flex;
@@ -270,9 +273,6 @@ export default {
   }
   .nav-logo {
     align-self: flex-start;
-  }
-  .nav-wrapper {
-    width: 100%;
   }
   .nav-burger {
     display: flex;
