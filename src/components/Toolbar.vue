@@ -35,11 +35,9 @@
         :class="{ 'dropdown': displayDropdown }" 
         class="nav__wrapper--links">
         <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
-        <!-- <p class="item">abc</p>
-        <p>ddd</p> -->
         <router-link 
           to="/portfolio"
-          class="nav-item" 
+          class="nav__item" 
           tag="a"
           @click.native="ToggleNavBurger"
         >
@@ -47,7 +45,7 @@
         </router-link>
         <router-link 
           to="/about-me"
-          class="nav-item aboutMe" 
+          class="nav__item aboutMe" 
           tag="a"
           @click.native="ToggleNavBurger"
         >
@@ -77,7 +75,7 @@
                 aria-hidden="true"/>
             </span>
           </a>
-          <span class="credit nav__footer__item">
+          <span class="nav__footer__item credit">
             @2018 Hao Ran Chen
           </span>
         </footer>
@@ -179,7 +177,7 @@ export default {
     height: 100%;
     padding: 0.5rem;
     display: flex;
-    align-items: center; // aligns the text.
+    align-items: center;
     color: $white;
     transition: height 0.4s;
     &.is-active {
@@ -214,27 +212,26 @@ export default {
       &:hover {
         color: $primary-darker;
       }
+      &.credit {
+        margin-left: auto;
+      }
     }
   }
-}
-
-.nav-item {
-  height: 100%;
-  padding: 0.5rem;
-  display: flex;
-  align-items: center; // aligns the text.
-  color: $white;
-  &.is-active {
-    background-color: transparent;
-    color: $primary-darker;
-  }
-  &:hover {
+  &__item {
+    height: 100%;
+    padding: 0.5rem;
+    display: flex;
+    align-items: center; // aligns the text.
     color: $white;
-    background-color: rgba(0, 0, 0, 0.05);
+    &.is-active {
+      background-color: transparent;
+      color: $primary-darker;
+    }
+    &:hover {
+      color: $white;
+      background-color: rgba(0, 0, 0, 0.05);
+    }
   }
-}
-.credit {
-  margin-left: auto;
 }
 // ********************************************************************
 @media screen and (max-width: $mobile) {
@@ -245,19 +242,19 @@ export default {
       &__item {
         margin-top: 0;
         margin-bottom: 0;
+        &.credit {
+          margin-right: 3.3rem;
+          margin-left: 3.3rem;
+          margin-bottom: 1rem;
+        }
+        &.linkedin {
+          margin-left: 3rem;
+        }
+        &.envelope {
+          margin-right: 3rem;
+        }
       }
     }
-  }
-  .linkedin {
-    margin-left: 3rem;
-  }
-  .envelope {
-    margin-right: 3rem;
-  }
-  .credit {
-    margin-right: 3.3rem;
-    margin-left: 3.3rem;
-    margin-bottom: 1rem;
   }
 }
 // ********************************************************************
@@ -342,6 +339,27 @@ export default {
         }
       }
     }
+    &__item {
+      font-family: $roboto;
+      font-weight: bold;
+      font-size: 2rem;
+      opacity: 0;
+      display: flex;
+      position: relative;
+      justify-content: center;
+      height: 100px;
+      width: 100%;
+      top: -30px;
+      transition: all ease-in-out 0.3s;
+      &.is-active {
+        background-color: transparent;
+        color: $primary-darker;
+      }
+      &:hover {
+        color: $white;
+        background-color: rgba(0, 0, 0, 0.05);
+      }
+    }
   }
   .line {
     height: 3px;
@@ -386,41 +404,19 @@ export default {
     left: 30px;
     opacity: 0;
   }
-  .nav-item {
-    font-family: $roboto;
-    font-weight: bold;
-    font-size: 2rem;
-    opacity: 0;
-    display: flex;
-    position: relative;
-    justify-content: center;
-    height: 100px;
-    width: 100%;
-    top: -30px;
-    transition: all ease-in-out 0.3s;
-    &.is-active {
-      background-color: transparent;
-      color: $primary-darker;
-    }
-    &:hover {
-      color: $white;
-      background-color: rgba(0, 0, 0, 0.05);
-    }
-  }
-  .nav-logo {
-    display: flex;
-  }
   .dropdown {
     transition-delay: 0.5s;
     height: 100vh;
     overflow-y: auto;
-    .nav-item {
-      opacity: 1;
-      top: 0;
-    }
-    .nav__footer {
-      opacity: 1;
-      bottom: 0;
+    .nav {
+      &__item {
+        opacity: 1;
+        top: 0;
+      }
+      &__footer {
+        opacity: 1;
+        bottom: 0;
+      }
     }
   }
 }

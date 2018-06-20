@@ -7,17 +7,13 @@
             <div class="level-left">
               <h5 class="title ProjectTitle level-item">{{ project.name }}</h5>
             </div>
-            <!-- <div class="level-right">
-              <h6 class="subtitle level-item">{{ project.date }}</h6>
-            </div> -->
           </div>
-          <!-- Project Descriptions -->
           <p class="ProjectDescription">
             {{ project.description }}            
           </p>
         </div>
         <!-- Card Technology Icons -->
-        <nav class="level NavLevel is-mobile is-marginless">
+        <nav class="level box__nav is-mobile is-marginless">
           <div class="level-left IconWrapper">
             <a 
               class="level-item" 
@@ -101,7 +97,7 @@ export default {
       right: 0px;
     }
   }
-  .NavLevel {
+  .box__nav {
     flex-wrap: nowrap;
     @media screen and (max-width: $mobile) {
       justify-content: center;

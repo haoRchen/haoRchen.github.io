@@ -1,18 +1,18 @@
 <template>
-  <div class="columns PortfolioWrapper is-centered ">
-    <div class="LeftLayout">
+  <div class="columns portfolio is-centered ">
+    <div class="portfolio__topnav">
       <a 
-        class="button SideButton Work"
+        class="button portfolio__topnav__button"
         href="#">
         Work
       </a>
       <a 
-        class="button SideButton PersonalProject"
+        class="button portfolio__topnav__button"
         href="#">
         Personal Projects
       </a>
       <a 
-        class="button SideButton OpenSource"
+        class="button portfolio__topnav__button"
         href="#">
         Open Source
       </a>
@@ -57,49 +57,49 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../main.sass";
-.PortfolioWrapper {
+.portfolio {
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-.LeftLayout {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-.SideButton {
-  font-family: $roboto;
-  font-weight: 600;
-  padding-left: 0;
-  padding-right: 0;
-  margin-left: 10px;
-  margin-right: 10px;
-  text-decoration: none;
-  background-color: transparent;
-  border: none;
-  &:hover {
-    color: $primary;
-    margin-left: 20px;
-    margin-right: 20px;
-    &:after {
-      width: 100%;
-    }
-  }
-  &:after {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 0;
-    border-bottom: 3px solid $primary;
-    transition: width 0.3s;
-  }
-  &:focus {
-    box-shadow: none;
-    color: $primary-darker;
-    &:after {
-      width: 0;
+  &__topnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    &__button {
+      font-family: $roboto;
+      font-weight: 600;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 10px;
+      margin-right: 10px;
+      text-decoration: none;
+      background-color: transparent;
+      border: none;
+      &:hover {
+        color: $primary;
+        margin-left: 20px;
+        margin-right: 20px;
+        &:after {
+          width: 100%;
+        }
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 0;
+        border-bottom: 3px solid $primary;
+        transition: width 0.3s;
+      }
+      &:focus {
+        box-shadow: none;
+        color: $primary-darker;
+        &:after {
+          width: 0;
+        }
+      }
     }
   }
 }

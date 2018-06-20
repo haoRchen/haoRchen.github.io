@@ -1,7 +1,7 @@
 <template>
-  <div class="pagewrapper p-t-lg p-l-lg p-r-lg p-b-lg ">
+  <div class="aboutme p-t-lg p-l-lg p-r-lg p-b-lg ">
     
-    <div class="LeftColumn">
+    <div class="aboutme__leftcolumn">
       <div>
         <h1 class="title AboutMeHeader" >Hey there!</h1>
       </div>
@@ -32,7 +32,7 @@
         </a>
       </div>
     </div>
-    <div class="RightColumn">
+    <div class="aboutme__rightcolumn">
       <google-map/>
     </div>
   </div>    
@@ -58,24 +58,24 @@ export default {
 </script>
 <style lang="scss" scoped>
 @import "../main.sass";
-.pagewrapper {
+.aboutme {
   background-color: $white;
   display: flex;
-}
-.RightColumn {
-  width: 50%;
-  display: flex;
-  margin: 1%;
-}
-.LeftColumn {
-  width: 50%;
-  margin: 1%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
-  & > div {
-    margin-top: 15px;
-    margin-bottom: 15px;
+  &__leftcolumn {
+    width: 50%;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    & > div {
+      margin-top: 15px;
+      margin-bottom: 15px;
+    }
+  }
+  &__rightcolumn {
+    width: 50%;
+    display: flex;
+    margin: 1%;
   }
 }
 .TheFooter {
@@ -102,14 +102,12 @@ export default {
   font-weight: 500;
 }
 @media screen and (max-width: $tablet) {
-  .pagewrapper {
+  .aboutme {
     flex-direction: column;
-  }
-  .RightColumn {
-    width: 100%;
-  }
-  .LeftColumn {
-    width: 100%;
+    &__leftcolumn,
+    &__rightcolumn {
+      width: 100%;
+    }
   }
 }
 </style>
