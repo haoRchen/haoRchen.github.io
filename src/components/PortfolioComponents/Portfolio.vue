@@ -78,8 +78,6 @@ export default {
       border: none;
       &:hover {
         color: $primary;
-        margin-left: 20px;
-        margin-right: 20px;
         &:after {
           width: 100%;
         }

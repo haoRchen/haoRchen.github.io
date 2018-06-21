@@ -138,7 +138,7 @@ export default {
       }
       this.CurrentScrollPos = window.pageYOffset;
       this.navTop =
-        this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-60px";
+        this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-80px";
       this.PreviousScrollPos = this.CurrentScrollPos;
     }, 40)
   }
@@ -155,7 +155,7 @@ export default {
   position: fixed;
   display: flex;
   width: 100%;
-  height: 60px;
+  height: 80px;
   transition: all 0.3s ease-in-out;
   box-shadow: 0 1px 3px grey;
   &__wrapper {
@@ -296,7 +296,7 @@ export default {
         height: 3px;
         background-color: $white;
         border-radius: 8px;
-        margin: 3px 0;
+        margin: 3px;
         transition: all ease-in-out 0.3s;
         //Hovering effect
         // we only see the first 100% of width initially,

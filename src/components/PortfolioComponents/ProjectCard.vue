@@ -97,6 +97,12 @@ export default {
     box-shadow: 0 2px 5px grey;
     border-radius: 6px;
     transform: scale(1.02, 1.02);
+    .icon {
+      color: $primary;
+      &:hover {
+        color: $dark-grey;
+      }
+    }
     & #{ $box }__nav__wrapper--button {
       opacity: 1;
       right: 0px;
@@ -131,12 +137,6 @@ export default {
         }
       }
     }
-  }
-}
-.icon {
-  color: $primary;
-  &:hover {
-    color: $dark-grey;
   }
 }
 .title {
