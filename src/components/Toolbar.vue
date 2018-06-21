@@ -23,11 +23,11 @@
           :class="{ 'is-active': displayDropdown }" 
           class="nav__burger" 
           @click="ToggleNavBurger">
-          <span class="line line1"/>
-          <span class="line line2"/>
-          <span class="line line3"/>
-          <span class="line line4"/>
-          <span class="line line5"/>
+          <span class="nav__burger__line1"/>
+          <span class="nav__burger__line2"/>
+          <span class="nav__burger__line3"/>
+          <span class="nav__burger__line4"/>
+          <span class="nav__burger__line5"/>
         </div>
 
       </div>
@@ -260,6 +260,7 @@ export default {
 // ********************************************************************
 @media screen and (max-width: $tablet) {
   .nav {
+    $self: &;
     background-color: $primary;
     &__wrapper {
       width: 100%;
@@ -284,53 +285,102 @@ export default {
       align-self: flex-start;
     }
     &__burger {
+      $burger: &;
       display: flex;
       padding: 0.5rem;
       flex-direction: column;
       flex-wrap: wrap;
       align-items: center;
       justify-content: center;
+      .line {
+        height: 3px;
+        background-color: $white;
+        border-radius: 8px;
+        margin: 3px 0;
+        transition: all ease-in-out 0.3s;
+        //Hovering effect
+        // we only see the first 100% of width initially,
+        // On hover, slide the background image over horizontally! ^_^
+        background-size: 200% 100%;
+        background-image: linear-gradient(
+          to right,
+          $white 50%,
+          $primary-darker 50%
+        );
+        background-position: auto;
+      }
+      &__line1 {
+        @extend .line;
+        width: 30px;
+        transition-delay: 0.3s;
+      }
+      &__line2 {
+        @extend .line;
+        width: 30px;
+        transition-delay: 0.2s;
+      }
+      &__line3 {
+        @extend .line;
+        width: 30px;
+        transition-delay: 0.1s;
+      }
+      &__line4 {
+        @extend .line;
+        width: 15px;
+        position: relative;
+        top: -60px;
+        left: -30px;
+        opacity: 0;
+      }
+      &__line5 {
+        @extend .line;
+        width: 15px;
+        position: relative;
+        top: 60px;
+        left: 30px;
+        opacity: 0;
+      }
       &:hover {
         transform: scale(1.2, 1.2);
         .line {
           background-position: -100% 0;
         }
-        .line1 {
+        & #{ $burger }__line1 {
           transition-delay: 0.1s;
         }
-        .line2 {
+        & #{ $burger }__line2 {
           transition-delay: 0.2s;
         }
-        .line3 {
+        & #{ $burger }__line3 {
           transition-delay: 0.3s;
         }
-        .line4 {
+        & #{ $burger }__line4 {
           transition-delay: 0.5s;
         }
-        .line5 {
+        & #{ $burger }__line5 {
           transition-delay: 0.5s;
         }
       }
       &.is-active {
-        .line1 {
+        & #{ $burger }__line1 {
           opacity: 0;
           transform: translateX(50px);
         }
-        .line2 {
+        & #{ $burger }__line2 {
           transform: rotate(315deg);
         }
-        .line3 {
+        & #{ $burger }__line3 {
           opacity: 0;
           transform: translateX(-50px);
         }
-        .line4 {
+        & #{ $burger }__line4 {
           top: -37px;
           left: -4px;
           opacity: 1;
           transform: rotate(45deg) translate(10px, 10px);
           transition-delay: 0;
         }
-        .line5 {
+        & #{ $burger }__line5 {
           top: 28px;
           left: -45px;
           opacity: 1;
@@ -360,49 +410,6 @@ export default {
         background-color: rgba(0, 0, 0, 0.05);
       }
     }
-  }
-  .line {
-    height: 3px;
-    background-color: $white;
-    border-radius: 8px;
-    margin: 3px 0;
-    transition: all ease-in-out 0.3s;
-    //Hovering effect
-    // we only see the first 100% of width initially,
-    // On hover, slide the background image over horizontally! ^_^
-    background-size: 200% 100%;
-    background-image: linear-gradient(
-      to right,
-      $white 50%,
-      $primary-darker 50%
-    );
-    background-position: auto;
-  }
-  .line1 {
-    width: 30px;
-    transition-delay: 0.3s;
-  }
-  .line2 {
-    width: 30px;
-    transition-delay: 0.2s;
-  }
-  .line3 {
-    width: 30px;
-    transition-delay: 0.1s;
-  }
-  .line4 {
-    width: 15px;
-    position: relative;
-    top: -60px;
-    left: -30px;
-    opacity: 0;
-  }
-  .line5 {
-    width: 15px;
-    position: relative;
-    top: 60px;
-    left: 30px;
-    opacity: 0;
   }
   .dropdown {
     transition-delay: 0.5s;

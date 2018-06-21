@@ -14,7 +14,7 @@
         </div>
         <!-- Card Technology Icons -->
         <nav class="level box__nav is-mobile is-marginless">
-          <div class="level-left IconWrapper">
+          <div class="level-left box__nav__wrapper--icon">
             <a 
               class="level-item" 
               aria-label="reply">
@@ -53,9 +53,13 @@
             </a>
           </div>
           <div 
-            class="level-right ButtonWrapper">
-            <a class="button MoreInfoButton level-item">MORE INFO</a>
-            <a class="DemoLink level-item">View Demo</a>
+            class="level-right box__nav__wrapper--button">
+            <a 
+              id="MoreInfoButton" 
+              class="button level-item">MORE INFO</a>
+            <a 
+              id="DemoLink"
+              class="level-item">View Demo</a>
           </div>
         </nav>
       </div>
@@ -85,6 +89,7 @@ export default {
 <style lang="scss" scoped>
 @import "../../main.sass";
 .box {
+  $box: &;
   background-color: $white;
   transition: all 0.3s;
   &:hover {
@@ -92,31 +97,37 @@ export default {
     box-shadow: 0 2px 5px grey;
     border-radius: 6px;
     transform: scale(1.02, 1.02);
-    .ButtonWrapper {
+    & #{ $box }__nav__wrapper--button {
       opacity: 1;
       right: 0px;
     }
   }
-  .box__nav {
+  &__nav {
     flex-wrap: nowrap;
-    @media screen and (max-width: $mobile) {
-      justify-content: center;
-      flex-wrap: wrap;
-      .ButtonWrapper {
-        flex-wrap: wrap;
-        .MoreInfoButton {
-          margin-top: 15px;
-          margin-bottom: 15px;
-          margin-left: 0.75rem; // counter bulma's is-mobile auto margin-right.
+    &__wrapper--button {
+      opacity: 0;
+      height: 0; // Used for slide out/in within mobile view
+      right: -20px;
+      position: relative;
+      transition: all 0.3s ease-in-out;
+      font-family: $roboto;
+      font-weight: 500;
+      #MoreInfoButton {
+        background-color: $primary;
+        color: $white;
+        &:hover {
+          background-color: $dark-grey;
+          color: $white;
         }
-        .DemoLink {
-          width: auto;
-          margin-left: 30%;
-          margin-right: 30%;
-          &:hover {
-            margin-left: 15%;
-            margin-right: 15%;
-          }
+      }
+      #DemoLink {
+        color: $primary;
+        border-bottom-width: 1px;
+        border-bottom-style: solid;
+        border-bottom-color: $primary;
+        &:hover {
+          color: $dark-grey;
+          border-bottom-color: $dark-grey;
         }
       }
     }
@@ -136,47 +147,40 @@ export default {
   font-family: $montserrat;
   font-weight: 300;
 }
-.ButtonWrapper {
-  opacity: 0;
-  height: 0; // Used for slide out/in within mobile view
-  right: -20px;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  font-family: $roboto;
-  font-weight: 500;
-}
-.MoreInfoButton {
-  background-color: $primary;
-  color: $white;
-  &:hover {
-    background-color: $dark-grey;
-    color: $white;
-  }
-}
-.DemoLink {
-  color: $primary;
-  border-bottom-width: 1px;
-  border-bottom-style: solid;
-  border-bottom-color: $primary;
-  &:hover {
-    color: $dark-grey;
-    border-bottom-color: $dark-grey;
-  }
-}
 @media screen and (max-width: $mobile) {
   .box {
+    $box: &;
     height: auto;
     &:hover {
-      .ButtonWrapper {
+      & #{ $box }__nav__wrapper--button {
         right: auto;
         height: 80px;
       }
     }
-  }
-  .ButtonWrapper {
-    position: relative;
-    right: auto;
-    transition: all 0.3s ease-in-out;
+    &__nav {
+      justify-content: center;
+      flex-wrap: wrap;
+      &__wrapper--button {
+        flex-wrap: wrap;
+        position: relative;
+        right: auto;
+        transition: all 0.3s ease-in-out;
+        #MoreInfoButton {
+          margin-top: 15px;
+          margin-bottom: 15px;
+          margin-left: 0.75rem; // counter bulma's is-mobile auto margin-right.
+        }
+        #DemoLink {
+          width: auto;
+          margin-left: 30%;
+          margin-right: 30%;
+          &:hover {
+            margin-left: 15%;
+            margin-right: 15%;
+          }
+        }
+      }
+    }
   }
   .level {
     justify-content: center;

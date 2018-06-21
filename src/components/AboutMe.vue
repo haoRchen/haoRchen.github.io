@@ -3,28 +3,28 @@
     
     <div class="aboutme__leftcolumn">
       <div>
-        <h1 class="title AboutMeHeader" >Hey there!</h1>
+        <h1 class="title aboutme__header" >Hey there!</h1>
       </div>
-      <p class="AboutMeContent">
+      <p class="aboutme__content">
         Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights. Gluten-free Odd Future American Apparel pour-over umami drinking vinegar Truffaut. Selvage sustainable plaid viral salvia readymade, lomo slow-carb before they sold out bitters leggings. 90's pickled actually biodiesel put a bird on it, butcher dreamcatcher Cosby sweater.
       </p>
-      <div class="TheFooter has-text-centered">
+      <div class="aboutme__footer has-text-centered">
         <a >
-          <span class="icon is-large linkedin">
+          <span class="icon is-large aboutme__footer__icon linkedin">
             <i 
               class="fab fa-linkedin fa-lg"
               aria-hidden="true"/>
           </span> 
         </a>
         <a >
-          <span class="icon is-large">
+          <span class="icon aboutme__footer__icon is-large">
             <i 
               class="fab fa-github fa-lg"
               aria-hidden="true"/>
           </span>
         </a>
         <a >
-          <span class="icon is-large">
+          <span class="icon aboutme__footer__icon is-large">
             <i 
               class="fas fa-envelope fa-lg"
               aria-hidden="true"/>
@@ -77,29 +77,25 @@ export default {
     display: flex;
     margin: 1%;
   }
-}
-.TheFooter {
-  font-family: $montserrat;
-  font-weight: 500;
-  display: flex;
+  &__footer {
+    font-family: $montserrat;
+    font-weight: 500;
+    display: flex;
+    &__icon:hover {
+      color: $primary;
+    }
+  }
+  &__header {
+    font-family: $roboto;
+    font-weight: 600;
+  }
+  &__content {
+    font-family: $montserrat;
+    font-weight: 400;
+  }
 }
 .linkedin {
   margin-left: -13px;
-}
-.icon:hover {
-  color: $primary;
-}
-.AboutMeHeader {
-  font-family: $roboto;
-  font-weight: 600;
-}
-.AboutMeContent {
-  font-family: $montserrat;
-  font-weight: 400;
-}
-.PortfolioButton {
-  font-family: $roboto;
-  font-weight: 500;
 }
 @media screen and (max-width: $tablet) {
   .aboutme {
