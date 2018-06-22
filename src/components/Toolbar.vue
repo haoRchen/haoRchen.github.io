@@ -163,6 +163,7 @@ export default {
     width: 70%;
     display: flex;
     position: relative;
+    transition: all 0.3s ease-in-out;
     &--logo {
       display: flex;
     }
@@ -273,6 +274,7 @@ export default {
         }
       }
     }
+    // ------------------------------   burger  --------------------------------
     &__burger {
       $burger: &;
       display: flex;
@@ -284,6 +286,7 @@ export default {
       justify-content: center;
       .line {
         height: 3px;
+        width: 30px;
         background-color: $white;
         border-radius: 8px;
         margin: 3px;
@@ -301,23 +304,19 @@ export default {
       }
       &__line1 {
         @extend .line;
-        width: 30px;
         transition-delay: 0.3s;
       }
       &__line2 {
         @extend .line;
-        width: 30px;
         transition-delay: 0.2s;
       }
       &__line3 {
         @extend .line;
-        width: 30px;
         transition-delay: 0.1s;
       }
       &__line4 {
         @extend .line;
-        width: 15px;
-        // opacity: 0;
+        opacity: 0;
         position: relative;
         top: -60px;
         left: -30px;
@@ -326,7 +325,7 @@ export default {
         @extend .line;
         width: 15px;
         position: relative;
-        // opacity: 0;
+        opacity: 0;
         top: 60px;
         left: 30px;
       }
@@ -344,12 +343,6 @@ export default {
         & #{ $burger }__line3 {
           transition-delay: 0.3s;
         }
-        & #{ $burger }__line4 {
-          transition-delay: 0.5s;
-        }
-        & #{ $burger }__line5 {
-          transition-delay: 0.5s;
-        }
       }
       &.is-active {
         & #{ $burger }__line1 {
@@ -358,29 +351,37 @@ export default {
         }
         & #{ $burger }__line2 {
           transform: rotate(315deg);
+          transition-delay: 0.4s;
         }
         & #{ $burger }__line3 {
           opacity: 0;
           transform: translateX(-50px);
         }
         & #{ $burger }__line4 {
-          display: initial;
-          top: -2px;
-          left: -4px;
+          top: 4px;
+          left: 0px;
           opacity: 1;
           transform: rotate(45deg) translate(10px, 10px);
-          transition-delay: 0;
+          transition-delay: 0.4s;
         }
-        & #{ $burger }__line5 {
-          display: initial;
-          top: 15px;
-          left: -22px;
-          opacity: 1;
-          transform: rotate(45deg) translate(-0px, -40px);
-          transition-delay: 0;
+        // & #{ $burger }__line5 {
+        //   top: 15px;
+        //   left: -22px;
+        //   opacity: 1;
+        //   transform: rotate(45deg) translate(-0px, -40px);
+        //   transition-delay: 0.4s;
+        // }
+        &:hover {
+          & #{ $burger }__line4 {
+            transition-delay: 0.1s;
+          }
+          & #{ $burger }__line5 {
+            transition-delay: 0.1s;
+          }
         }
       }
     }
+    // ------------------------------   burger  --------------------------------
     &__item {
       font-family: $roboto;
       font-weight: bold;
@@ -422,6 +423,12 @@ export default {
 // ********************************************************************
 @media screen and (max-width: $mobile) {
   .nav {
+    &__logo {
+      margin-left: 1rem;
+    }
+    &__burger {
+      margin-right: 1rem;
+    }
     &__footer {
       justify-content: center;
       height: 100px;
