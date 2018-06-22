@@ -23,10 +23,10 @@
           :class="{ 'is-active': displayDropdown }" 
           class="nav__burger" 
           @click="ToggleNavBurger">
+          <span class="nav__burger__line4"/>
           <span class="nav__burger__line1"/>
           <span class="nav__burger__line2"/>
           <span class="nav__burger__line3"/>
-          <span class="nav__burger__line4"/>
           <span class="nav__burger__line5"/>
         </div>
 
@@ -55,21 +55,21 @@
           class="nav__footer"
         >
           <a>
-            <span class="icon linkedin is-large nav__footer__item" >
+            <span class="icon linkedin nav__footer__item" >
               <i 
                 class="fab fa-linkedin fa-lg"
                 aria-hidden="true"/>
             </span> 
           </a>
           <a>
-            <span class="icon github is-large nav__footer__item">
+            <span class="icon github nav__footer__item">
               <i 
                 class="fab fa-github fa-lg"
                 aria-hidden="true"/>
             </span>
           </a>
           <a>
-            <span class="icon envelope is-large nav__footer__item">
+            <span class="icon envelope nav__footer__item">
               <i 
                 class="fas fa-envelope fa-lg"
                 aria-hidden="true"/>
@@ -234,30 +234,6 @@ export default {
   }
 }
 // ********************************************************************
-@media screen and (max-width: $mobile) {
-  .nav {
-    &__footer {
-      justify-content: center;
-      height: 100px;
-      &__item {
-        margin-top: 0;
-        margin-bottom: 0;
-        &.credit {
-          margin-right: 3.3rem;
-          margin-left: 3.3rem;
-          margin-bottom: 1rem;
-        }
-        &.linkedin {
-          margin-left: 3rem;
-        }
-        &.envelope {
-          margin-right: 3rem;
-        }
-      }
-    }
-  }
-}
-// ********************************************************************
 @media screen and (max-width: $tablet) {
   .nav {
     $self: &;
@@ -272,7 +248,7 @@ export default {
       &--links {
         background-color: $primary;
         height: 0px;
-        top: 60px;
+        top: 80px;
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
@@ -283,11 +259,25 @@ export default {
     }
     &__logo {
       align-self: flex-start;
+      margin-left: 1.5rem;
+    }
+    &__footer {
+      &__item {
+        margin-top: 0;
+        margin-bottom: 0;
+        &.credit {
+          margin-right: 2rem;
+        }
+        &.linkedin {
+          margin-left: 2rem;
+        }
+      }
     }
     &__burger {
       $burger: &;
       display: flex;
-      padding: 0.5rem;
+      margin-right: 1.7rem;
+      padding: 0.3rem;
       flex-direction: column;
       flex-wrap: wrap;
       align-items: center;
@@ -326,19 +316,21 @@ export default {
       }
       &__line4 {
         @extend .line;
+        // display: none;
         width: 15px;
+        opacity: 0;
         position: relative;
         top: -60px;
         left: -30px;
-        opacity: 0;
       }
       &__line5 {
         @extend .line;
+        // display: none;
         width: 15px;
         position: relative;
+        opacity: 0;
         top: 60px;
         left: 30px;
-        opacity: 0;
       }
       &:hover {
         transform: scale(1.2, 1.2);
@@ -374,15 +366,17 @@ export default {
           transform: translateX(-50px);
         }
         & #{ $burger }__line4 {
-          top: -37px;
+          display: initial;
+          top: -2px;
           left: -4px;
           opacity: 1;
           transform: rotate(45deg) translate(10px, 10px);
           transition-delay: 0;
         }
         & #{ $burger }__line5 {
-          top: 28px;
-          left: -45px;
+          display: initial;
+          top: 15px;
+          left: -22px;
           opacity: 1;
           transform: rotate(45deg) translate(-0px, -40px);
           transition-delay: 0;
@@ -423,6 +417,30 @@ export default {
       &__footer {
         opacity: 1;
         bottom: 0;
+      }
+    }
+  }
+}
+// ********************************************************************
+@media screen and (max-width: $mobile) {
+  .nav {
+    &__footer {
+      justify-content: center;
+      height: 100px;
+      &__item {
+        margin-top: 0;
+        margin-bottom: 0;
+        &.credit {
+          margin-right: 3.3rem;
+          margin-left: 3.3rem;
+          margin-bottom: 1rem;
+        }
+        &.linkedin {
+          margin-left: 4rem;
+        }
+        &.envelope {
+          margin-right: 4rem;
+        }
       }
     }
   }
