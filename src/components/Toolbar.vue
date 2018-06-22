@@ -316,19 +316,17 @@ export default {
       }
       &__line4 {
         @extend .line;
-        // display: none;
         width: 15px;
-        opacity: 0;
+        // opacity: 0;
         position: relative;
         top: -60px;
         left: -30px;
       }
       &__line5 {
         @extend .line;
-        // display: none;
         width: 15px;
         position: relative;
-        opacity: 0;
+        // opacity: 0;
         top: 60px;
         left: 30px;
       }
