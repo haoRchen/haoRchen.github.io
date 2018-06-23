@@ -13,11 +13,9 @@
           class="nav__logo" 
           tag="a"
         >
-          <img 
-            src="https://bulma.io/images/bulma-logo.png" 
-            alt="Bulma: a modern CSS framework based on Flexbox" 
-            width="112" 
-            height="28">
+          <p>Hao</p>
+          <p>Ran</p>
+          <p>Chen</p>
         </router-link>
         <div 
           :class="{ 'is-active': displayDropdown }" 
@@ -145,7 +143,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../main.sass";
+@import "../main.scss";
 .nav {
   box-sizing: border-box;
   background-color: $primary;
@@ -186,7 +184,7 @@ export default {
       color: $primary-darker;
     }
     &:hover {
-      color: $white;
+      color: $primary-darker;
       background-color: rgba(0, 0, 0, 0.05);
     }
   }
@@ -200,13 +198,13 @@ export default {
     width: 100%;
     height: 60px;
     opacity: 0;
-    bottom: -50px;
+    bottom: 200px;
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
     align-items: center;
     transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-    transition-delay: 1s;
+    transition-delay: 0.5s;
     &__item {
       color: $white;
       margin: 1rem;
@@ -237,7 +235,7 @@ export default {
 // ********************************************************************
 @media screen and (max-width: $tablet) {
   .nav {
-    $self: &;
+    $nav: &;
     background-color: $primary;
     &__wrapper {
       width: 100%;
@@ -318,8 +316,8 @@ export default {
         @extend .line;
         opacity: 0;
         position: relative;
-        top: -60px;
-        left: -30px;
+        top: -45px;
+        left: -80px;
       }
       &__line5 {
         @extend .line;
@@ -364,18 +362,8 @@ export default {
           transform: rotate(45deg) translate(10px, 10px);
           transition-delay: 0.4s;
         }
-        // & #{ $burger }__line5 {
-        //   top: 15px;
-        //   left: -22px;
-        //   opacity: 1;
-        //   transform: rotate(45deg) translate(-0px, -40px);
-        //   transition-delay: 0.4s;
-        // }
         &:hover {
           & #{ $burger }__line4 {
-            transition-delay: 0.1s;
-          }
-          & #{ $burger }__line5 {
             transition-delay: 0.1s;
           }
         }

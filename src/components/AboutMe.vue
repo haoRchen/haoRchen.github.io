@@ -1,41 +1,43 @@
 <template>
-  <div class="aboutme p-t-lg p-l-lg p-r-lg p-b-lg ">
-    
-    <div class="aboutme__leftcolumn">
-      <div>
-        <h1 class="title aboutme__header" >Hey there!</h1>
+  <div class="container is-centered">
+    <div class="aboutme">
+      
+      <div class="aboutme__leftcolumn">
+        <div>
+          <h1 class="title aboutme__header" >Hey there!</h1>
+        </div>
+        <p class="aboutme__content">
+          Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights. Gluten-free Odd Future American Apparel pour-over umami drinking vinegar Truffaut. Selvage sustainable plaid viral salvia readymade, lomo slow-carb before they sold out bitters leggings. 90's pickled actually biodiesel put a bird on it, butcher dreamcatcher Cosby sweater.
+        </p>
+        <div class="aboutme__footer has-text-centered">
+          <a >
+            <span class="icon is-large aboutme__footer__icon linkedin">
+              <i 
+                class="fab fa-linkedin fa-lg"
+                aria-hidden="true"/>
+            </span> 
+          </a>
+          <a >
+            <span class="icon aboutme__footer__icon is-large">
+              <i 
+                class="fab fa-github fa-lg"
+                aria-hidden="true"/>
+            </span>
+          </a>
+          <a >
+            <span class="icon aboutme__footer__icon is-large">
+              <i 
+                class="fas fa-envelope fa-lg"
+                aria-hidden="true"/>
+            </span>
+          </a>
+        </div>
       </div>
-      <p class="aboutme__content">
-        Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights. Gluten-free Odd Future American Apparel pour-over umami drinking vinegar Truffaut. Selvage sustainable plaid viral salvia readymade, lomo slow-carb before they sold out bitters leggings. 90's pickled actually biodiesel put a bird on it, butcher dreamcatcher Cosby sweater.
-      </p>
-      <div class="aboutme__footer has-text-centered">
-        <a >
-          <span class="icon is-large aboutme__footer__icon linkedin">
-            <i 
-              class="fab fa-linkedin fa-lg"
-              aria-hidden="true"/>
-          </span> 
-        </a>
-        <a >
-          <span class="icon aboutme__footer__icon is-large">
-            <i 
-              class="fab fa-github fa-lg"
-              aria-hidden="true"/>
-          </span>
-        </a>
-        <a >
-          <span class="icon aboutme__footer__icon is-large">
-            <i 
-              class="fas fa-envelope fa-lg"
-              aria-hidden="true"/>
-          </span>
-        </a>
+      <div class="aboutme__rightcolumn">
+        <google-map/>
       </div>
-    </div>
-    <div class="aboutme__rightcolumn">
-      <google-map/>
-    </div>
-  </div>    
+    </div>   
+  </div> 
 </template>
 
 <script>
@@ -57,10 +59,15 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../main.sass";
+@import "../main.scss";
 .aboutme {
   background-color: $white;
   display: flex;
+  padding: 2.5rem;
+  margin: auto;
+  margin-top: 3rem;
+  width: 80%;
+  align-self: center;
   &__leftcolumn {
     width: 50%;
     margin: 1%;
@@ -97,8 +104,14 @@ export default {
 .linkedin {
   margin-left: -13px;
 }
+@media screen and (max-width: $desktop) {
+  .aboutme {
+    width: 90%;
+  }
+}
 @media screen and (max-width: $tablet) {
   .aboutme {
+    width: 100%;
     flex-direction: column;
     &__leftcolumn,
     &__rightcolumn {

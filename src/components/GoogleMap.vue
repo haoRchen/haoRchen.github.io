@@ -63,7 +63,7 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
-@import "../main.sass";
+@import "../main.scss";
 .fullsize {
   width: 100%;
   height: 100%;

@@ -1,12 +1,14 @@
 <template>
   <div>
     <toolbar/>
-    <div class="Body">
-      <div class="section">
-        <div class="container">
-          <router-view/>
-        </div>
-      </div>
+    <div class="app">
+      <!-- <div class="section">
+      <div class="container"> -->
+      <transition name="fade">
+        <router-view/>
+      </transition>
+      <!-- </div>
+      </div> -->
     </div>
   </div>
 </template>
@@ -23,8 +25,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "main.sass";
-.Body {
+@import "main.scss";
+.app {
   background-color: #f7f8fa;
   font-family: $roboto;
   min-height: 100vh;
@@ -53,5 +55,18 @@ export default {
   .container {
     width: 90%;
   }
+}
+// ******************   page transition   ************
+.fade-enter-active,
+.fade-leave-active {
+  transition-property: opacity;
+  transition-duration: 0.3s;
+}
+.fade-enter-active {
+  transition-delay: 0.4s;
+}
+.fade-enter,
+.fade-leave-active {
+  opacity: 0;
 }
 </style>

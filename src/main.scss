@@ -1,0 +1,52 @@
+@import 'mixins.scss';
+// Default Bulma Color
+$primary: #30CBE8 !default;
+$primary-light: #93EBFB !default;
+$primary-lighter: #CAF7FF !default;
+$primary-dark: #007B92 !default;
+$primary-darker: #006375 !default;
+$secondary: #FF4430 !default;
+$secondary-light: #FF9D93 !default;
+$secondary-lighter: #FFCEC9 !default;
+$secondary-dark: #EE1700 !default;
+$secondary-darker: #BF1200 !default;
+$light-grey: #F7F8FA !default;
+$dark-grey: #3B4A4D !default;
+$white: #ffffff !default;
+// Fonts
+$montserrat: 'Montserrat', Arial, sans-serif;
+$roboto: 'Roboto Slab', Arial, sans-serif;
+
+//Box
+$box-shadow: 0;
+$box-radius: 0;
+$box-padding: 3rem;
+
+a,
+.button,
+.icon {
+  transition: all 0.3s;
+  color: $dark-grey;
+}
+.scale {
+  &:hover {
+    transform: scale(1.1, 1.1);
+  }
+}
+.container {
+  margin-top: 5rem;
+}
+@media screen and (max-width: $mobile) {
+}
+@media screen and (max-width: $tablet) {
+  .container {
+    width: 100%;
+  }
+}
+@media screen and (max-width: $desktop) {
+  .container {
+    width: 90%;
+  }
+}
+
+@import '~bulma/bulma.sass';

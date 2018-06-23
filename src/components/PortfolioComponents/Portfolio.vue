@@ -1,28 +1,30 @@
 <template>
-  <div class="columns portfolio is-centered ">
-    <div class="portfolio__topnav">
-      <a 
-        class="button portfolio__topnav__button"
-        href="#">
-        Work
-      </a>
-      <a 
-        class="button portfolio__topnav__button"
-        href="#">
-        Personal Projects
-      </a>
-      <a 
-        class="button portfolio__topnav__button"
-        href="#">
-        Open Source
-      </a>
-    </div>
-    <div class="column RightLayout">
-      <ProjectCard 
-        v-for="project in workList" 
-        :key="project.id" 
-        :project="project"
-      />
+  <div class="container">
+    <div class="columns portfolio is-centered ">
+      <div class="portfolio__topnav">
+        <a 
+          class="button portfolio__topnav__button"
+          href="#">
+          Work
+        </a>
+        <a 
+          class="button portfolio__topnav__button"
+          href="#">
+          Personal Projects
+        </a>
+        <a 
+          class="button portfolio__topnav__button"
+          href="#">
+          Open Source
+        </a>
+      </div>
+      <div class="column portfolio__contents">
+        <ProjectCard 
+          v-for="project in workList" 
+          :key="project.id" 
+          :project="project"
+        />
+      </div>
     </div>
   </div>
 </template>
@@ -56,11 +58,18 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../main.sass";
+@import "../../main.scss";
+.column {
+  padding-left: 0;
+  padding-right: 0;
+}
 .portfolio {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-top: 2.5rem;
+  margin: auto;
+  width: 80%;
   &__topnav {
     display: flex;
     flex-direction: row;
@@ -99,6 +108,16 @@ export default {
         }
       }
     }
+  }
+}
+@media screen and (max-width: $desktop) {
+  .portfolio {
+    width: 90%;
+  }
+}
+@media screen and (max-width: $tablet) {
+  .portfolio {
+    width: 100%;
   }
 }
 </style>

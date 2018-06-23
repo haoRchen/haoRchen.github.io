@@ -87,7 +87,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import "../../main.sass";
+@import "../../main.scss";
 .box {
   $box: &;
   background-color: $white;
