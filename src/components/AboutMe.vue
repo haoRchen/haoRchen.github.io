@@ -68,12 +68,14 @@ export default {
   margin-top: 3rem;
   width: 80%;
   align-self: center;
+  transition: all 0.7s ease;
   &__leftcolumn {
     width: 50%;
     margin: 1%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+    transition: all 0.5s ease;
     & > div {
       margin-top: 15px;
       margin-bottom: 15px;
@@ -83,6 +85,7 @@ export default {
     width: 50%;
     display: flex;
     margin: 1%;
+    transition: all 0.5s ease;
   }
   &__footer {
     font-family: $montserrat;

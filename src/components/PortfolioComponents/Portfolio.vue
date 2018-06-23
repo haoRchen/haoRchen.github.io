@@ -70,11 +70,13 @@ export default {
   padding-top: 2.5rem;
   margin: auto;
   width: 80%;
+  transition: all 0.7s ease;
   &__topnav {
     display: flex;
     flex-direction: row;
     justify-content: center;
     flex-wrap: wrap;
+    transition: all 0.7s ease;
     &__button {
       font-family: $roboto;
       font-weight: 600;

@@ -1,70 +1,72 @@
 <template>
-  <div class="box">
-    <article class="media">
-      <div class="media-content">
-        <div class="content">
-          <div class="level is-mobile is-marginless">
-            <div class="level-left">
-              <h5 class="title ProjectTitle level-item">{{ project.name }}</h5>
+  <transition name="slide-fade">
+    <div class="box">
+      <article class="media">
+        <div class="media-content">
+          <div class="content">
+            <div class="level is-mobile is-marginless">
+              <div class="level-left">
+                <h5 class="title ProjectTitle level-item">{{ project.name }}</h5>
+              </div>
             </div>
+            <p class="ProjectDescription">
+              {{ project.description }}            
+            </p>
           </div>
-          <p class="ProjectDescription">
-            {{ project.description }}            
-          </p>
+          <!-- Card Technology Icons -->
+          <nav class="level box__nav is-mobile is-marginless">
+            <div class="level-left box__nav__wrapper--icon">
+              <a 
+                class="level-item" 
+                aria-label="reply">
+                <span class="icon is-medium ">
+                  <i 
+                    class="fab fa-angular fa-lg" 
+                    aria-hidden="true"/>
+                </span>
+              </a>
+              <a 
+                class="level-item" 
+                aria-label="retweet">
+                <span class="icon is-medium ">
+                  <i 
+                    class="fab fa-js fa-lg" 
+                    aria-hidden="true"/>
+                </span>
+              </a>
+              <a 
+                class="level-item" 
+                aria-label="like">
+                <span class="icon is-medium ">
+                  <i 
+                    class="fab fa-vuejs fa-lg" 
+                    aria-hidden="true"/>
+                </span>
+              </a>
+              <a 
+                class="level-item" 
+                aria-label="like">
+                <span class="icon is-medium">
+                  <i 
+                    class="fab fa-node-js fa-lg" 
+                    aria-hidden="true"/>
+                </span>
+              </a>
+            </div>
+            <div 
+              class="level-right box__nav__wrapper--button">
+              <a 
+                id="MoreInfoButton" 
+                class="button level-item">MORE INFO</a>
+              <a 
+                id="DemoLink"
+                class="level-item">View Demo</a>
+            </div>
+          </nav>
         </div>
-        <!-- Card Technology Icons -->
-        <nav class="level box__nav is-mobile is-marginless">
-          <div class="level-left box__nav__wrapper--icon">
-            <a 
-              class="level-item" 
-              aria-label="reply">
-              <span class="icon is-medium">
-                <i 
-                  class="fab fa-angular fa-lg" 
-                  aria-hidden="true"/>
-              </span>
-            </a>
-            <a 
-              class="level-item" 
-              aria-label="retweet">
-              <span class="icon is-medium">
-                <i 
-                  class="fab fa-js fa-lg" 
-                  aria-hidden="true"/>
-              </span>
-            </a>
-            <a 
-              class="level-item" 
-              aria-label="like">
-              <span class="icon is-medium">
-                <i 
-                  class="fab fa-vuejs fa-lg" 
-                  aria-hidden="true"/>
-              </span>
-            </a>
-            <a 
-              class="level-item" 
-              aria-label="like">
-              <span class="icon is-medium">
-                <i 
-                  class="fab fa-node-js fa-lg" 
-                  aria-hidden="true"/>
-              </span>
-            </a>
-          </div>
-          <div 
-            class="level-right box__nav__wrapper--button">
-            <a 
-              id="MoreInfoButton" 
-              class="button level-item">MORE INFO</a>
-            <a 
-              id="DemoLink"
-              class="level-item">View Demo</a>
-          </div>
-        </nav>
-      </div>
-    </article>
-  </div>    
+      </article>
+    </div>    
+  </transition>
 </template>
 
 <script>
@@ -121,6 +123,7 @@ export default {
       #MoreInfoButton {
         background-color: $primary;
         color: $white;
+        width: 11rem;
         &:hover {
           background-color: $dark-grey;
           color: $white;
@@ -131,6 +134,8 @@ export default {
         border-bottom-width: 1px;
         border-bottom-style: solid;
         border-bottom-color: $primary;
+        margin-left: 1rem;
+        margin-right: 1rem;
         &:hover {
           color: $dark-grey;
           border-bottom-color: $dark-grey;
@@ -151,6 +156,7 @@ export default {
   .box {
     $box: &;
     height: auto;
+    transition: all 0.5s ease;
     &:hover {
       & #{ $box }__nav__wrapper--button {
         right: auto;
@@ -158,6 +164,7 @@ export default {
       }
     }
     &__nav {
+      transition: all 0.5s ease;
       justify-content: center;
       flex-wrap: wrap;
       &__wrapper--button {
@@ -166,11 +173,14 @@ export default {
         right: auto;
         transition: all 0.3s ease-in-out;
         #MoreInfoButton {
+          transition: all 0.5s ease;
+          width: auto;
           margin-top: 15px;
           margin-bottom: 15px;
           margin-left: 0.75rem; // counter bulma's is-mobile auto margin-right.
         }
         #DemoLink {
+          transition: all 0.5s ease;
           width: auto;
           margin-left: 30%;
           margin-right: 30%;
@@ -180,10 +190,14 @@ export default {
           }
         }
       }
+      &__wrapper--icon {
+        margin-left: 0.75rem;
+      }
     }
   }
   .level {
     justify-content: center;
+    transition: all 0.5s ease;
   }
 }
 </style>

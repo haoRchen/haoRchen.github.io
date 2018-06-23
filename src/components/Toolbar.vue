@@ -17,6 +17,7 @@
           <p>Ran</p>
           <p>Chen</p>
         </router-link>
+        
         <div 
           :class="{ 'is-active': displayDropdown }" 
           class="nav__burger" 
@@ -74,7 +75,7 @@
             </span>
           </a>
           <span class="nav__footer__item credit">
-            @2018 Hao Ran Chen
+            <i class="far fa-copyright"/> 2018 Hao Ran Chen
           </span>
         </footer>
       </div>
@@ -158,7 +159,7 @@ export default {
   box-shadow: 0 1px 3px grey;
   &__wrapper {
     height: 100%;
-    width: 70%;
+    width: 65%;
     display: flex;
     position: relative;
     transition: all 0.3s ease-in-out;
@@ -198,13 +199,12 @@ export default {
     width: 100%;
     height: 60px;
     opacity: 0;
-    bottom: 200px;
+    bottom: -200px;
     display: flex;
     justify-content: flex-end;
     flex-wrap: wrap;
     align-items: center;
     transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
-    transition-delay: 0.5s;
     &__item {
       color: $white;
       margin: 1rem;
@@ -232,7 +232,7 @@ export default {
     }
   }
 }
-// ********************************************************************
+// ******************************************************************** TABLET
 @media screen and (max-width: $tablet) {
   .nav {
     $nav: &;
@@ -283,11 +283,11 @@ export default {
       align-items: center;
       justify-content: center;
       .line {
-        height: 3px;
-        width: 30px;
+        height: 4px;
+        width: 35px;
         background-color: $white;
-        border-radius: 8px;
-        margin: 3px;
+        border-radius: 15px;
+        margin: 2.5px;
         transition: all ease-in-out 0.3s;
         //Hovering effect
         // we only see the first 100% of width initially,
@@ -295,8 +295,8 @@ export default {
         background-size: 200% 100%;
         background-image: linear-gradient(
           to right,
-          $white 50%,
-          $primary-darker 50%
+          $primary-darker 50%,
+          $white 50%
         );
         background-position: auto;
       }
@@ -369,19 +369,23 @@ export default {
         }
       }
     }
-    // ------------------------------   burger  --------------------------------
     &__item {
       font-family: $roboto;
       font-weight: bold;
-      font-size: 2rem;
+      font-size: 1.5rem;
       opacity: 0;
       display: flex;
       position: relative;
       justify-content: center;
       height: 100px;
       width: 100%;
-      top: -30px;
       transition: all ease-in-out 0.3s;
+      &:nth-of-type(1) {
+        left: -100px;
+      }
+      &:nth-of-type(2) {
+        left: 100px;
+      }
       &.is-active {
         background-color: transparent;
         color: $primary-darker;
@@ -393,22 +397,25 @@ export default {
     }
   }
   .dropdown {
-    transition-delay: 0.5s;
+    transition-delay: 0.7s;
     height: 100vh;
     overflow-y: auto;
     .nav {
       &__item {
         opacity: 1;
-        top: 0;
+        left: 0;
+        transition-delay: 0.8s;
       }
       &__footer {
+        transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
+        transition-delay: 1.1s;
         opacity: 1;
         bottom: 0;
       }
     }
   }
 }
-// ********************************************************************
+// ******************************************************************** Mobile
 @media screen and (max-width: $mobile) {
   .nav {
     &__logo {
@@ -435,6 +442,20 @@ export default {
           margin-right: 4rem;
         }
       }
+    }
+  }
+}
+@media screen and (min-width: $widescreen) {
+  .nav {
+    &__wrapper {
+      width: 55%;
+    }
+  }
+}
+@media screen and (min-width: $fullhd) {
+  .nav {
+    &__wrapper {
+      width: 60%;
     }
   }
 }
