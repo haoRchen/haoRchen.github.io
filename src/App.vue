@@ -1,5 +1,6 @@
 <template>
   <div>
+    <project-detail/>
     <toolbar/>
     <div class="app">
       <!-- <div class="section">
@@ -15,11 +16,13 @@
 
 <script>
 import Toolbar from "@/components/Toolbar.vue";
+import ProjectDetail from "@/components/PortfolioComponents/ProjectDetail.vue";
 
 export default {
   name: "App",
   components: {
-    Toolbar
+    Toolbar,
+    ProjectDetail
   }
 };
 </script>

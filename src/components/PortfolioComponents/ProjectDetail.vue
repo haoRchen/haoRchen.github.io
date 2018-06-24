@@ -1,28 +1,28 @@
 <template>
-  <v-modal name="ProjectDetail">
+  <modal name="ProjectDetail">
     <p>
       hello, world!
     </p>
-    <!-- <carousel :per-page="1">
+    <carousel :per-page="1">
       <slide>
         Slide 1 Content
       </slide>
       <slide>
         Slide 2 Content
       </slide>
-    </carousel> -->
-  </v-modal>
+    </carousel>
+  </modal>
 </template>
 
 <script>
-// import { Carousel, Slide } from "vue-carousel";
+import { Carousel, Slide } from "vue-carousel";
 
 export default {
   name: "ProjectDetail",
-  // components: {
-  //   Carousel,
-  //   Slide
-  // },
+  components: {
+    Carousel,
+    Slide
+  },
   methods: {
     // beforeOpen (event) {
     //   console.log(event.params.foo);

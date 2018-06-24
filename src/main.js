@@ -6,7 +6,7 @@ import VModal from "vue-js-modal";
 
 Vue.config.productionTip = false;
 // Vue.use(VModal);
-Vue.use(VModal, { componentName: "v-modal" });
+Vue.use(VModal);
 Vue.use(VueGoogleMaps, {
   load: {
     key: "AIzaSyDqihpHzlKCB7lcZRU7zjtRZB1mAhrSCwg",

@@ -92,7 +92,9 @@ export default {
     }
   },
   methods: {
-    ShowModal() {}
+    ShowModal() {
+      this.$modal.show("ProjectDetail");
+    }
   }
 };
 </script>
