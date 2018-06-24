@@ -57,7 +57,10 @@
               class="level-right box__nav__wrapper--button">
               <a 
                 id="MoreInfoButton" 
-                class="button level-item">MORE INFO</a>
+                class="button level-item"
+                @click="ShowModal">
+                MORE INFO
+              </a>
               <a 
                 v-if="project.demoLink"
                 id="DemoLink"
@@ -87,6 +90,9 @@ export default {
         };
       }
     }
+  },
+  methods: {
+    ShowModal() {}
   }
 };
 </script>
@@ -180,7 +186,7 @@ export default {
           width: auto;
           margin-top: 15px;
           margin-bottom: 15px;
-          margin-left: 0.75rem; // counter bulma's is-mobile auto margin-right.
+          margin-left: 0.75rem; // counter bulma"s is-mobile auto margin-right.
         }
         #DemoLink {
           transition: all 0.5s ease;
