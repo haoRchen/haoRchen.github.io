@@ -59,7 +59,9 @@
                 id="MoreInfoButton" 
                 class="button level-item">MORE INFO</a>
               <a 
+                v-if="project.demoLink"
                 id="DemoLink"
+                :href="project.demoLink"
                 class="level-item">View Demo</a>
             </div>
           </nav>
@@ -80,7 +82,8 @@ export default {
         return {
           name: "default",
           date: "2018/6/12",
-          description: "default desc"
+          description: "default desc",
+          demoLink: ""
         };
       }
     }

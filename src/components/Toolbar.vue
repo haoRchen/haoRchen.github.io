@@ -408,13 +408,15 @@ export default {
       justify-content: center;
       height: 100px;
       width: 100%;
-      transition: opacity ease-in-out 0.3s 0.1s, left ease-in-out 0.3s 0.1s;
-      &:nth-of-type(1),
-      &:nth-of-type(3) {
-        left: -100px;
+      left: -100px;
+      &:nth-of-type(1) {
+        transition: opacity ease-in-out 0.3s 0.3s, left ease-in-out 0.3s 0.3s;
       }
       &:nth-of-type(2) {
-        left: 100px;
+        transition: opacity ease-in-out 0.3s 0.2s, left ease-in-out 0.3s 0.2s;
+      }
+      &:nth-of-type(3) {
+        transition: opacity ease-in-out 0.3s 0.1s, left ease-in-out 0.3s 0.1s;
       }
       &.is-active {
         background-color: transparent;
@@ -434,7 +436,15 @@ export default {
       &__item {
         opacity: 1;
         left: 0;
-        transition: opacity ease-in-out 0.3s 0.8s, left ease-in-out 0.3s 0.8s;
+        &:nth-of-type(1) {
+          transition: opacity ease-in-out 0.3s 0.8s, left ease-in-out 0.3s 0.8s;
+        }
+        &:nth-of-type(2) {
+          transition: opacity ease-in-out 0.3s 0.9s, left ease-in-out 0.3s 0.9s;
+        }
+        &:nth-of-type(3) {
+          transition: opacity ease-in-out 0.3s 1s, left ease-in-out 0.3s 1s;
+        }
       }
       &__footer {
         transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;

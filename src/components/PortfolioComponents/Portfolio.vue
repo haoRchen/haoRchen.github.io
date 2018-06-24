@@ -104,7 +104,6 @@ export default {
       border: none;
       opacity: 0.5;
       &:hover {
-        // color: $primary;
         opacity: 1;
         &:after {
           width: 100%;
@@ -122,7 +121,6 @@ export default {
         content: "";
         position: absolute;
         bottom: 0;
-        left: 0;
         width: 0;
         border-bottom: 3px solid $dark-grey;
         transition: width 0.3s;
