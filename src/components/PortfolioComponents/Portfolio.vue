@@ -3,24 +3,27 @@
     <div class="columns portfolio is-centered ">
       <div class="portfolio__topnav">
         <a 
-          class="button portfolio__topnav__button"
-          href="#">
+          class="button portfolio__topnav__button selected"
+          href="#"
+          @click="projectList = work, selected($event)">
           Work
         </a>
         <a 
           class="button portfolio__topnav__button"
-          href="#">
+          href="#"
+          @click="projectList = personal, selected($event)">
           Personal Projects
         </a>
         <a 
           class="button portfolio__topnav__button"
-          href="#">
+          href="#"
+          @click="projectList = openSource, selected($event)">
           Open Source
         </a>
       </div>
       <div class="column portfolio__contents">
         <ProjectCard 
-          v-for="project in workList" 
+          v-for="project in projectList" 
           :key="project.id" 
           :project="project"
         />
@@ -30,10 +33,12 @@
 </template>
 
 <script>
+import { ScrollTop, Selected } from "@/utility";
+
 import ProjectCard from "@/components/PortfolioComponents/ProjectCard.vue";
 import WorkProjects from "@/assets/ProjectList/work";
-// import OpenSourceProjects from "@/assets/ProjectList/openSource";
-// import PersonalProjects from "@/assets/ProjectList/personal";
+import OpenSourceProjects from "@/assets/ProjectList/openSource";
+import PersonalProjects from "@/assets/ProjectList/personal";
 
 export default {
   name: "Portfolio",
@@ -42,16 +47,22 @@ export default {
   },
   data() {
     return {
-      workList: Object
+      projectList: Object,
+      work: Object,
+      openSource: Object,
+      personal: Object
     };
   },
   mounted() {
-    this.workList = WorkProjects;
-    this.ScrollTop();
+    this.projectList = WorkProjects;
+    this.work = WorkProjects;
+    this.personal = PersonalProjects;
+    this.openSource = OpenSourceProjects;
+    ScrollTop();
   },
   methods: {
-    ScrollTop() {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    selected: e => {
+      Selected(e.target);
     }
   }
 };
@@ -77,6 +88,10 @@ export default {
     justify-content: center;
     flex-wrap: wrap;
     transition: all 0.7s ease;
+    .selected {
+      opacity: 1;
+      transform: scale(1.1, 1.1);
+    }
     &__button {
       font-family: $roboto;
       font-weight: 600;
@@ -87,11 +102,21 @@ export default {
       text-decoration: none;
       background-color: transparent;
       border: none;
+      opacity: 0.5;
       &:hover {
-        color: $primary;
+        // color: $primary;
+        opacity: 1;
         &:after {
           width: 100%;
         }
+      }
+      &:focus {
+        box-shadow: none !important;
+      }
+      &:active {
+        opacity: 1;
+        box-shadow: none;
+        color: $dark-grey;
       }
       &:after {
         content: "";
@@ -99,15 +124,8 @@ export default {
         bottom: 0;
         left: 0;
         width: 0;
-        border-bottom: 3px solid $primary;
+        border-bottom: 3px solid $dark-grey;
         transition: width 0.3s;
-      }
-      &:focus {
-        box-shadow: none;
-        color: $primary-darker;
-        &:after {
-          width: 0;
-        }
       }
     }
   }

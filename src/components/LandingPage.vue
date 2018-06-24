@@ -5,16 +5,14 @@
 </template>
 
 <script>
+import { ScrollTop } from "@/utility";
+
 export default {
   name: "LandingPage",
   mounted() {
-    this.ScrollTop();
+    ScrollTop();
   },
-  methods: {
-    ScrollTop() {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-    }
-  }
+  methods: {}
 };
 </script>
 

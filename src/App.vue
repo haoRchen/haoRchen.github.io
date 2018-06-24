@@ -56,17 +56,4 @@ export default {
     width: 90%;
   }
 }
-// ******************   page transition   ************
-.fade-enter-active,
-.fade-leave-active {
-  transition-property: opacity;
-  transition-duration: 0.3s;
-}
-.fade-enter-active {
-  transition-delay: 0.4s;
-}
-.fade-enter,
-.fade-leave-active {
-  opacity: 0;
-}
 </style>

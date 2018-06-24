@@ -12,12 +12,20 @@
           to="/"
           class="nav__logo" 
           tag="a"
+          @click.native="ToggleNavBurger"
         >
-          <p>Hao</p>
-          <p>Ran</p>
-          <p>Chen</p>
+          <p>H</p>
+          <!-- https://stackoverflow.com/a/4482962 for using object -->
+          <!-- <object 
+            type="image/svg+xml"
+            data="../assets/Images/hao.svg" 
+            width="200px"
+          >
+            <img 
+              src="../assets/Images/logo.png" 
+              alt="my logo that you cannot see :(">
+          </object> -->
         </router-link>
-        
         <div 
           :class="{ 'is-active': displayDropdown }" 
           class="nav__burger" 
@@ -35,8 +43,16 @@
         class="nav__wrapper--links">
         <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
         <router-link 
+          to="/"
+          class="nav__item home" 
+          tag="a"
+          @click.native="ToggleNavBurger"
+        >
+          Home
+        </router-link>
+        <router-link 
           to="/portfolio"
-          class="nav__item" 
+          class="nav__item portfolio" 
           tag="a"
           @click.native="ToggleNavBurger"
         >
@@ -99,8 +115,8 @@ export default {
   mounted() {
     // https://www.w3schools.com/howto/howto_js_media_queries.asp
     // This is needed to hide drop down nav when adjusting between viewport size.
-    var mediaQuery = window.matchMedia("(max-width: 985px)");
-    mediaQuery.addListener(this.HideNavBarOnMediaQuery);
+    var navBurgerDisplayQuery = window.matchMedia("(min-width: 769px)");
+    navBurgerDisplayQuery.addListener(this.HideNavBarOnMediaQuery);
 
     this.PreviousScrollPos = window.pageYOffset;
     //https://techstacker.com/posts/yz6e9Ksz6ARbNpQAZ/vanilla-javascript-how-to-detect-clicks-outside-of-an
@@ -112,10 +128,10 @@ export default {
     });
   },
   created() {
-    window.addEventListener("scroll", this.ToggleNavBar);
+    document.addEventListener("scroll", this.ToggleNavBar);
   },
   destroyed() {
-    window.removeEventListener("scroll", this.ToggleNavBar);
+    document.removeEventListener("scroll", this.ToggleNavBar);
   },
   methods: {
     ToggleNavBurger() {
@@ -123,7 +139,9 @@ export default {
     },
     HideNavBarOnMediaQuery(mediaSize) {
       if (mediaSize.matches) {
-        this.HideNav();
+        if (this.displayDropdown) {
+          this.ToggleNavBurger();
+        }
       }
     },
     HideNav() {
@@ -231,6 +249,10 @@ export default {
       background-color: rgba(0, 0, 0, 0.05);
     }
   }
+  .home {
+    visibility: hidden;
+    display: none;
+  }
 }
 // ******************************************************************** TABLET
 @media screen and (max-width: $tablet) {
@@ -254,11 +276,13 @@ export default {
         width: 100%;
         overflow-y: hidden;
         position: absolute;
+        transition-delay: 0.3s;
       }
     }
     &__logo {
-      align-self: flex-start;
-      margin-left: 1.5rem;
+      // align-self: flex-start;
+      // margin-left: 1.5rem;
+      visibility: hidden;
     }
     &__footer {
       &__item {
@@ -349,6 +373,7 @@ export default {
         }
         & #{ $burger }__line2 {
           transform: rotate(315deg);
+          transition-duration: 0.3s;
           transition-delay: 0.4s;
         }
         & #{ $burger }__line3 {
@@ -369,6 +394,10 @@ export default {
         }
       }
     }
+    .home {
+      visibility: visible;
+      display: inherit;
+    }
     &__item {
       font-family: $roboto;
       font-weight: bold;
@@ -379,8 +408,9 @@ export default {
       justify-content: center;
       height: 100px;
       width: 100%;
-      transition: all ease-in-out 0.3s;
-      &:nth-of-type(1) {
+      transition: opacity ease-in-out 0.3s 0.1s, left ease-in-out 0.3s 0.1s;
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
         left: -100px;
       }
       &:nth-of-type(2) {
@@ -391,7 +421,7 @@ export default {
         color: $primary-darker;
       }
       &:hover {
-        color: $white;
+        color: $primary-darker;
         background-color: rgba(0, 0, 0, 0.05);
       }
     }
@@ -404,7 +434,7 @@ export default {
       &__item {
         opacity: 1;
         left: 0;
-        transition-delay: 0.8s;
+        transition: opacity ease-in-out 0.3s 0.8s, left ease-in-out 0.3s 0.8s;
       }
       &__footer {
         transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;

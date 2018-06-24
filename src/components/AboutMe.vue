@@ -41,6 +41,7 @@
 </template>
 
 <script>
+import { ScrollTop } from "@/utility";
 import GoogleMap from "./GoogleMap";
 
 export default {
@@ -49,13 +50,9 @@ export default {
     GoogleMap
   },
   mounted() {
-    this.ScrollTop();
+    ScrollTop();
   },
-  methods: {
-    ScrollTop() {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-    }
-  }
+  methods: {}
 };
 </script>
 <style lang="scss" scoped>
