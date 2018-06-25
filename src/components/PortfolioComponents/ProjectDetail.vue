@@ -1,17 +1,17 @@
 <template>
-  <modal name="ProjectDetail">
+  <div>
     <p>
-      hello, world!
+      {{ project.name }}
     </p>
     <carousel :per-page="1">
       <slide>
-        Slide 1 Content
+        Slide 1
       </slide>
       <slide>
         Slide 2 Content
       </slide>
     </carousel>
-  </modal>
+  </div>
 </template>
 
 <script>
@@ -23,24 +23,20 @@ export default {
     Carousel,
     Slide
   },
-  methods: {
-    // beforeOpen (event) {
-    //   console.log(event.params.foo);
-    // }
+  props: {
+    project: {
+      type: Object,
+      required: true,
+      default: () => {
+        return {
+          name: "default",
+          date: "2018/6/12",
+          description: "default desc",
+          demoLink: ""
+        };
+      }
+    }
   }
-  // props: {
-  //   project: {
-  //     type: Object,
-  //     required: true,
-  //     default: () => {
-  //       return {
-  //         name: "default",
-  //         date: "2018/6/12",
-  //         description: "default desc"
-  //       };
-  //     }
-  //   }
-  // }
 };
 </script>
 

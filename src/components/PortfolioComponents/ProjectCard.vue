@@ -75,8 +75,13 @@
 </template>
 
 <script>
+import ProjectDetail from "@/components/PortfolioComponents/ProjectDetail.vue";
+
 export default {
   name: "ProjectTitle",
+  components: {
+    ProjectDetail
+  },
   props: {
     project: {
       type: Object,
@@ -93,7 +98,7 @@ export default {
   },
   methods: {
     ShowModal() {
-      this.$modal.show("ProjectDetail");
+      this.$modal.show(ProjectDetail, { project: this.project });
     }
   }
 };

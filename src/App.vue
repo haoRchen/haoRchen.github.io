@@ -1,28 +1,22 @@
 <template>
   <div>
-    <project-detail/>
+    <modals-container/>
     <toolbar/>
     <div class="app">
-      <!-- <div class="section">
-      <div class="container"> -->
       <transition name="fade">
         <router-view/>
       </transition>
-      <!-- </div>
-      </div> -->
     </div>
   </div>
 </template>
 
 <script>
 import Toolbar from "@/components/Toolbar.vue";
-import ProjectDetail from "@/components/PortfolioComponents/ProjectDetail.vue";
 
 export default {
   name: "App",
   components: {
-    Toolbar,
-    ProjectDetail
+    Toolbar
   }
 };
 </script>
@@ -39,24 +33,5 @@ export default {
   padding-top: 100px;
   padding-bottom: 60px;
   margin: auto;
-}
-.container {
-  width: 80%;
-}
-@media screen and (max-width: $mobile) {
-  .section {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-@media screen and (max-width: $tablet) {
-  .container {
-    width: 100%;
-  }
-}
-@media screen and (max-width: $desktop) {
-  .container {
-    width: 90%;
-  }
 }
 </style>
