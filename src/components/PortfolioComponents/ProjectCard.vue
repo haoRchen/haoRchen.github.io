@@ -98,7 +98,21 @@ export default {
   },
   methods: {
     ShowModal() {
-      this.$modal.show(ProjectDetail, { project: this.project });
+      /* 
+        the first argument is the component definition, 
+        the second are component properties, 
+        the third modal parameters, 
+        and the fourth the modal event listeners):
+      */
+      this.$modal.show(
+        ProjectDetail,
+        { project: this.project },
+        {
+          scrollable: true,
+          width: "100%",
+          height: "auto"
+        }
+      );
     }
   }
 };
@@ -109,12 +123,11 @@ export default {
 .box {
   $box: &;
   background-color: $white;
-  transition: all 0.3s;
+  border-radius: 6px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
-    border: 1px $light-grey;
-    box-shadow: 0 2px 5px grey;
-    border-radius: 6px;
-    transform: scale(1.02, 1.02);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    transform: scale(1.01, 1.01);
     .icon {
       color: $primary;
       &:hover {
