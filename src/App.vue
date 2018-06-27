@@ -1,12 +1,11 @@
 <template>
   <div>
+    <modals-container/>
     <toolbar/>
-    <div class="Body">
-      <div class="section">
-        <div class="container">
-          <router-view/>
-        </div>
-      </div>
+    <div class="app">
+      <transition name="fade">
+        <router-view/>
+      </transition>
     </div>
   </div>
 </template>
@@ -22,21 +21,17 @@ export default {
 };
 </script>
 
-<style lang="sass">
-@import 'main.sass'
-
-.Body
-  background-color: #f7f8fa
-  font-family: $roboto
-  display: flex
-  min-height: 100vh
-  flex-direction: column
-  padding-top: 60px
-  padding-bottom: 60px
-  margin: auto
-  align-items: center
-.section
-  flex: 1 0 auto
-.container
-  width: 90%
+<style lang="scss">
+@import "main.scss";
+.app {
+  background-color: #f7f8fa;
+  font-family: $roboto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 60px;
+  margin: auto;
+}
 </style>

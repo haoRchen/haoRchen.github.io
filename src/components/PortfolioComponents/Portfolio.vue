@@ -1,37 +1,44 @@
 <template>
-  <div class="columns PortfolioWrapper is-centered ">
-    <div class="column LeftLayout is-one-fifth">
-      <a 
-        class="button SideButton Work"
-        href="#">
-        Work
-      </a>
-      <a 
-        class="button SideButton PersonalProject"
-        href="#">
-        Personal Projects
-      </a>
-      <a 
-        class="button SideButton OpenSource"
-        href="#">
-        Open Source
-      </a>
-    </div>
-    <div class="column RightLayout">
-      <ProjectCard 
-        v-for="project in workList" 
-        :key="project.id" 
-        :project="project"
-      />
+  <div class="container">
+    <div class="columns portfolio is-centered ">
+      <div class="portfolio__topnav">
+        <a 
+          class="button portfolio__topnav__button selected"
+          href="#"
+          @click="projectList = work, selected($event)">
+          Work
+        </a>
+        <a 
+          class="button portfolio__topnav__button"
+          href="#"
+          @click="projectList = personal, selected($event)">
+          Personal Projects
+        </a>
+        <a 
+          class="button portfolio__topnav__button"
+          href="#"
+          @click="projectList = openSource, selected($event)">
+          Open Source
+        </a>
+      </div>
+      <div class="column portfolio__contents">
+        <ProjectCard 
+          v-for="project in projectList" 
+          :key="project.id" 
+          :project="project"
+        />
+      </div>
     </div>
   </div>
 </template>
 
 <script>
+import { ScrollTop, Selected } from "@/utility";
+
 import ProjectCard from "@/components/PortfolioComponents/ProjectCard.vue";
 import WorkProjects from "@/assets/ProjectList/work";
-// import OpenSourceProjects from "@/assets/ProjectList/openSource";
-// import PersonalProjects from "@/assets/ProjectList/personal";
+import OpenSourceProjects from "@/assets/ProjectList/openSource";
+import PersonalProjects from "@/assets/ProjectList/personal";
 
 export default {
   name: "Portfolio",
@@ -40,65 +47,95 @@ export default {
   },
   data() {
     return {
-      workList: Object
+      projectList: Object,
+      work: Object,
+      openSource: Object,
+      personal: Object
     };
   },
   mounted() {
-    this.workList = WorkProjects;
-    this.ScrollTop();
+    this.projectList = WorkProjects;
+    this.work = WorkProjects;
+    this.personal = PersonalProjects;
+    this.openSource = OpenSourceProjects;
+    ScrollTop();
   },
   methods: {
-    ScrollTop() {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
+    selected: e => {
+      Selected(e.target);
     }
   }
 };
 </script>
 
-<style lang="sass" scoped>
-@import '../../main.sass'
-.PortfolioWrapper
-.RightLayout
-  // width: 70%
-.LeftLayout
-  display: flex
-  flex-direction: row
-  justify-content: center
-  flex-wrap: wrap
-  // width: 30%
-  margin-right: 2% // gap between column
-  @media screen and (min-width: $tablet)
-    flex-direction: column
-    justify-content: flex-start
-    align-items: flex-end
-  .SideButton
-    text-decoration: none
-    background-color: transparent
-    border: none
-    font-family: $roboto
-    font-weight: 600
-    width: fit-content
-    padding-left: 0
-    padding-right: 0
-    margin-left: auto
-    @media screen and (max-width: $tablet)
-      margin-left: 10px
-      margin-right: 10px
-    &:hover
-      color: $primary
-      &:after
-        width: 100%
-    &:after
-      content: ''
-      position: absolute
-      bottom: 0
-      left: 0
-      width: 0
-      border-bottom: 3px solid $primary
-      transition: width 0.3s
-    &:focus
-      box-shadow: none
-      color: $primary-darker
-      &:after
-        width: 0
+<style lang="scss" scoped>
+@import "../../main.scss";
+.column {
+  padding-left: 0;
+  padding-right: 0;
+}
+.portfolio {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2.5rem;
+  margin: auto;
+  width: 80%;
+  transition: all 0.7s ease;
+  &__topnav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: all 0.7s ease;
+    .selected {
+      opacity: 1;
+      transform: scale(1.1, 1.1);
+    }
+    &__button {
+      font-family: $roboto;
+      font-weight: 600;
+      padding-left: 0;
+      padding-right: 0;
+      margin-left: 10px;
+      margin-right: 10px;
+      text-decoration: none;
+      background-color: transparent;
+      border: none;
+      opacity: 0.5;
+      &:hover {
+        opacity: 1;
+        &:after {
+          width: 100%;
+        }
+      }
+      &:focus {
+        box-shadow: none !important;
+      }
+      &:active {
+        opacity: 1;
+        box-shadow: none;
+        color: $dark-grey;
+      }
+      &:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        border-bottom: 3px solid $dark-grey;
+        transition: width 0.3s;
+      }
+    }
+  }
+}
+@media screen and (max-width: $desktop) {
+  .portfolio {
+    width: 90%;
+  }
+}
+@media screen and (max-width: $tablet) {
+  .portfolio {
+    width: 100%;
+  }
+}
 </style>

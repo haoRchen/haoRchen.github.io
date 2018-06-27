@@ -1,19 +1,16 @@
 <template>
-  <v-container>
+  <div>    
     <p>Landing Page</p>
-  </v-container>
+  </div>
 </template>
 
 <script>
+import { ScrollTop } from "@/utility";
+
 export default {
   name: "LandingPage",
   mounted() {
-    this.ScrollTop();
-  },
-  methods: {
-    ScrollTop() {
-      document.body.scrollTop = document.documentElement.scrollTop = 0;
-    }
+    ScrollTop();
   }
 };
 </script>

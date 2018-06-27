@@ -3,8 +3,8 @@ import VueRouter from "vue-router";
 
 import AboutMe from "@/components/AboutMe.vue";
 import Portfolio from "@/components/PortfolioComponents/Portfolio.vue";
-// import LandingPage from "@/components/LandingPage.vue";
-import DetailModal from "@/components/PortfolioComponents/DetailModal.vue";
+import LandingPage from "@/components/LandingPage.vue";
+// import ProjectDetail from "@/components/PortfolioComponents/ProjectDetail.vue";
 
 Vue.use(VueRouter);
 
@@ -14,8 +14,8 @@ export default new VueRouter({
   routes: [
     {
       path: "/",
-      name: "DetailModal",
-      component: DetailModal
+      name: "LandingPage",
+      component: LandingPage
     },
     {
       path: "/portfolio",
