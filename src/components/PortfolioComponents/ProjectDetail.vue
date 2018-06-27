@@ -7,6 +7,9 @@
         class="fas fa-times fa-3x"
         aria-hidden="true"/>
     </a>
+    <h5 class="modal__title">
+      {{ project.name }}
+    </h5>
     <carousel 
       :per-page="1"
       :pagination-enabled="false"
@@ -18,33 +21,34 @@
       <slide class="modal__carousel__slide">
         <img 
           class="modal__image" 
-          src="@/assets/Images/portfolio/1.jpg" 
+          src="public/Images/portfolio/1.jpg" 
           alt="">
       </slide>
       <slide class="modal__carousel__slide">
         <img 
           class="modal__image" 
-          src="@/assets/Images/portfolio/2.jpg" 
+          src="public/Images/portfolio/2.jpg" 
           alt="">
       </slide>
       <slide class="modal__carousel__slide">
         <img 
           class="modal__image" 
-          src="@/assets/Images/portfolio/3.jpg" 
+          src="public/Images/portfolio/3.jpg" 
           alt="">
       </slide>
       <slide class="modal__carousel__slide">
         <img 
           class="modal__image" 
-          src="@/assets/Images/portfolio/4.jpg" 
+          src="public/Images/portfolio/4.jpg" 
           alt="">
       </slide>
     </carousel>
-    <h5 class="title">
-      {{ project.name }}
-    </h5>
     <p class="modal__description">
       {{ project.fullDescription }}
+    </p>
+    <h6><strong>Technologies used</strong></h6>
+    <p>
+      Reactjs  -  JavaScript  -  CSS3  -  Bulma
     </p>
   </div>
 </template>
@@ -83,18 +87,20 @@ export default {
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  overflow-y: auto;
   &__close {
     color: $dark-grey;
     align-self: flex-end;
-    margin: 3rem;
+    position: fixed;
     &:hover {
       color: $primary-dark;
     }
   }
   &__title {
-    font-family: $montserrat;
-    font-weight: 700;
-    font-size: 20px;
+    font-family: $roboto;
+    font-weight: 600;
+    font-size: 2rem;
+    margin: 2rem;
   }
   &__image {
     width: 50%;
@@ -110,6 +116,8 @@ export default {
     }
   }
   &__description {
+    margin: 1rem;
+    margin-top: 2rem;
     width: 40%;
   }
 }

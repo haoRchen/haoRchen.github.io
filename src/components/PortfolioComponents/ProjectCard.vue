@@ -109,7 +109,7 @@ export default {
         { project: this.project },
         {
           scrollable: true,
-          width: "100%",
+          // width: "100%"
           height: "auto"
         }
       );
