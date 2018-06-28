@@ -21,25 +21,25 @@
       <slide class="modal__carousel__slide">
         <img 
           class="modal__image" 
-          src="public/Images/portfolio/1.jpg" 
+          src="Images/portfolio/1.jpg" 
           alt="">
       </slide>
       <slide class="modal__carousel__slide">
         <img 
           class="modal__image" 
-          src="public/Images/portfolio/2.jpg" 
+          src="Images/portfolio/2.jpg" 
           alt="">
       </slide>
       <slide class="modal__carousel__slide">
         <img 
           class="modal__image" 
-          src="public/Images/portfolio/3.jpg" 
+          src="Images/portfolio/3.jpg" 
           alt="">
       </slide>
       <slide class="modal__carousel__slide">
         <img 
           class="modal__image" 
-          src="public/Images/portfolio/4.jpg" 
+          src="Images/portfolio/4.jpg" 
           alt="">
       </slide>
     </carousel>
@@ -47,7 +47,7 @@
       {{ project.fullDescription }}
     </p>
     <h6><strong>Technologies used</strong></h6>
-    <p>
+    <p class="modal__technologies">
       Reactjs  -  JavaScript  -  CSS3  -  Bulma
     </p>
   </div>
@@ -86,6 +86,7 @@ export default {
   background-color: white;
   flex-direction: column;
   justify-content: flex-start;
+  height: auto;
   align-items: center;
   overflow-y: auto;
   &__close {
@@ -119,6 +120,9 @@ export default {
     margin: 1rem;
     margin-top: 2rem;
     width: 40%;
+  }
+  &__technologies {
+    margin-bottom: 4rem;
   }
 }
 @media screen and (max-width: $desktop) {
