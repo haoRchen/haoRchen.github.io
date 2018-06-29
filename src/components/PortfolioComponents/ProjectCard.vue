@@ -108,9 +108,9 @@ export default {
         ProjectDetail,
         { project: this.project },
         {
-          scrollable: true,
-          // width: "100%"
-          height: "auto"
+          // scrollable: true,
+          transition: "fade"
+          // height: "auto"
         }
       );
     }
