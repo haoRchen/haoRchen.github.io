@@ -14,17 +14,9 @@
           tag="a"
           @click.native="ToggleNavBurger"
         >
-          <p>H</p>
-          <!-- https://stackoverflow.com/a/4482962 for using object -->
+          <logo/>
           <!-- <object 
-            type="image/svg+xml"
-            data="../assets/Images/hao.svg" 
-            width="200px"
-          >
-            <img 
-              src="../assets/Images/logo.png" 
-              alt="my logo that you cannot see :(">
-          </object> -->
+            data="Images/logo/h.svg"/> -->
         </router-link>
         <div 
           :class="{ 'is-active': displayDropdown }" 
@@ -101,7 +93,12 @@
 
 <script>
 import _ from "lodash";
+import Logo from "@/components/Logo.vue";
+
 export default {
+  components: {
+    Logo
+  },
   data() {
     return {
       showNav: false,

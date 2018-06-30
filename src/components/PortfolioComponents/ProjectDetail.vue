@@ -7,17 +7,10 @@
         <span class="modal__close__line1"/>
         <span class="modal__close__line2"/>
       </div>
-      <!-- <a
-        class="icon is-large modal__close"
-        @click="$emit('close')">
-        <i 
-          class="fas fa-times fa-3x"
-          aria-hidden="true"/>
-      </a> -->
       <h5 class="modal__title">
         {{ project.name }}
       </h5>
-      <!-- <carousel 
+      <carousel 
         :per-page="1"
         :pagination-enabled="false"
         :navigation-enabled="true"
@@ -49,7 +42,7 @@
             src="Images/portfolio/4.jpg" 
             alt="">
         </slide>
-      </carousel> -->
+      </carousel>
       <p class="modal__description">
         {{ project.fullDescription }}
       </p>
@@ -91,7 +84,7 @@ export default {
 @import "@/main.scss";
 .modal {
   display: flex;
-  // background-color: white;
+  background-color: white;
   flex-direction: column;
   justify-content: flex-start;
   height: auto;

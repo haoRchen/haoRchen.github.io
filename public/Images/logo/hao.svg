@@ -4,7 +4,7 @@
       font-family: sans-serif;
       font-weight: bold;
       font-size: 40px;
-      fill: white;
+      fill: black;
       transform-origin: center;
       transition: all 0.4s ease-in-out 0s;
     }
@@ -45,7 +45,6 @@
       opacity: 1;
     }
   </style>
-  <circle id="circle" cx="50" cy="50" r="40" stroke="#30CBEA" fill="#30CBEA" />
   <text id="h" class="text" x="36" y="64">H</text>
   <text id="r" class="text" x="36" y="64">R</text>
   <text id="c" class="text" x="36" y="64">C</text>
