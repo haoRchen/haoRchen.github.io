@@ -20,8 +20,21 @@
             <logo
               :animated="Loading"
             />
+            <!-- ******************* Loading Text ******************** -->
+            <transition name="fade">
+              <div 
+                v-if="Loading"
+                class="loading-text">
+                <span>Loading</span>
+                <span class="loading-text__dot"> .</span>
+                <span class="loading-text__dot"> .</span>
+                <span class="loading-text__dot"> .</span>
+              </div>
+            </transition>
+            <!-- ******************* Loading Text ******************** -->
           </router-link>
           <div 
+            v-if="!Loading"
             :class="{ 'is-active': displayDropdown }" 
             class="nav__burger" 
             @click="ToggleNavBurger">
@@ -34,18 +47,6 @@
 
         </div>
       </transition>
-      <!-- ******************* Loading Text ******************** -->
-      <transition name="fade">
-        <div 
-          v-if="Loading"
-          class="loading-text">
-          <span>Loading</span>
-          <span class="loading-text__dot"> .</span>
-          <span class="loading-text__dot"> .</span>
-          <span class="loading-text__dot"> .</span>
-        </div>
-      </transition>
-      <!-- ******************* Loading Text ******************** -->
       <transition name="fade">
         <div 
           v-if="!Loading"
@@ -229,6 +230,7 @@ export default {
     }
   }
   &__logo--loading {
+    margin-left: 1rem;
     margin-bottom: 2rem;
     height: fit-content;
     display: flex;
@@ -561,7 +563,7 @@ export default {
   //   bottom: 10px;
   // }
   20% {
-    bottom: 3px;
+    bottom: 5px;
   }
   // 75% {
   //   bottom: 10px;

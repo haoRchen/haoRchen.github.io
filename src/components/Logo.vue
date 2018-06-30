@@ -53,6 +53,20 @@ export default {
     transform: scaleX(1);
   }
 }
+@keyframes collapse {
+  0% {
+    stroke-width: 8;
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-width: 15;
+    stroke-opacity: 0.5;
+  }
+  100% {
+    stroke-width: 8;
+    stroke-opacity: 1;
+  }
+}
 .logo,
 .logo--loading {
   width: 50px;
@@ -102,6 +116,12 @@ export default {
 .logo--loading {
   cursor: default;
   transition: all 0.5s;
-  animation: flip 2s linear infinite;
+  // animation: flip 2s linear infinite;
+  .text {
+    opacity: 0;
+  }
+  .rectangle {
+    animation: collapse 2s linear infinite;
+  }
 }
 </style>
