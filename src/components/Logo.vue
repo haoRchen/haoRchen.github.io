@@ -20,30 +20,48 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "../main.scss";
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+    transform: translate(0, -5px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(0, 5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, -5px);
+  }
+}
 .logo {
   $self: &;
   cursor: pointer;
   width: 50px;
   height: 50px;
-  background-color: white;
+  background-color: transparent;
   &:hover {
     & #{$self}__text {
-      transform: translate(-22px, 0) scale(0.85);
+      animation: pulsate 1.3s ease-in infinite;
     }
     & #{$self}__rectangle {
-      stroke-dasharray: 300, 300px;
+      stroke-dashoffset: 100;
+      // stroke-dasharray: 0, 0, 100, 300;
+      stroke-dasharray: 100, 200;
     }
   }
   &:focus {
     & #{$self}__rectangle {
-      stroke-dasharray: 100px;
+      stroke-dasharray: 100, 300;
     }
   }
   &__text {
+    stroke-width: 20px;
     font-family: sans-serif;
     font-weight: bold;
     font-size: 40px;
-    fill: black;
+    fill: $white;
     transform-origin: center;
     transition: all 0.4s ease-in-out 0s;
   }
@@ -51,11 +69,14 @@ export default {
     width: 100px;
     height: 100px;
     fill: transparent;
-    stroke: black;
+    stroke: $white;
     stroke-width: 8;
-    stroke-dasharray: 0, 0, 400, 400;
-    // stroke-dashoffset: 1700;
-    transition: stroke-dasharray 1s;
+    // stroke-dasharray: 0, 0, 400, 500;
+    // stroke-dasharray: 500, 500;
+    // length, gap, length, gap
+    stroke-dasharray: 0, 0, 600, 600;
+    stroke-dashoffset: 100;
+    transition: stroke-dasharray 0.5s;
   }
 }
 </style>
