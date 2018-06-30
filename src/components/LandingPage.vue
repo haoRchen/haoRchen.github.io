@@ -7,12 +7,8 @@
 
 <script>
 import { ScrollTop } from "@/utility";
-// import Logo from "@/components/Logo.vue";
 export default {
   name: "LandingPage",
-  // components: {
-  //   Logo
-  // },
   mounted() {
     ScrollTop();
   }
