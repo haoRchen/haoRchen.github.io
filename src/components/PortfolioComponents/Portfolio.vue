@@ -75,6 +75,7 @@ export default {
   padding-right: 0;
 }
 .portfolio {
+  $self: &;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -91,6 +92,11 @@ export default {
     .selected {
       opacity: 1;
       transform: scale(1.1, 1.1);
+      &#{$self}__topnav__button {
+        &:after {
+          width: 100%;
+        }
+      }
     }
     &__button {
       font-family: $roboto;
@@ -102,7 +108,7 @@ export default {
       text-decoration: none;
       background-color: transparent;
       border: none;
-      opacity: 0.5;
+      opacity: 0.4;
       &:hover {
         opacity: 1;
         &:after {

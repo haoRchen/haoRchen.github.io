@@ -128,10 +128,8 @@ export default {
       }
     }
     &:active {
-      & #{ $close }__line1,
-      & #{ $close }__line2 {
-        transform: none;
-      }
+      transform: translate(0, -5px);
+      box-shadow: 0 2 $dark-grey;
     }
   }
   &__title {

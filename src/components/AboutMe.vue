@@ -34,7 +34,7 @@
         </div>
       </div>
       <div class="aboutme__rightcolumn">
-        <!-- <google-map/> -->
+        <google-map/>
       </div>
     </div>   
   </div> 
@@ -42,13 +42,13 @@
 
 <script>
 import { ScrollTop } from "@/utility";
-// import GoogleMap from "./GoogleMap";
+import GoogleMap from "./GoogleMap";
 
 export default {
   name: "AboutMe",
-  // components: {
-  //   GoogleMap
-  // },
+  components: {
+    GoogleMap
+  },
   mounted() {
     ScrollTop();
   },

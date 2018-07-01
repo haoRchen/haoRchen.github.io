@@ -59,7 +59,7 @@ export default {
     stroke-opacity: 1;
   }
   50% {
-    stroke-width: 15;
+    stroke-width: 20;
     stroke-opacity: 0.5;
   }
   100% {
@@ -75,14 +75,12 @@ export default {
 }
 .logo {
   $self: &;
-  // cursor: pointer;
   &:hover {
     .text {
       animation: pulsate 1.3s ease-in infinite;
     }
     .rectangle {
       stroke-dashoffset: 100;
-      // stroke-dasharray: 0, 0, 100, 300;
       stroke-dasharray: 100, 200;
     }
   }
@@ -97,6 +95,7 @@ export default {
   font-family: sans-serif;
   font-weight: bold;
   font-size: 40px;
+  opacity: 1;
   fill: $white;
   transform-origin: center;
   transition: all 0.4s ease-in-out 0s;
@@ -121,7 +120,7 @@ export default {
     opacity: 0;
   }
   .rectangle {
-    animation: collapse 2s linear infinite;
+    animation: collapse 1s linear infinite;
   }
 }
 </style>

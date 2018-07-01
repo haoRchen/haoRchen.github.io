@@ -59,7 +59,7 @@
                 id="MoreInfoButton" 
                 class="button level-item"
                 @click="ShowModal">
-                MORE INFO
+                INFO
               </a>
               <a 
                 v-if="project.demoLink"
@@ -129,9 +129,9 @@ export default {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transform: scale(1.01, 1.01);
     .icon {
-      color: $primary;
+      color: $dark-grey;
       &:hover {
-        color: $dark-grey;
+        color: $primary;
       }
     }
     & #{ $box }__nav__wrapper--button {

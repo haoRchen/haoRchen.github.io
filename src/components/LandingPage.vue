@@ -81,9 +81,9 @@ export default {
     transition: all 0.5s ease-in-out;
     bottom: 0;
     animation-delay: 0.7s;
-    &:hover {
-      animation: moveup 0.5s ease-in-out alternate;
-    }
+    // &:hover {
+    //   animation: moveup 0.5s ease-in-out alternate;
+    // }
   }
   &__job {
     font-family: $montserrat;

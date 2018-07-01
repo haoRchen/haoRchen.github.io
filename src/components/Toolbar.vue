@@ -1,114 +1,119 @@
 <template>
-  <nav 
-    :style="{top:navTop}"
-    :class="{'isLoading': Loading}"
-    class="nav" 
-    role="navigation" 
-    aria-label="main navigation">
+  <transition name="fade">
+    <nav 
+      :style="{top:navTop}"
+      :class="{'isLoading': Loading}"
+      class="nav" 
+      role="navigation" 
+      aria-label="main navigation">
 
-    <div
-      class="nav__wrapper container" 
-    >
-      <transition name="fade">
-        <div class="nav__wrapper--logo">
-          <router-link 
-            :class="{'nav__logo': !Loading, 'nav__logo--loading':Loading}"
-            to="/"
-            tag="a"
-            @click.native="ToggleNavBurger"
-          >
-            <logo
-              :animated="Loading"
-            />
-            <!-- ******************* Loading Text ******************** -->
+      <div
+        class="nav__wrapper container" 
+      >
+        <transition name="fade">
+          <div class="nav__wrapper--logo">
+            <transition name="fade">
+              <router-link 
+                :class="{'nav__logo': !Loading, 'nav__logo--loading':Loading}"
+                to="/"
+                tag="a"
+                @click.native="ToggleNavBurger"
+              >
+                <logo
+                  :animated="Loading"
+                />
+                <!-- ******************* Loading Text ******************** -->
+                <transition name="fade">
+                  <div 
+                    v-if="Loading"
+                    class="loading-text">
+                    <span>Loading</span>
+                    <span class="loading-text__dot"> .</span>
+                    <span class="loading-text__dot"> .</span>
+                    <span class="loading-text__dot"> .</span>
+                  </div>
+                </transition>
+                <!-- ******************* Loading Text ******************** -->
+              </router-link>
+            </transition>
             <transition name="fade">
               <div 
-                v-if="Loading"
-                class="loading-text">
-                <span>Loading</span>
-                <span class="loading-text__dot"> .</span>
-                <span class="loading-text__dot"> .</span>
-                <span class="loading-text__dot"> .</span>
+                v-if="!Loading"
+                :class="{ 'is-active': displayDropdown }" 
+                class="nav__burger" 
+                @click="ToggleNavBurger">
+                <span class="nav__burger__line4"/>
+                <span class="nav__burger__line1"/>
+                <span class="nav__burger__line2"/>
+                <span class="nav__burger__line3"/>
+                <span class="nav__burger__line5"/>
               </div>
             </transition>
-            <!-- ******************* Loading Text ******************** -->
-          </router-link>
+          </div>
+        </transition>
+        <transition name="fade">
           <div 
             v-if="!Loading"
-            :class="{ 'is-active': displayDropdown }" 
-            class="nav__burger" 
-            @click="ToggleNavBurger">
-            <span class="nav__burger__line4"/>
-            <span class="nav__burger__line1"/>
-            <span class="nav__burger__line2"/>
-            <span class="nav__burger__line3"/>
-            <span class="nav__burger__line5"/>
+            :class="{ 'dropdown': displayDropdown }" 
+            class="nav__wrapper--links">
+            <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
+            <router-link 
+              to="/"
+              class="nav__item home" 
+              tag="a"
+              @click.native="ToggleNavBurger"
+            >
+              Home
+            </router-link>
+            <router-link 
+              to="/portfolio"
+              class="nav__item portfolio" 
+              tag="a"
+              @click.native="ToggleNavBurger"
+            >
+              Portfolio
+            </router-link>
+            <router-link 
+              to="/about-me"
+              class="nav__item aboutMe" 
+              tag="a"
+              @click.native="ToggleNavBurger"
+            >
+              About Me
+            </router-link>
+            <footer
+              class="nav__footer"
+            >
+              <a>
+                <span class="icon linkedin nav__footer__item" >
+                  <i 
+                    class="fab fa-linkedin fa-lg"
+                    aria-hidden="true"/>
+                </span> 
+              </a>
+              <a>
+                <span class="icon github nav__footer__item">
+                  <i 
+                    class="fab fa-github fa-lg"
+                    aria-hidden="true"/>
+                </span>
+              </a>
+              <a>
+                <span class="icon envelope nav__footer__item">
+                  <i 
+                    class="fas fa-envelope fa-lg"
+                    aria-hidden="true"/>
+                </span>
+              </a>
+              <span class="nav__footer__item credit">
+                <i class="far fa-copyright"/> 2018 Hao Ran Chen
+              </span>
+            </footer>
           </div>
-
-        </div>
-      </transition>
-      <transition name="fade">
-        <div 
-          v-if="!Loading"
-          :class="{ 'dropdown': displayDropdown }" 
-          class="nav__wrapper--links">
-          <!-- .native is needed for router-link https://github.com/vuejs/vue-router/issues/800#issuecomment-254623582 -->
-          <router-link 
-            to="/"
-            class="nav__item home" 
-            tag="a"
-            @click.native="ToggleNavBurger"
-          >
-            Home
-          </router-link>
-          <router-link 
-            to="/portfolio"
-            class="nav__item portfolio" 
-            tag="a"
-            @click.native="ToggleNavBurger"
-          >
-            Portfolio
-          </router-link>
-          <router-link 
-            to="/about-me"
-            class="nav__item aboutMe" 
-            tag="a"
-            @click.native="ToggleNavBurger"
-          >
-            About Me
-          </router-link>
-          <footer
-            class="nav__footer"
-          >
-            <a>
-              <span class="icon linkedin nav__footer__item" >
-                <i 
-                  class="fab fa-linkedin fa-lg"
-                  aria-hidden="true"/>
-              </span> 
-            </a>
-            <a>
-              <span class="icon github nav__footer__item">
-                <i 
-                  class="fab fa-github fa-lg"
-                  aria-hidden="true"/>
-              </span>
-            </a>
-            <a>
-              <span class="icon envelope nav__footer__item">
-                <i 
-                  class="fas fa-envelope fa-lg"
-                  aria-hidden="true"/>
-              </span>
-            </a>
-            <span class="nav__footer__item credit">
-              <i class="far fa-copyright"/> 2018 Hao Ran Chen
-            </span>
-          </footer>
-        </div>
-      </transition>
-    </div>
-  </nav>
+        </transition>
+      </div>
+    </nav>
+  </transition>
 </template>
 
 <script>
@@ -210,6 +215,7 @@ export default {
       display: flex;
       box-shadow: none;
       margin-left: auto;
+      overflow-y: hidden;
       transition: height 0.5s ease-in-out;
     }
   }
@@ -219,7 +225,8 @@ export default {
     display: flex;
     align-items: center;
     color: $white;
-    transition: height 0.4s;
+    opacity: 1;
+    transition: height 0.4s, opacity 0.5s;
     &.is-active {
       background-color: transparent;
       color: $primary-darker;
@@ -234,7 +241,7 @@ export default {
     margin-bottom: 2rem;
     height: fit-content;
     display: flex;
-    cursor: none;
+    cursor: default;
     align-self: flex-end;
   }
   .loading-text {
@@ -243,6 +250,7 @@ export default {
   }
   .loading-text,
   .loading-text__dot {
+    cursor: default;
     align-self: flex-end;
     position: relative;
     color: $white;
@@ -261,6 +269,7 @@ export default {
   }
   &__burger {
     display: none;
+    transition: opacity 0.5s;
     cursor: pointer;
   }
   &__footer {
@@ -292,12 +301,14 @@ export default {
     display: flex;
     align-items: center; // aligns the text.
     color: $white;
+    opacity: 1;
+    transition: all 0.4s cubic-bezier(0, 0, 0.23, 1);
     &.is-active {
       background-color: transparent;
       color: $primary-darker;
     }
     &:hover {
-      color: $white;
+      color: $primary-darker;
       background-color: rgba(0, 0, 0, 0.05);
     }
   }
@@ -338,7 +349,8 @@ export default {
     &__logo {
       // align-self: flex-start;
       // margin-left: 1.5rem;
-      visibility: hidden;
+      opacity: 0;
+      transition: opacity 0.5s;
     }
     &__footer {
       &__item {
@@ -465,6 +477,8 @@ export default {
       height: 100px;
       width: 100%;
       left: -100px;
+      opacity: 0;
+      transition: opacity 0.5s;
       &:nth-of-type(1) {
         transition: opacity ease-in-out 0.3s 0.3s, left ease-in-out 0.3s 0.3s;
       }
@@ -491,6 +505,7 @@ export default {
     .nav {
       &__item {
         opacity: 1;
+        transition: opacity 0.5s;
         left: 0;
         &:nth-of-type(1) {
           transition: opacity ease-in-out 0.3s 0.8s, left ease-in-out 0.3s 0.8s;
@@ -559,15 +574,9 @@ export default {
   0% {
     bottom: 0px;
   }
-  // 25% {
-  //   bottom: 10px;
-  // }
   20% {
     bottom: 5px;
   }
-  // 75% {
-  //   bottom: 10px;
-  // }
   100% {
     bottom: 0px;
   }
