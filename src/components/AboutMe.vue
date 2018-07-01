@@ -7,7 +7,10 @@
           <h1 class="title aboutme__header" >Hey there!</h1>
         </div>
         <p class="aboutme__content">
-          Portland ugh fashion axe Helvetica, YOLO Echo Park Austin gastropub roof party. Meggings cred before they sold out messenger bag, ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit. Kogi ethnic ugh fashion axe bicycle rights. Gluten-free Odd Future American Apparel pour-over umami drinking vinegar Truffaut. Selvage sustainable plaid viral salvia readymade, lomo slow-carb before they sold out bitters leggings. 90's pickled actually biodiesel put a bird on it, butcher dreamcatcher Cosby sweater.
+          I'm Hao! A third-year student at Seneca College who's seeking a Co-Op work term in Spring 2019. 
+          I'm curious about all things related to software.
+          In my free time, I tinker away at personal projects, attend Hackathons and contribute to Open Source to gain exposure to different aspects of software development.
+          My current interest lies in the Web. However, I'm up for any challenge :]
         </p>
         <div class="aboutme__footer has-text-centered">
           <a >
@@ -113,9 +116,19 @@ export default {
   .aboutme {
     width: 100%;
     flex-direction: column;
+    align-items: center;
+    justify-content: center;
     &__leftcolumn,
     &__rightcolumn {
       width: 100%;
+    }
+    &__header {
+      display: flex;
+      justify-content: center;
+    }
+    &__footer {
+      display: flex;
+      justify-content: center;
     }
   }
 }

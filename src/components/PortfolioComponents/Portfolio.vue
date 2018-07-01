@@ -12,7 +12,7 @@
           class="button portfolio__topnav__button"
           href="#"
           @click="projectList = personal, selected($event)">
-          Personal Projects
+          Personal
         </a>
         <a 
           class="button portfolio__topnav__button"
@@ -101,6 +101,7 @@ export default {
     &__button {
       font-family: $roboto;
       font-weight: 600;
+      // font-size: 1px;
       padding-left: 0;
       padding-right: 0;
       margin-left: 10px;

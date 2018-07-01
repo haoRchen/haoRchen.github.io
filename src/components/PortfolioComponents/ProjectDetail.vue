@@ -21,25 +21,25 @@
         <slide class="modal__carousel__slide">
           <img 
             class="modal__image" 
-            src="Images/portfolio/1.jpg" 
+            src="Images/portfolio/jenga1.jpg" 
             alt="">
         </slide>
         <slide class="modal__carousel__slide">
           <img 
             class="modal__image" 
-            src="Images/portfolio/2.jpg" 
+            src="Images/portfolio/jenga1.jpg" 
             alt="">
         </slide>
         <slide class="modal__carousel__slide">
           <img 
             class="modal__image" 
-            src="Images/portfolio/3.jpg" 
+            src="Images/portfolio/jenga1.jpg" 
             alt="">
         </slide>
         <slide class="modal__carousel__slide">
           <img 
             class="modal__image" 
-            src="Images/portfolio/4.jpg" 
+            src="Images/portfolio/jenga1.jpg" 
             alt="">
         </slide>
       </carousel>
@@ -136,12 +136,13 @@ export default {
     font-family: $roboto;
     font-weight: 600;
     font-size: 2rem;
-    margin: 3rem;
+    margin-top: 3rem;
   }
   &__image {
-    width: 50%;
-    max-width: 500px;
-    max-height: 500px;
+    height: auto;
+    width: auto;
+    max-width: 70vw;
+    max-height: 70vh;
     align-self: center;
   }
   &__carousel {
@@ -158,6 +159,11 @@ export default {
   }
   &__technologies {
     margin-bottom: 4rem;
+  }
+}
+.VueCarousel-navigation-prev {
+  &:hover {
+    color: red;
   }
 }
 @media screen and (max-width: $desktop) {

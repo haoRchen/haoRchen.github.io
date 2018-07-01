@@ -19,7 +19,7 @@
               <a 
                 class="level-item" 
                 aria-label="reply">
-                <span class="icon is-medium ">
+                <span class="icon is-medium tech-icon">
                   <i 
                     class="fab fa-angular fa-lg" 
                     aria-hidden="true"/>
@@ -28,7 +28,7 @@
               <a 
                 class="level-item" 
                 aria-label="retweet">
-                <span class="icon is-medium ">
+                <span class="icon is-medium tech-icon">
                   <i 
                     class="fab fa-js fa-lg" 
                     aria-hidden="true"/>
@@ -37,7 +37,7 @@
               <a 
                 class="level-item" 
                 aria-label="like">
-                <span class="icon is-medium ">
+                <span class="icon is-medium tech-icon">
                   <i 
                     class="fab fa-vuejs fa-lg" 
                     aria-hidden="true"/>
@@ -46,7 +46,7 @@
               <a 
                 class="level-item" 
                 aria-label="like">
-                <span class="icon is-medium">
+                <span class="icon is-medium tech-icon">
                   <i 
                     class="fab fa-node-js fa-lg" 
                     aria-hidden="true"/>
@@ -59,13 +59,16 @@
                 id="MoreInfoButton" 
                 class="button level-item"
                 @click="ShowModal">
-                INFO
+                Info 
+                <i 
+                  class="fas fa-angle-double-right fa-lg" 
+                  aria-hidden="true"/>
               </a>
-              <a 
+              <!-- <a 
                 v-if="project.demoLink"
                 id="DemoLink"
                 :href="project.demoLink"
-                class="level-item">View Demo</a>
+                class="level-item">View Demo</a> -->
             </div>
           </nav>
         </div>
@@ -128,13 +131,14 @@ export default {
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transform: scale(1.01, 1.01);
-    .icon {
+    .tech-icon {
       color: $dark-grey;
       &:hover {
         color: $primary;
       }
     }
     & #{ $box }__nav__wrapper--button {
+      transition-delay: 0.5s;
       opacity: 1;
       right: 0px;
     }
@@ -149,25 +153,27 @@ export default {
       transition: all 0.3s ease-in-out;
       font-family: $roboto;
       font-weight: 500;
+      transition-delay: 0;
       #MoreInfoButton {
-        background-color: $primary;
+        transition: all 0.5s ease;
+        background-color: $dark-grey;
         color: $white;
-        width: 11rem;
+        width: 10rem;
         &:hover {
-          background-color: $dark-grey;
+          background-color: $primary;
           color: $white;
         }
       }
       #DemoLink {
-        color: $primary;
+        color: $dark-grey;
         border-bottom-width: 1px;
         border-bottom-style: solid;
-        border-bottom-color: $primary;
+        border-bottom-color: $dark-grey;
         margin-left: 1rem;
         margin-right: 1rem;
         &:hover {
-          color: $dark-grey;
-          border-bottom-color: $dark-grey;
+          color: $primary;
+          border-bottom-color: $primary;
         }
       }
     }
@@ -180,42 +186,48 @@ export default {
 .ProjectDescription {
   font-family: $montserrat;
   font-weight: 300;
+  font-size: 15px;
 }
-@media screen and (max-width: $mobile) {
+@media screen and (max-width: $tablet) {
   .box {
     $box: &;
     height: auto;
     transition: all 0.5s ease;
     &:hover {
       & #{ $box }__nav__wrapper--button {
-        right: auto;
-        height: 80px;
+        height: 40px;
+        opacity: 1;
+        transition-delay: 0.5s;
       }
     }
     &__nav {
+      display: flex;
+      flex-direction: column;
       transition: all 0.5s ease;
       justify-content: center;
+      align-items: center;
       flex-wrap: wrap;
       &__wrapper--button {
+        display: flex;
+        flex-direction: column;
+        right: auto;
         flex-wrap: wrap;
         position: relative;
-        right: auto;
         transition: all 0.3s ease-in-out;
+        transition-delay: 0;
         #MoreInfoButton {
           transition: all 0.5s ease;
-          width: auto;
-          margin-top: 15px;
-          margin-bottom: 15px;
-          margin-left: 0.75rem; // counter bulma"s is-mobile auto margin-right.
+          position: relative;
+          margin-top: 1rem;
+          width: 12rem;
+          bottom: -10px;
         }
         #DemoLink {
           transition: all 0.5s ease;
           width: auto;
-          margin-left: 30%;
-          margin-right: 30%;
           &:hover {
-            margin-left: 15%;
-            margin-right: 15%;
+            padding-left: 30px;
+            padding-right: 30px;
           }
         }
       }
