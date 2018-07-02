@@ -7,10 +7,8 @@
         <span class="modal__close__line1"/>
         <span class="modal__close__line2"/>
       </div>
-      <h5 class="modal__title">
-        {{ project.name }}
-      </h5>
       <carousel 
+        v-if="project.imgUrls"
         :per-page="1"
         :pagination-enabled="false"
         :navigation-enabled="true"
@@ -18,38 +16,48 @@
         :navigation-prev-label="`<i class='fas fa-chevron-left fa-2x'></i>`"
         :easing="'ease-out'"
         class="modal__carousel" >
-        <slide class="modal__carousel__slide">
+        <slide 
+          v-for="image in project.imgUrls" 
+          :key="image" 
+          class="modal__carousel__slide">
           <img 
+            :src="image" 
             class="modal__image" 
-            src="Images/portfolio/jenga1.jpg" 
-            alt="">
-        </slide>
-        <slide class="modal__carousel__slide">
-          <img 
-            class="modal__image" 
-            src="Images/portfolio/jenga1.jpg" 
-            alt="">
-        </slide>
-        <slide class="modal__carousel__slide">
-          <img 
-            class="modal__image" 
-            src="Images/portfolio/jenga1.jpg" 
-            alt="">
-        </slide>
-        <slide class="modal__carousel__slide">
-          <img 
-            class="modal__image" 
-            src="Images/portfolio/jenga1.jpg" 
             alt="">
         </slide>
       </carousel>
-      <p class="modal__description">
+      <h5 class="modal__title">
+        {{ project.name }}
+      </h5>
+      <a 
+        v-if="project.blog" 
+        :href="project.blog">
+        Blog post about the contribution</a>
+      <p 
+        v-if="project.fullDescription"
+        class="modal__description">
         {{ project.fullDescription }}
       </p>
-      <h6><strong>Technologies used</strong></h6>
+      <h6 class="modal__subheader"><strong>Technologies used</strong></h6>
       <p class="modal__technologies">
-        Reactjs  -  JavaScript  -  CSS3  -  Bulma
+        <span 
+          v-for="technology in project.technologies" 
+          :key="technology">
+          {{ technology }}
+        </span>
       </p>
+      <a 
+        v-if="project.gitRepo" 
+        :href="project.gitRepo">
+        Source Code</a>
+      <a 
+        v-if="project.demoLink" 
+        :href="project.demoLink">
+        Demo</a>
+      <a 
+        v-if="project.prLink" 
+        :href="project.prLink">
+        Pull request</a>
     </div>
   </transition>
 </template>
@@ -89,6 +97,7 @@ export default {
   justify-content: flex-start;
   height: auto;
   align-items: center;
+  padding-bottom: 4rem;
   overflow-y: auto;
   &__close {
     $close: &;
@@ -135,8 +144,8 @@ export default {
   &__title {
     font-family: $roboto;
     font-weight: 600;
-    font-size: 2rem;
-    margin-top: 3rem;
+    font-size: 25px;
+    margin: 1rem;
   }
   &__image {
     height: auto;
@@ -147,6 +156,7 @@ export default {
   }
   &__carousel {
     width: 95%;
+    margin-top: 4rem;
     &__slide {
       display: flex;
       justify-content: center;
@@ -154,11 +164,15 @@ export default {
   }
   &__description {
     margin: 1rem;
-    margin-top: 2rem;
+    margin-top: 1rem;
     width: 40%;
   }
+  &__subheader {
+    font-family: $roboto;
+    font-weight: 600;
+    font-size: 17px;
+  }
   &__technologies {
-    margin-bottom: 4rem;
   }
 }
 .VueCarousel-navigation-prev {

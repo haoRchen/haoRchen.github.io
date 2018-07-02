@@ -1,46 +1,53 @@
 export default [
   {
     id: "os-4",
-    name: "Excel",
+    name: "Mozilla - Debugger.html",
     date: "Jan 2016 - Oct 2017",
-    technologies: ["Angular", "Vuejs", "JavaScript", "CSS3"],
+    technologies: ["JavaScript", "React", "Redux"],
+    imgUrls: "",
     demoLink: "",
-    description:
-      "ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit.",
-    fullDescription:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+    prLink: "https://github.com/devtools-html/debugger.html/pull/6263",
+    blog:
+      "https://medium.com/haorc/tricky-javascript-with-a-sprinkle-of-react-12820e1d2fc6",
+    description: "Aided in the restructuring of hover events",
+    fullDescription: ""
   },
   {
     id: "os-3",
-    name: "Word processor",
+    name: "Mozilla - Debugger.html",
     date: "Apr 2015 - May 2018",
-    technologies: ["Angular", "Vuejs", "C#", "HTML"],
+    technologies: ["JavaScript"],
+    imgUrls: "",
     demoLink: "",
-    description:
-      "ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit.",
-    fullDescription:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+    prLink: "https://github.com/devtools-html/debugger.html/pull/5742",
+    blog: "https://medium.com/haorc/default-behavior-6bd2f2ea2c0e",
+    description: "Corrected arrow key behavior within input search field.",
+    fullDescription: ""
   },
   {
     id: "os-2",
-    name: "bananas",
+    name: "Mozilla - Debugger.html",
     date: "Aug 2009 - Jul 2050",
-    technologies: ["Angular", "Vuejs", "Bulma", "React"],
+    technologies: ["JavaScript"],
+    imgUrls: "",
     demoLink: "",
+    prLink: "https://github.com/devtools-html/debugger.html/pull/5619",
+    blog: "https://medium.com/haorc/bug-fix-in-debugger-html-9011499bf205",
     description:
-      "ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit.",
-    fullDescription:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+      "Updated functionality for debugger.html to disable breakpoint traversal upon initial launch.",
+    fullDescription: ""
   },
   {
     id: "os-1",
-    name: "very powerful",
+    name: "Angular.io - Documentation",
     date: "Feb 2012 - Dec 2017",
-    technologies: ["Angular", "C++", "Bulma", "CSS3"],
+    technologies: ["CSS3"],
+    imgUrls: "",
     demoLink: "",
+    prLink: "https://github.com/angular/angular/pull/22431",
+    blog: "https://medium.com/haorc/first-bug-in-open-source-cd3251a329cc",
     description:
-      "ugh fashion axe Pitchfork tousled freegan asymmetrical literally twee Thundercats. Whatever Blue Bottle Neutra irony 8-bit.",
-    fullDescription:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+      "Corrected multiple site-wide occurrences of header misalignment for Angular documentation.",
+    fullDescription: ""
   }
 ];
