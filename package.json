@@ -1,8 +1,8 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
+  "homepage": "https://github.com/haoRchen/portfolio",
   "private": true,
-  "homepage": "https://github.com/haoRchen/haorchen.github.io",
   "scripts": {
     "serve": "vue-cli-service serve --open",
     "build": "vue-cli-service build",
