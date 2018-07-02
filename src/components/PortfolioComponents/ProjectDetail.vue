@@ -40,11 +40,7 @@
       </p>
       <h6 class="modal__subheader"><strong>Technologies used</strong></h6>
       <p class="modal__technologies">
-        <span 
-          v-for="technology in project.technologies" 
-          :key="technology">
-          {{ technology }}
-        </span>
+        {{ project.technologies }}
       </p>
       <a 
         v-if="project.gitRepo" 
