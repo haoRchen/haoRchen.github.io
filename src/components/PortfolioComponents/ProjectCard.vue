@@ -1,5 +1,7 @@
 <template>
-  <transition name="slide-fade">
+  <transition 
+    name="slide-fade" 
+    mode="out-in">
     <div class="box">
       <article class="media">
         <div class="media-content">
@@ -15,7 +17,7 @@
           </div>
           <!-- Card Technology Icons -->
           <nav class="level box__nav is-mobile is-marginless">
-            <div class="level-left box__nav__wrapper--icon">
+            <!-- <div class="level-left box__nav__wrapper--icon">
               <a 
                 class="level-item" 
                 aria-label="reply">
@@ -52,17 +54,26 @@
                     aria-hidden="true"/>
                 </span>
               </a>
-            </div>
+            </div> -->
             <div 
               class="level-right box__nav__wrapper--button">
               <a 
                 id="MoreInfoButton" 
-                class="button level-item"
+                class="level-item"
                 @click="ShowModal">
-                Info 
-                <i 
-                  class="fas fa-angle-double-right fa-lg" 
-                  aria-hidden="true"/>
+                <span class="info__text">
+                  more info
+                </span>
+                <span class="info__icon">
+                  <i 
+                    class="fas fa-chevron-right fa-xs" 
+                    aria-hidden="true"/>
+                </span>
+                <span class="info__icon">
+                  <i 
+                    class="fas fa-chevron-right fa-xs" 
+                    aria-hidden="true"/>
+                </span>
               </a>
               <!-- <a 
                 v-if="project.demoLink"
@@ -126,8 +137,12 @@ export default {
 .box {
   $box: &;
   background-color: $white;
+  padding: 2rem !important;
+  padding-left: 2.5rem !important;
+  padding-right: 2.5rem !important;
+  max-width: 730px;
   border-radius: 6px;
-  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
   &:hover {
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
     transform: scale(1.01, 1.01);
@@ -144,6 +159,8 @@ export default {
     }
   }
   &__nav {
+    display: flex;
+    justify-content: flex-end;
     flex-wrap: nowrap;
     &__wrapper--button {
       opacity: 0;
@@ -156,12 +173,22 @@ export default {
       transition-delay: 0;
       #MoreInfoButton {
         transition: all 0.5s ease;
-        background-color: $dark-grey;
-        color: $white;
-        width: 10rem;
+        color: $dark-grey;
+        position: relative;
+        transition: all 0.3s ease-out;
+        padding: 5px;
         &:hover {
-          background-color: $primary;
-          color: $white;
+          color: $primary;
+          transform: translate(10px, 0);
+        }
+        .info__text {
+          margin-right: 6px;
+        }
+        .info__icon {
+          animation: fade 1.5s ease-in infinite;
+          &:nth-child(3) {
+            animation-delay: 0.1s;
+          }
         }
       }
       #DemoLink {
@@ -195,7 +222,7 @@ export default {
     transition: all 0.5s ease;
     &:hover {
       & #{ $box }__nav__wrapper--button {
-        height: 40px;
+        height: 20px;
         opacity: 1;
         transition-delay: 0.5s;
       }
@@ -239,6 +266,17 @@ export default {
   .level {
     justify-content: center;
     transition: all 0.5s ease;
+  }
+}
+@keyframes fade {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
   }
 }
 </style>

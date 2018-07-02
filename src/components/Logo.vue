@@ -28,45 +28,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "../main.scss";
-@keyframes pulsate {
-  0% {
-    opacity: 1;
-    transform: translate(0, -5px);
-  }
-  50% {
-    opacity: 0.7;
-    transform: translate(0, 5px);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(0, -5px);
-  }
-}
-@keyframes flip {
-  0% {
-    transform: scaleX(1);
-  }
-  50% {
-    transform: scaleX(-1);
-  }
-  100% {
-    transform: scaleX(1);
-  }
-}
-@keyframes collapse {
-  0% {
-    stroke-width: 8;
-    stroke-opacity: 1;
-  }
-  50% {
-    stroke-width: 20;
-    stroke-opacity: 0.5;
-  }
-  100% {
-    stroke-width: 8;
-    stroke-opacity: 1;
-  }
-}
 .logo,
 .logo--loading {
   width: 50px;
@@ -77,9 +38,11 @@ export default {
   $self: &;
   &:hover {
     .text {
+      fill: $primary-darker;
       animation: pulsate 1.3s ease-in infinite;
     }
     .rectangle {
+      stroke: $primary-darker;
       stroke-dashoffset: 100;
       stroke-dasharray: 100, 200;
     }
@@ -121,6 +84,45 @@ export default {
   }
   .rectangle {
     animation: collapse 1s linear infinite;
+  }
+}
+@keyframes pulsate {
+  0% {
+    opacity: 1;
+    transform: translate(0, -5px);
+  }
+  50% {
+    opacity: 0.7;
+    transform: translate(0, 5px);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0, -5px);
+  }
+}
+@keyframes flip {
+  0% {
+    transform: scaleX(1);
+  }
+  50% {
+    transform: scaleX(-1);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
+@keyframes collapse {
+  0% {
+    stroke-width: 8;
+    stroke-opacity: 1;
+  }
+  50% {
+    stroke-width: 20;
+    stroke-opacity: 0.5;
+  }
+  100% {
+    stroke-width: 8;
+    stroke-opacity: 1;
   }
 }
 </style>

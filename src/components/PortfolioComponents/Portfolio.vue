@@ -22,11 +22,15 @@
         </a>
       </div>
       <div class="column portfolio__contents">
+        <!-- <transition-group 
+          name="slide-fade" 
+          tag="div"> -->
         <ProjectCard 
           v-for="project in projectList" 
           :key="project.id" 
           :project="project"
         />
+        <!-- </transition-group> -->
       </div>
     </div>
   </div>
@@ -79,9 +83,9 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 2.5rem;
   margin: auto;
-  width: 80%;
+  margin-top: 1rem;
+  width: 65%;
   transition: all 0.7s ease;
   &__topnav {
     display: flex;

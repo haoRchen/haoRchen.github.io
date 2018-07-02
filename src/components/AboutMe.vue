@@ -7,10 +7,10 @@
           <h1 class="title aboutme__header" >Hey there!</h1>
         </div>
         <p class="aboutme__content">
-          I'm Hao! A third-year student at Seneca College who's seeking a Co-Op work term in Spring 2019. 
+          I'm Hao! A third-year student at Seneca College who's seeking a Co-Op work term for Spring 2019. 
           I'm curious about all things related to software.
           In my free time, I tinker away at personal projects, attend Hackathons and contribute to Open Source to gain exposure to different aspects of software development.
-          My current interest lies in the Web. However, I'm up for any challenge :]
+          My current interest lies in the Web. However, I'm up for any challenge :)
         </p>
         <div class="aboutme__footer has-text-centered">
           <a >
@@ -63,10 +63,9 @@ export default {
 .aboutme {
   background-color: $white;
   display: flex;
-  padding: 2.5rem;
   margin: auto;
-  margin-top: 3rem;
-  width: 80%;
+  margin-top: 1rem;
+  width: 70%;
   align-self: center;
   transition: all 0.7s ease;
   &__leftcolumn {
@@ -109,7 +108,7 @@ export default {
 }
 @media screen and (max-width: $desktop) {
   .aboutme {
-    width: 90%;
+    width: 80%;
   }
 }
 @media screen and (max-width: $tablet) {

@@ -11,54 +11,13 @@ export function Selected(selectedElement) {
   selectedElement.className += " selected";
 }
 
-// export function GetFontAwesomeTechIcon(iconName) {
-//   switch (iconName) {
-//     case "angular": {
-
-//     }
-//     break;
-//     case "vue": {
-
-//     }
-//     break;
-//     case "javascript": {
-
-//     }
-//     break;
-//     case "css": {
-
-//     }
-//     break;
-//     case "html": {
-
-//     }
-//     break;
-//     case "bulma": {
-//     }
-//     break;
-//     case "node": {
-
-//     }
-//     break;
-//     case "react": {
-
-//     }
-//     break;
-//     case "c++": {
-
-//     }
-//     break;
-//     case "c#": {
-
-//     }
-//     break;
-//     case "mongo": {
-
-//     }
-//     break;
-//     default: {
-
-//     }
-//     break;
-//   }
-// }
+/*
+angular ---- fab fa-angular
+javascript ---- fab fa-js
+vuejs ----- fab fa-vuejs
+nodejs ----- fab fa-node-js
+html ----- fab fa-html5
+react ----- fab fa-react
+css ----- fab fa-css3
+microsoft
+*/

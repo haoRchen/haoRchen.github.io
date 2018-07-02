@@ -33,7 +33,7 @@ export default {
   data() {
     return {
       center: { lat: 43.688, lng: -79.304 },
-      markers: [{ lat: 43.688, lng: -79.304 }],
+      markers: [{ position: { lat: 43.688, lng: -79.304 } }],
       places: [],
       currentPlace: null
     };
