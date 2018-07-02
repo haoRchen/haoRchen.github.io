@@ -1,91 +1,91 @@
 <template>
-  <transition 
+  <!-- <transition 
     name="slide-fade" 
-    mode="out-in">
-    <div class="box">
-      <article class="media">
-        <div class="media-content">
-          <div class="content">
-            <div class="level is-mobile is-marginless">
-              <div class="level-left">
-                <h5 class="title ProjectTitle level-item">{{ project.name }}</h5>
-              </div>
+    mode="out-in"> -->
+  <div class="box">
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          <div class="level is-mobile is-marginless">
+            <div class="level-left">
+              <h5 class="title ProjectTitle level-item">{{ project.name }}</h5>
             </div>
-            <p class="ProjectDescription">
-              {{ project.description }}            
-            </p>
           </div>
-          <!-- Card Technology Icons -->
-          <nav class="level box__nav is-mobile is-marginless">
-            <!-- <div class="level-left box__nav__wrapper--icon">
-              <a 
-                class="level-item" 
-                aria-label="reply">
-                <span class="icon is-medium tech-icon">
-                  <i 
-                    class="fab fa-angular fa-lg" 
-                    aria-hidden="true"/>
-                </span>
-              </a>
-              <a 
-                class="level-item" 
-                aria-label="retweet">
-                <span class="icon is-medium tech-icon">
-                  <i 
-                    class="fab fa-js fa-lg" 
-                    aria-hidden="true"/>
-                </span>
-              </a>
-              <a 
-                class="level-item" 
-                aria-label="like">
-                <span class="icon is-medium tech-icon">
-                  <i 
-                    class="fab fa-vuejs fa-lg" 
-                    aria-hidden="true"/>
-                </span>
-              </a>
-              <a 
-                class="level-item" 
-                aria-label="like">
-                <span class="icon is-medium tech-icon">
-                  <i 
-                    class="fab fa-node-js fa-lg" 
-                    aria-hidden="true"/>
-                </span>
-              </a>
-            </div> -->
-            <div 
-              class="level-right box__nav__wrapper--button">
-              <a 
-                id="MoreInfoButton" 
-                class="level-item"
-                @click="ShowModal">
-                <span class="info__text">
-                  more info
-                </span>
-                <span class="info__icon">
-                  <i 
-                    class="fas fa-chevron-right fa-xs" 
-                    aria-hidden="true"/>
-                </span>
-                <span class="info__icon">
-                  <i 
-                    class="fas fa-chevron-right fa-xs" 
-                    aria-hidden="true"/>
-                </span>
-              </a>
-              <!-- <a 
-                v-if="project.demoLink"
-                id="DemoLink"
-                :href="project.demoLink"
-                class="level-item">View Demo</a> -->
-            </div>
-          </nav>
+          <p class="ProjectDescription">
+            {{ project.description }}            
+          </p>
         </div>
-      </article>
-    </div>    
-  </transition>
+        <!-- Card Technology Icons -->
+        <nav class="level box__nav is-mobile is-marginless">
+          <!-- <div class="level-left box__nav__wrapper--icon">
+            <a 
+              class="level-item" 
+              aria-label="reply">
+              <span class="icon is-medium tech-icon">
+                <i 
+                  class="fab fa-angular fa-lg" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+            <a 
+              class="level-item" 
+              aria-label="retweet">
+              <span class="icon is-medium tech-icon">
+                <i 
+                  class="fab fa-js fa-lg" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+            <a 
+              class="level-item" 
+              aria-label="like">
+              <span class="icon is-medium tech-icon">
+                <i 
+                  class="fab fa-vuejs fa-lg" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+            <a 
+              class="level-item" 
+              aria-label="like">
+              <span class="icon is-medium tech-icon">
+                <i 
+                  class="fab fa-node-js fa-lg" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+          </div> -->
+          <div 
+            class="level-right box__nav__wrapper--button">
+            <a 
+              id="MoreInfoButton" 
+              class="level-item"
+              @click="ShowModal">
+              <span class="info__text">
+                more info
+              </span>
+              <span class="info__icon">
+                <i 
+                  class="fas fa-chevron-right fa-xs" 
+                  aria-hidden="true"/>
+              </span>
+              <span class="info__icon">
+                <i 
+                  class="fas fa-chevron-right fa-xs" 
+                  aria-hidden="true"/>
+              </span>
+            </a>
+            <!-- <a 
+              v-if="project.demoLink"
+              id="DemoLink"
+              :href="project.demoLink"
+              class="level-item">View Demo</a> -->
+          </div>
+        </nav>
+      </div>
+    </article>
+  </div>    
+  <!-- </transition> -->
 </template>
 
 <script>

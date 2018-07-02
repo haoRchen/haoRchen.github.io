@@ -84,21 +84,21 @@
             <footer
               class="nav__footer"
             >
-              <a>
+              <a href="https://www.linkedin.com/in/hao-ran-chen/">
                 <span class="icon linkedin nav__footer__item" >
                   <i 
                     class="fab fa-linkedin fa-lg"
                     aria-hidden="true"/>
                 </span> 
               </a>
-              <a>
+              <a href="https://github.com/haoRchen">
                 <span class="icon github nav__footer__item">
                   <i 
                     class="fab fa-github fa-lg"
                     aria-hidden="true"/>
                 </span>
               </a>
-              <a>
+              <a href="mailto:Hao.RC@outlook.com">
                 <span class="icon envelope nav__footer__item">
                   <i 
                     class="fas fa-envelope fa-lg"

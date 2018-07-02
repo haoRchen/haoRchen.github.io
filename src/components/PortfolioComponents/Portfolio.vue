@@ -1,36 +1,40 @@
 <template>
   <div class="container">
     <div class="columns portfolio is-centered ">
-      <div class="portfolio__topnav">
-        <a 
-          class="button portfolio__topnav__button selected"
-          href="#"
-          @click="projectList = work, selected($event)">
-          Work
-        </a>
-        <a 
-          class="button portfolio__topnav__button"
-          href="#"
-          @click="projectList = personal, selected($event)">
-          Personal
-        </a>
-        <a 
-          class="button portfolio__topnav__button"
-          href="#"
-          @click="projectList = openSource, selected($event)">
-          Open Source
-        </a>
-      </div>
+      <transition 
+        name="slide-fade-up" 
+        mode="out-in">
+        <div class="portfolio__topnav">
+          <a 
+            class="button portfolio__topnav__button selected"
+            href="#"
+            @click="projectList = work, selected($event)">
+            Work
+          </a>
+          <a 
+            class="button portfolio__topnav__button"
+            href="#"
+            @click="projectList = personal, selected($event)">
+            Personal
+          </a>
+          <a 
+            class="button portfolio__topnav__button"
+            href="#"
+            @click="projectList = openSource, selected($event)">
+            Open Source
+          </a>
+        </div>
+      </transition>
       <div class="column portfolio__contents">
-        <!-- <transition-group 
+        <transition-group 
           name="slide-fade" 
-          tag="div"> -->
-        <ProjectCard 
-          v-for="project in projectList" 
-          :key="project.id" 
-          :project="project"
-        />
-        <!-- </transition-group> -->
+          tag="div">
+          <ProjectCard 
+            v-for="project in projectList" 
+            :key="project.id" 
+            :project="project"
+          />
+        </transition-group>
       </div>
     </div>
   </div>

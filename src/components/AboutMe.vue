@@ -1,7 +1,6 @@
 <template>
   <div class="container is-centered">
     <div class="aboutme">
-      
       <div class="aboutme__leftcolumn">
         <div>
           <h1 class="title aboutme__header" >Hey there!</h1>
@@ -13,21 +12,21 @@
           My current interest lies in the Web. However, I'm up for any challenge :)
         </p>
         <div class="aboutme__footer has-text-centered">
-          <a >
+          <a href="https://www.linkedin.com/in/hao-ran-chen/">
             <span class="icon is-large aboutme__footer__icon linkedin">
               <i 
                 class="fab fa-linkedin fa-lg"
                 aria-hidden="true"/>
             </span> 
           </a>
-          <a >
+          <a href="https://github.com/haoRchen">
             <span class="icon aboutme__footer__icon is-large">
               <i 
                 class="fab fa-github fa-lg"
                 aria-hidden="true"/>
             </span>
           </a>
-          <a >
+          <a href="mailto:Hao.RC@outlook.com">
             <span class="icon aboutme__footer__icon is-large">
               <i 
                 class="fas fa-envelope fa-lg"
