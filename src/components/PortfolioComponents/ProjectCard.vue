@@ -1,7 +1,4 @@
 <template>
-  <!-- <transition 
-    name="slide-fade" 
-    mode="out-in"> -->
   <div class="box">
     <article class="media">
       <div class="media-content">
@@ -75,17 +72,11 @@
                   aria-hidden="true"/>
               </span>
             </a>
-            <!-- <a 
-              v-if="project.demoLink"
-              id="DemoLink"
-              :href="project.demoLink"
-              class="level-item">View Demo</a> -->
           </div>
         </nav>
       </div>
     </article>
   </div>    
-  <!-- </transition> -->
 </template>
 
 <script>
@@ -104,8 +95,7 @@ export default {
         return {
           name: "default",
           date: "2018/6/12",
-          description: "default desc",
-          demoLink: ""
+          description: "default desc"
         };
       }
     }
@@ -142,9 +132,9 @@ export default {
   padding-right: 2.5rem !important;
   max-width: 730px;
   border-radius: 6px;
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+  transition: all 0.3s ease-out;
   &:hover {
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+    box-shadow: 0 2px 3px 1px lightgrey;
     transform: scale(1.01, 1.01);
     .tech-icon {
       color: $dark-grey;
@@ -189,18 +179,6 @@ export default {
           &:nth-child(3) {
             animation-delay: 0.1s;
           }
-        }
-      }
-      #DemoLink {
-        color: $dark-grey;
-        border-bottom-width: 1px;
-        border-bottom-style: solid;
-        border-bottom-color: $dark-grey;
-        margin-left: 1rem;
-        margin-right: 1rem;
-        &:hover {
-          color: $primary;
-          border-bottom-color: $primary;
         }
       }
     }
@@ -248,14 +226,6 @@ export default {
           margin-top: 1rem;
           width: 12rem;
           bottom: -10px;
-        }
-        #DemoLink {
-          transition: all 0.5s ease;
-          width: auto;
-          &:hover {
-            padding-left: 30px;
-            padding-right: 30px;
-          }
         }
       }
       &__wrapper--icon {

@@ -93,12 +93,14 @@ export default {
   justify-content: flex-start;
   height: auto;
   align-items: center;
+  padding-top: 3rem;
   padding-bottom: 4rem;
   overflow-y: auto;
   &__close {
     $close: &;
     padding: 1.5rem;
     color: $dark-grey;
+    top: 0;
     align-self: flex-end;
     position: absolute;
     cursor: pointer;
@@ -152,7 +154,7 @@ export default {
   }
   &__carousel {
     width: 95%;
-    margin-top: 4rem;
+    margin-top: 1rem;
     &__slide {
       display: flex;
       justify-content: center;
@@ -160,7 +162,7 @@ export default {
   }
   &__description {
     margin: 1rem;
-    margin-top: 1rem;
+    margin-top: 0;
     width: 40%;
   }
   &__subheader {
@@ -169,11 +171,8 @@ export default {
     font-size: 17px;
   }
   &__technologies {
-  }
-}
-.VueCarousel-navigation-prev {
-  &:hover {
-    color: red;
+    padding-left: 1rem;
+    padding-right: 1rem;
   }
 }
 @media screen and (max-width: $desktop) {

@@ -75,6 +75,9 @@ export default {
     & > div {
       margin: 0.5rem;
     }
+    &__middle {
+      opacity: 0.6;
+    }
   }
   .name__letter {
     position: relative;

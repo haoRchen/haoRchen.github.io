@@ -8,23 +8,27 @@
           <a 
             class="button portfolio__topnav__button selected"
             href="#"
-            @click="projectList = work, selected($event)">
+            @click="projectList = work, selected($event), toggleOverlay()">
             Work
           </a>
           <a 
             class="button portfolio__topnav__button"
             href="#"
-            @click="projectList = personal, selected($event)">
+            @click="projectList = personal, selected($event), toggleOverlay()">
             Personal
           </a>
           <a 
             class="button portfolio__topnav__button"
             href="#"
-            @click="projectList = openSource, selected($event)">
+            @click="projectList = openSource, selected($event), toggleOverlay()">
             Open Source
           </a>
         </div>
       </transition>
+      <div 
+        v-if="overlayActive"
+        class="portfolio__overlay"
+      />
       <div class="column portfolio__contents">
         <transition-group 
           name="slide-fade" 
@@ -58,7 +62,8 @@ export default {
       projectList: Object,
       work: Object,
       openSource: Object,
-      personal: Object
+      personal: Object,
+      overlayActive: false
     };
   },
   mounted() {
@@ -71,6 +76,12 @@ export default {
   methods: {
     selected: e => {
       Selected(e.target);
+    },
+    toggleOverlay() {
+      this.overlayActive = true;
+      setTimeout(() => {
+        this.overlayActive = false;
+      }, 700);
     }
   }
 };
@@ -91,6 +102,19 @@ export default {
   margin-top: 1rem;
   width: 65%;
   transition: all 0.7s ease;
+  &__overlay {
+    background-color: transparent;
+    position: absolute;
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: translateY(55px);
+  }
   &__topnav {
     display: flex;
     flex-direction: row;
