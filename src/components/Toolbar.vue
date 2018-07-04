@@ -380,7 +380,6 @@ export default {
         background-color: $white;
         border-radius: 15px;
         margin: 2.5px;
-        transition: all ease-in-out 0.3s;
         //Hovering effect
         // we only see the first 100% of width initially,
         // On hover, slide the background image over horizontally! ^_^
@@ -394,18 +393,20 @@ export default {
       }
       &__line1 {
         @extend .line;
-        transition-delay: 0.3s;
+        transition: all 0.3s ease-in-out 0.3s;
+        // transition-delay: 0.3s;
       }
       &__line2 {
         @extend .line;
-        transition-delay: 0.2s;
+        transition: all 0.3s ease-in-out 0.2s;
       }
       &__line3 {
         @extend .line;
-        transition-delay: 0.1s;
+        transition: all 0.3s ease-in-out 0.1s;
       }
       &__line4 {
         @extend .line;
+        transition: all 0.3s ease-in-out 0.3s;
         opacity: 0;
         position: relative;
         top: -45px;
@@ -413,11 +414,13 @@ export default {
       }
       &__line5 {
         @extend .line;
+        transition: all 0.3s ease-in-out 0.3s;
         width: 15px;
         position: relative;
         opacity: 0;
         top: 60px;
         left: 30px;
+        visibility: hidden;
       }
       &:hover {
         transform: scale(1.2, 1.2);
