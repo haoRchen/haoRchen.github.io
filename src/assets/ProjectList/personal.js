@@ -59,7 +59,12 @@ export default [
     id: "personal-1",
     name: "Blackjack/21",
     date: "Feb 2012 - Dec 2017",
-    imgUrls: "",
+    imgUrls: [
+      "Images/portfolio/blackjack/b1.jpg",
+      "Images/portfolio/blackjack/b2.jpg",
+      "Images/portfolio/blackjack/b3.jpg",
+      "Images/portfolio/blackjack/b4.jpg"
+    ],
     technologies: "C++",
     demoLink: "",
     gitRepo: "https://github.com/haoRchen/Blackjack",
