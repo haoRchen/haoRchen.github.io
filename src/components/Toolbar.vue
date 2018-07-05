@@ -136,6 +136,7 @@ export default {
     };
   },
   mounted() {
+    // for turning off the preload screen.
     setTimeout(() => {
       this.Loading = false;
     }, 3000);
@@ -365,6 +366,9 @@ export default {
       }
     }
     // ------------------------------   burger  --------------------------------
+    .unclickable {
+      pointer-events: none;
+    }
     &__burger {
       $burger: &;
       display: flex;

@@ -153,7 +153,7 @@ export default {
     align-self: center;
   }
   &__carousel {
-    width: 95%;
+    width: 94%;
     margin-top: 1rem;
     &__slide {
       display: flex;
@@ -181,7 +181,7 @@ export default {
       width: 70%;
     }
     &__carousel {
-      width: 90%;
+      width: 85%;
     }
   }
 }
@@ -191,7 +191,7 @@ export default {
       width: 90%;
     }
     &__carousel {
-      width: 85%;
+      width: 80%;
     }
   }
 }
