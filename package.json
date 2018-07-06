@@ -16,7 +16,7 @@
     "fontawesome": "^4.7.2",
     "lodash": "^4.17.10",
     "material-design-icons-iconfont": "^3.0.3",
-    "node-sass": "^4.9.0",
+    "node-sass": "^4.9.1",
     "sass-loader": "^7.0.1",
     "vue": "^2.5.16",
     "vue-carousel": "^0.8.1",
