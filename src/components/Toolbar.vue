@@ -185,7 +185,7 @@ export default {
       this.navTop =
         this.PreviousScrollPos > this.CurrentScrollPos ? "0" : "-80px";
       this.PreviousScrollPos = this.CurrentScrollPos;
-    }, 40)
+    }, 10)
   }
 };
 </script>
