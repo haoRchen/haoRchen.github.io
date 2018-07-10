@@ -155,6 +155,7 @@ export default {
         opacity: 1;
         box-shadow: none;
         color: $dark-grey;
+        transform: scale(0.9);
       }
       &:after {
         content: "";

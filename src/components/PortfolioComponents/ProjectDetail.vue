@@ -135,7 +135,7 @@ export default {
       }
     }
     &:active {
-      transform: translate(0, -5px);
+      transform: scale(0.8);
       box-shadow: 0 2 $dark-grey;
     }
   }

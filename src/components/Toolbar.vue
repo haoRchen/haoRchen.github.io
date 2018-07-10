@@ -234,7 +234,9 @@ export default {
     }
     &:hover {
       color: $primary-darker;
-      background-color: rgba(0, 0, 0, 0.05);
+    }
+    &:active {
+      transform: scale(0.9);
     }
   }
   &__logo--loading {
@@ -310,7 +312,9 @@ export default {
     }
     &:hover {
       color: $primary-darker;
-      background-color: rgba(0, 0, 0, 0.05);
+    }
+    &:active {
+      transform: scale(0.9);
     }
   }
   .home {
@@ -441,6 +445,9 @@ export default {
           transition-delay: 0.3s;
         }
       }
+      &:active {
+        transform: scale(0.9);
+      }
       &.is-active {
         & #{ $burger }__line1 {
           opacity: 0;
@@ -501,7 +508,6 @@ export default {
       }
       &:hover {
         color: $primary-darker;
-        background-color: rgba(0, 0, 0, 0.05);
       }
     }
   }
