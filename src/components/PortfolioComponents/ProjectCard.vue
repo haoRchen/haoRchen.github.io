@@ -197,14 +197,8 @@ export default {
   .box {
     $box: &;
     height: auto;
+    box-shadow: 0 2px 3px 1px lightgrey;
     transition: all 0.5s ease;
-    &:hover {
-      & #{ $box }__nav__wrapper--button {
-        height: 20px;
-        opacity: 1;
-        transition-delay: 0.5s;
-      }
-    }
     &__nav {
       display: flex;
       flex-direction: column;
@@ -220,6 +214,9 @@ export default {
         position: relative;
         transition: all 0.3s ease-in-out;
         transition-delay: 0;
+        height: 20px;
+        opacity: 1;
+        transition-delay: 0.5s;
         #MoreInfoButton {
           transition: all 0.5s ease;
           position: relative;
