@@ -24,7 +24,6 @@ export default {
 <style lang="scss">
 @import "main.scss";
 .app {
-  // background-color: #f7f8fa;
   background-color: $white;
   font-family: $roboto;
   min-height: 100vh;

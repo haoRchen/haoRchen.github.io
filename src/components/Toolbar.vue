@@ -230,10 +230,10 @@ export default {
     transition: height 0.4s, opacity 0.5s;
     &.is-active {
       background-color: transparent;
-      color: $primary-darker;
+      color: $white;
     }
     &:hover {
-      color: $primary-darker;
+      color: $light-grey;
     }
     &:active {
       transform: scale(0.9);
@@ -288,10 +288,10 @@ export default {
     align-items: center;
     transition: opacity 0.3s ease-in-out, bottom 0.3s ease-in-out;
     &__item {
-      color: $white;
+      color: $dark-grey;
       margin: 1rem;
       &:hover {
-        color: $primary-darker;
+        color: $light-grey;
       }
       &.credit {
         margin-left: auto;
@@ -303,15 +303,15 @@ export default {
     padding: 0.5rem;
     display: flex;
     align-items: center; // aligns the text.
-    color: $white;
+    color: $dark-grey;
     opacity: 1;
     transition: all 0.4s cubic-bezier(0, 0, 0.23, 1);
     &.is-active {
       background-color: transparent;
-      color: $primary-darker;
+      color: $white;
     }
     &:hover {
-      color: $primary-darker;
+      color: $light-grey;
     }
     &:active {
       transform: scale(0.9);
@@ -352,8 +352,6 @@ export default {
       }
     }
     &__logo {
-      // align-self: flex-start;
-      // margin-left: 1.5rem;
       opacity: 0;
       transition: opacity 0.5s;
     }
@@ -361,6 +359,7 @@ export default {
       &__item {
         margin-top: 0;
         margin-bottom: 0;
+        color: $dark-grey;
         &.credit {
           margin-right: 2rem;
         }
@@ -392,11 +391,7 @@ export default {
         // we only see the first 100% of width initially,
         // On hover, slide the background image over horizontally! ^_^
         background-size: 200% 100%;
-        background-image: linear-gradient(
-          to right,
-          $primary-darker 50%,
-          $white 50%
-        );
+        background-image: linear-gradient(to right, $dark-grey 50%, $white 50%);
         background-position: auto;
       }
       &__line1 {
@@ -504,10 +499,10 @@ export default {
       }
       &.is-active {
         background-color: transparent;
-        color: $primary-darker;
+        color: $white;
       }
       &:hover {
-        color: $primary-darker;
+        color: $light-grey;
       }
     }
   }

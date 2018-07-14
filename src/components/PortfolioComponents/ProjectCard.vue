@@ -223,6 +223,10 @@ export default {
           margin-top: 1rem;
           width: 12rem;
           bottom: -10px;
+          .info__icon {
+            display: none;
+            animation: none;
+          }
         }
       }
       &__wrapper--icon {

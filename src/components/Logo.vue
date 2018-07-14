@@ -38,11 +38,11 @@ export default {
   $self: &;
   &:hover {
     .text {
-      fill: $primary-darker;
+      fill: $white;
       animation: pulsate 1.3s ease-in infinite;
     }
     .rectangle {
-      stroke: $primary-darker;
+      stroke: $white;
       stroke-dashoffset: 100;
       stroke-dasharray: 100, 200;
     }
@@ -59,7 +59,7 @@ export default {
   font-weight: bold;
   font-size: 40px;
   opacity: 1;
-  fill: $white;
+  fill: $dark-grey;
   transform-origin: center;
   transition: all 0.4s ease-in-out 0s;
 }
@@ -67,18 +67,16 @@ export default {
   width: 100px;
   height: 100px;
   fill: transparent;
-  stroke: $white;
+  stroke: $dark-grey;
   stroke-width: 8;
   // length, gap, length, gap
   stroke-dasharray: 0, 0, 600, 600;
   stroke-dashoffset: 100;
-  // stroke-linecap: round;
   transition: all 0.5s;
 }
 .logo--loading {
   cursor: default;
   transition: all 0.5s;
-  // animation: flip 2s linear infinite;
   .text {
     opacity: 0;
   }

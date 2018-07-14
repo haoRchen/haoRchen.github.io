@@ -88,7 +88,7 @@ export default {
 @import "@/main.scss";
 .modal {
   display: flex;
-  background-color: white;
+  background-color: $white;
   flex-direction: column;
   justify-content: flex-start;
   height: auto;
