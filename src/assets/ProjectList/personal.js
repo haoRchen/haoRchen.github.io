@@ -1,7 +1,7 @@
 export default [
   {
     id: "personal-5",
-    name: "Personal Web Portfolio",
+    name: "Personal Web Portfolio Version 1",
     date: "Jan 2016 - Oct 2017",
     technologies: "Vuejs - JavaScript - CSS3 - HTML5 - SASS - Bulma",
     imgUrls: "",
@@ -10,7 +10,7 @@ export default [
     description:
       "Static Vue.js website for displaying projects and learn about front-end web development",
     fullDescription:
-      "Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales Located two hours south of Sydney in the Southern Highlands of New South Wales "
+      "This site showcases my portfolio and learn more about front-end web development. By completing this project I dove deeper into CSS3, gained exposure to SASS and experiment with design in Sketch App."
   },
   {
     id: "personal-4",
