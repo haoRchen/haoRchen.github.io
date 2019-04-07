@@ -20,3 +20,6 @@ The following are learning goals for version 2 of the portfolio:
 3. Dive deeper into Vue.js and use Vuex for state management. (Current site relies on component state)
 4. Smaller and more modular Vue components. (Size of current Vue components are quite large)
 5. Mobile first development. (Styled site starting from desktop Media query)
+![Alt Text](Those-SVG-and-CSS-animation.gif)
+![Alt Text](Wow-so-Responsive.gif)
+![Alt Text](Fancy-Burger-Menu.gif)
